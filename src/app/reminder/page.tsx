@@ -31,7 +31,7 @@ const Reminder = () => {
     return (
         <div className="p-2 md:p-8">
             <MenuBar />
-            <div className=" rounded-xl shadow-md p-6 mt-8">
+            <div className=" rounded-xl shadow-md p-3 md:p-6 mt-8">
                 <div className="flex justify-between items-center mb-4 bg-white p-4 rounded-md">
                     <div>
                         <h2 className="text-xl font-semibold">Reminder</h2>

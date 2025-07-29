@@ -88,7 +88,7 @@ export default function page() {
                                 <td>Male</td>
                                 <td>04-30-2026</td>
                                 <td>
-                                    <span className='p-3 rounded-full bg-[#EEFEE7] text-[#237B10] px-6'>In care</span>
+                                    <span className='py-1 rounded-full bg-[#EEFEE7] text-[#237B10] px-4'>In care</span>
                                 </td>
                                 <td className='flex gap-3 justify-start pt-4'>
                                     <Image src="/pencil-edit-02.svg" alt='update svg' width="20" height="20"/>
@@ -108,7 +108,7 @@ export default function page() {
                                 <td>Male</td>
                                 <td>04-30-2026</td>
                                 <td>
-                                    <span className='p-3 rounded-full bg-[#F0F5FE] text-[#2B4DCA] px-6'>Recovered</span>
+                                    <span className='py-1 rounded-full bg-[#F0F5FE] text-[#2B4DCA] px-4'>Recovered</span>
                                 </td>
                                 <td className='flex gap-3 justify-start pt-4'>
                                     <Image src="/pencil-edit-02.svg" alt='update svg' width="20" height="20"/>
@@ -128,7 +128,7 @@ export default function page() {
                                 <td>Male</td>
                                 <td>04-30-2026</td>
                                 <td>
-                                    <span className='p-3 rounded-full bg-[#F0F5FE] text-[#2B4DCA] px-6'>In care</span>
+                                    <span className=' py-1 rounded-full bg-[#F0F5FE] text-[#2B4DCA] px-4'>In care</span>
                                 </td>
                                 <td className='flex gap-3 justify-start pt-4'>
                                     <Image src="/pencil-edit-02.svg" alt='update svg' width="20" height="20"/>
@@ -148,7 +148,7 @@ export default function page() {
                                 <td>Male</td>
                                 <td>04-30-2026</td>
                                 <td>
-                                    <span className='p-3 rounded-full bg-[#EEFEE7] text-[#237B10] px-6'>Recovered</span>
+                                    <span className='py-1 rounded-full bg-[#EEFEE7] text-[#237B10] px-4'>Recovered</span>
                                 </td>
                                 <td className='flex gap-3 justify-start pt-4'>
                                     <Image src="/pencil-edit-02.svg" alt='update svg' width="20" height="20"/>

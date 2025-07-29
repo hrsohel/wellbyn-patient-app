@@ -24,7 +24,6 @@ export default function page() {
             <Suspense fallback={<Loader />}>
                 <BarChartComponent />
             </Suspense>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white p-2 rounded-b-lg">
                 <div className="bg-blue-50 p-4 rounded-lg text-center">
                     <p className="text-sm text-gray-500">New users</p>
