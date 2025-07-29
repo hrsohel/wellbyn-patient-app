@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, Search, Eye, Pencil } from "lucide-react";
+import Link from "next/link";
 
 export default function PatientsDashboard() {
   const [isGenderOpen, setIsGenderOpen] = useState(false);
@@ -270,19 +271,19 @@ const patients = [
                       </span>
                     </td>
                     <td className="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-                      <div className="flex justify-end gap-2">
-                        <button className="rounded-md p-1 text-gray-400 hover:text-gray-500">
-                          <Eye className="h-4 w-4" />
-                          <span className="sr-only">View</span>
-                        </button>
-                        <button className="rounded-md p-1 text-gray-400 hover:text-gray-500">
+                      <div className="flex items-center justify-end gap-2">
+                     <Link href="/patients/details" className="rounded-md p-1 text-gray-400 hover:text-gray-500">
+  <Eye className="h-4 w-4" />
+  <span className="sr-only">View</span>
+</Link>
+                        <Link href="/patients/edit" className="rounded-md p-1 text-gray-400 hover:text-gray-500">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M20.4249 8.60509L21.4149 7.6151C22.2351 6.79497 23.5648 6.79497 24.3849 7.6151C25.205 8.43524 25.205 9.76493 24.3849 10.5851L23.3949 11.5751M20.4249 8.60509L13.7656 15.2644C13.2581 15.772 12.898 16.4078 12.724 17.1041L12 20L14.8959 19.276C15.5922 19.102 16.228 18.7419 16.7356 18.2344L23.3949 11.5751M20.4249 8.60509L23.3949 11.5751" stroke="#2B4DCA" stroke-width="1.5" stroke-linejoin="round"/>
 <path d="M22.9999 17.5C22.9999 20.7875 22.9999 22.4312 22.092 23.5376C21.9258 23.7401 21.7401 23.9258 21.5375 24.092C20.4312 25 18.7874 25 15.4999 25H15C11.2288 25 9.34316 25 8.17159 23.8284C7.00003 22.6569 7 20.7712 7 17V16.5C7 13.2125 7 11.5688 7.90794 10.4624C8.07417 10.2599 8.2599 10.0742 8.46244 9.90794C9.56879 9 11.2125 9 14.5 9" stroke="#2B4DCA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
                           <span className="sr-only">Edit</span>
-                        </button>
+                        </Link>
                       </div>
                     </td>
                   </tr>
