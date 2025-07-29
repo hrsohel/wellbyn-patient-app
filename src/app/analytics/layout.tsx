@@ -1,9 +1,9 @@
-import { Sidebar } from '@/components/layout/Sidebar'
+import { Sidebar } from '@/components/layout/Sidebar';
 import { Metadata } from 'next';
 import React from 'react'
 
 export const metadata: Metadata = {
-  title: "Billing and Coding",
+  title: "Analytics",
   description: "Welcome to Wellbyn, your personal health companion.",
 };
 

@@ -1,12 +1,16 @@
+"use client"
 import Image from "next/image";
 import CodeReview from "./CodeReview";
 import CMS100Data from "./CMS100Data";
+import { SetStateAction, useState } from "react";
+import Assessment from "./Assessment";
 
-export default function BillingCodeDialogBox() {
+export default function BillingCodeDialogBox({showDialogBox, setShowDialogBox}: {showDialogBox: boolean, setShowDialogBox: React.Dispatch<SetStateAction<boolean>>}) {
+  const [showAssessment, setShowAssessment] = useState<number>(1)
   return (
     <div
-      className="fixed top-0 left-0 w-screen h-screen z-50 flex justify-end"
-      style={{ background: "rgba(0, 0, 0, 0.5)" }}
+      className={`fixed top-0 w-screen h-screen z-50 flex justify-end ${showDialogBox ? "left-0" : "left-[110%]"} transition-all duration-500`}
+      style={showDialogBox ? { background: "rgba(0, 0, 0, 0.5)" } : {}}
     >
       <div className="bg-white w-1/2 h-full flex flex-col relative">
       
@@ -29,21 +33,23 @@ export default function BillingCodeDialogBox() {
           </div>
 
           <div className="bg-slate-100 flex items-center justify-between p-4 rounded-md mr-4 mt-8">
-            <button className="bg-white p-2 rounded-md cursor-pointer shadow-md">Assessment</button>
-            <button className="cursor-pointer">Code Review</button>
-            <button className="cursor-pointer">CMS-1500 Data</button>
+            <button onClick={() => setShowAssessment(1)} className={`cursor-pointer ${showAssessment === 1 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>Assessment</button>
+            <button onClick={() => setShowAssessment(2)} className={`cursor-pointer ${showAssessment === 2 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>Code Review</button>
+            <button onClick={() => setShowAssessment(3)} className={`cursor-pointer ${showAssessment === 3 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>CMS-1500 Data</button>
             <button className="cursor-pointer">Form Preview</button>
           </div>
-
-          {/* <CodeReview /> */}
-          <CMS100Data />
+          {
+            showAssessment === 1 ? <Assessment /> :
+            showAssessment === 2 ? <CodeReview /> :
+            showAssessment === 3 ? <CMS100Data /> : <></>
+          }
         </div>
 
         <div
-          style={{ boxShadow: "0 -1px 10px rgb(0, 0, 0)" }}
+          style={{ boxShadow: "0 -6px 15px rgba(0, 0, 0, 0.1)" }}
           className="bg-white p-4 flex items-center justify-center gap-4 mr-4"
         >
-          <button className="border-[1px] border-[#2E8BC9] rounded-md w-full py-2 text-center cursor-pointer">
+          <button onClick={() => setShowDialogBox(false)} className="border-[1px] border-[#2E8BC9] rounded-md w-full py-2 text-center cursor-pointer">
             Close
           </button>
           <button className="bg-[#2E8BC9] rounded-md w-full py-2 text-center flex items-center justify-center gap-2 text-white cursor-pointer">

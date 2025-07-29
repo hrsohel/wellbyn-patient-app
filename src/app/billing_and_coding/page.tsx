@@ -1,10 +1,12 @@
+"use client"
 import BillingCodeDialogBox from '@/components/UI/Bliing&Coding/BillingCodeDialogBox'
 import MenuBar from '@/components/UI/MenuBar'
 import { firstCardInfo } from '@/utils/billing&coding_cards_info'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function page() {
+    const [showDialogBox, setShowDialogBox] = useState<boolean>(false)
   return (
     <div className=''>
        <div className='px-6'>
@@ -89,7 +91,7 @@ export default function page() {
                             </td>
                             <td className='flex gap-3 justify-start pt-4'>
                                 <Image src="/pencil-edit-02.svg" alt='update svg' width="20" height="20"/>
-                                <Image src="/Frame 2147226749.svg" alt='view svg' width="30" height="30"/>
+                                <Image onClick={() => setShowDialogBox(true)} src="/Frame 2147226749.svg" alt='view svg' width="30" height="30"/>
                             </td>
                         </tr>
                         <tr className='py-2'>
@@ -109,7 +111,7 @@ export default function page() {
                             </td>
                             <td className='flex gap-3 justify-start pt-4'>
                                 <Image src="/pencil-edit-02.svg" alt='update svg' width="20" height="20"/>
-                                <Image src="/Frame 2147226749.svg" alt='view svg' width="30" height="30"/>
+                                <Image onClick={() => setShowDialogBox(true)} src="/Frame 2147226749.svg" alt='view svg' width="30" height="30"/>
                             </td>
                         </tr>
                         <tr className='py-2'>
@@ -129,7 +131,7 @@ export default function page() {
                             </td>
                             <td className='flex gap-3 justify-start pt-4'>
                                 <Image src="/pencil-edit-02.svg" alt='update svg' width="20" height="20"/>
-                                <Image src="/Frame 2147226749.svg" alt='view svg' width="30" height="30"/>
+                                <Image onClick={() => setShowDialogBox(true)} src="/Frame 2147226749.svg" alt='view svg' width="30" height="30"/>
                             </td>
                         </tr>
                         <tr className='py-2'>
@@ -149,14 +151,17 @@ export default function page() {
                             </td>
                             <td className='flex gap-3 justify-start pt-4'>
                                 <Image src="/pencil-edit-02.svg" alt='update svg' width="20" height="20"/>
-                                <Image src="/Frame 2147226749.svg" alt='view svg' width="30" height="30"/>
+                                <Image onClick={() => setShowDialogBox(true)} src="/Frame 2147226749.svg" alt='view svg' width="30" height="30"/>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
        </div>
-       <BillingCodeDialogBox />
+       {
+        // showDialogBox ? <BillingCodeDialogBox showDialogBox={showDialogBox} setShowDialogBox={setShowDialogBox} /> : <></>
+        <BillingCodeDialogBox showDialogBox={showDialogBox} setShowDialogBox={setShowDialogBox}/>
+       }
     </div>
   )
 }
