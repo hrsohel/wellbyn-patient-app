@@ -122,14 +122,14 @@ const patients = [
 
   return (
     <div className="flex min-h-screen w-full flex-col bg-gray-100 p-4 sm:p-6 md:p-8 lg:p-10">
-      <div className="flex flex-col gap-4 rounded-lg border bg-white p-4 shadow-sm md:p-6">
+      <div className="flex flex-col gap-4 rounded-lg  bg-white p-4 shadow-sm md:p-6">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div className="grid gap-1">
             <h1 className="text-2xl font-semibold">Patients</h1>
             <p className="text-sm text-gray-500">Manage all the patients</p>
           </div>
-          <button className="rounded-md border border-gray-300 px-4 py-2 text-sm font-medium hover:bg-gray-50">
+          <button className="rounded-md text-[#2E8BC9] shadow-md px-4 py-2 text-sm font-medium hover:bg-gray-50">
             Export Data
           </button>
         </div>
@@ -140,7 +140,7 @@ const patients = [
           <div className="relative">
             <button
               onClick={() => setIsGenderOpen(!isGenderOpen)}
-              className="flex items-center gap-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm hover:bg-gray-50"
+              className="flex items-center gap-2 rounded-md shadow-md bg-white px-3 py-2 text-sm hover:bg-gray-50"
             >
               Gender <ChevronDown className="h-4 w-4" />
             </button>
@@ -159,7 +159,7 @@ const patients = [
           <div className="relative">
             <button
               onClick={() => setIsVisitTypeOpen(!isVisitTypeOpen)}
-              className="flex items-center gap-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm hover:bg-gray-50"
+              className="flex items-center gap-2 rounded-md shadow-md bg-white px-3 py-2 text-sm hover:bg-gray-50"
             >
               Visit Type <ChevronDown className="h-4 w-4" />
             </button>
@@ -178,7 +178,7 @@ const patients = [
           <div className="relative">
             <button
               onClick={() => setIsStatusOpen(!isStatusOpen)}
-              className="flex items-center gap-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm hover:bg-gray-50"
+              className="flex items-center gap-2 rounded-md shadow-md bg-white px-3 py-2 text-sm hover:bg-gray-50"
             >
               Status <ChevronDown className="h-4 w-4" />
             </button>
@@ -197,7 +197,7 @@ const patients = [
           <div className="relative">
             <button
               onClick={() => setIsSortOpen(!isSortOpen)}
-              className="flex items-center gap-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm hover:bg-gray-50"
+              className="flex items-center gap-2 rounded-md shadow-md bg-white px-3 py-2 text-sm hover:bg-gray-50"
             >
               Sort by <ChevronDown className="h-4 w-4" />
             </button>
@@ -213,19 +213,19 @@ const patients = [
           </div>
 
           {/* Search */}
-          <div className="relative flex-1 min-w-[200px] max-w-xs">
+          <div className="relative flex-1  min-w-[200px] max-w-xs">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
             <input
               type="text"
               placeholder="Look for patient name"
-              className="w-full rounded-md border border-gray-300 py-2 pl-9 pr-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full shadow-md rounded-md py-2 pl-9 pr-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
           </div>
         </div>
 
         {/* Table */}
         <div className="overflow-x-auto">
-          <div className="min-w-full overflow-hidden rounded-lg border">
+          <div className="min-w-full overflow-hidden rounded-lg ">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
@@ -276,7 +276,11 @@ const patients = [
                           <span className="sr-only">View</span>
                         </button>
                         <button className="rounded-md p-1 text-gray-400 hover:text-gray-500">
-                          <Pencil className="h-4 w-4" />
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.4249 8.60509L21.4149 7.6151C22.2351 6.79497 23.5648 6.79497 24.3849 7.6151C25.205 8.43524 25.205 9.76493 24.3849 10.5851L23.3949 11.5751M20.4249 8.60509L13.7656 15.2644C13.2581 15.772 12.898 16.4078 12.724 17.1041L12 20L14.8959 19.276C15.5922 19.102 16.228 18.7419 16.7356 18.2344L23.3949 11.5751M20.4249 8.60509L23.3949 11.5751" stroke="#2B4DCA" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M22.9999 17.5C22.9999 20.7875 22.9999 22.4312 22.092 23.5376C21.9258 23.7401 21.7401 23.9258 21.5375 24.092C20.4312 25 18.7874 25 15.4999 25H15C11.2288 25 9.34316 25 8.17159 23.8284C7.00003 22.6569 7 20.7712 7 17V16.5C7 13.2125 7 11.5688 7.90794 10.4624C8.07417 10.2599 8.2599 10.0742 8.46244 9.90794C9.56879 9 11.2125 9 14.5 9" stroke="#2B4DCA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
                           <span className="sr-only">Edit</span>
                         </button>
                       </div>
