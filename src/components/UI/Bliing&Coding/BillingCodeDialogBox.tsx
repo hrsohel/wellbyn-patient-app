@@ -12,12 +12,12 @@ export default function BillingCodeDialogBox({showDialogBox, setShowDialogBox}: 
       className={`fixed top-0 w-screen h-screen z-50 flex justify-end ${showDialogBox ? "left-0" : "left-[110%]"} transition-all duration-500`}
       style={showDialogBox ? { background: "rgba(0, 0, 0, 0.5)" } : {}}
     >
-      <div className="bg-white w-1/2 h-full flex flex-col relative">
+      <div className="bg-white md:w-1/2 w-full h-full flex flex-col relative">
       
         <div className="flex-1 overflow-y-auto p-4">
           <h1 className="text-2xl font-semibold">Code Review</h1>
           <br />
-          <div className="bg-slate-100 flex items-center justify-between p-4 rounded-md mr-4">
+          <div className="bg-slate-100 flex items-center justify-between p-2 md:p-4 rounded-md">
             <div>
               <p className="text-[#7C7C7C]">Patient</p>
               <p className="text-[2xl]">John Smith</p>
@@ -32,7 +32,7 @@ export default function BillingCodeDialogBox({showDialogBox, setShowDialogBox}: 
             </div>
           </div>
 
-          <div className="bg-slate-100 flex items-center justify-between p-4 rounded-md mr-4 mt-8">
+          <div className="bg-slate-100 flex items-center justify-between p-2 md:p-4 rounded-md mt-8">
             <button onClick={() => setShowAssessment(1)} className={`cursor-pointer ${showAssessment === 1 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>Assessment</button>
             <button onClick={() => setShowAssessment(2)} className={`cursor-pointer ${showAssessment === 2 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>Code Review</button>
             <button onClick={() => setShowAssessment(3)} className={`cursor-pointer ${showAssessment === 3 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>CMS-1500 Data</button>

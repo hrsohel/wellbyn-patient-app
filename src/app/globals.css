@@ -46,12 +46,13 @@
   .text-with-line {
     position: relative;
   }
-  .text-with-line::before {
+  .text-with-line::after {
+    --value: -25%;
     content: '';
     position: absolute;
-    left: 53%; top: 50%;
+    right: var(--value); top: 50%;
     transform: translateX(-50%);
-    width: 97%;
+    width: calc(100% + var(--value));
     height: 2px;
     color: black;
     background-color: #999;

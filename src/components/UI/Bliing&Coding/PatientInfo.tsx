@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function PatientInfo() {
   return (
-    <div className='pr-4'>
+    <div className=''>
         <form method="post">
             <div className='flex items-center justify-center gap-3 flex-wrap md:flex-nowrap'>
                 <div className='w-full'>

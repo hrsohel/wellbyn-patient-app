@@ -45,7 +45,7 @@ export const stats = [
 
 export const pieData = [
   { name: "New", value: 60, color: "#3498db" }, // Light blue
-  { name: "Old", value: 20, color: "#195A8A" }, // Dark blue
+  { name: "Old", value: 40, color: "#195A8A" }, // Dark blue
 ];
 
 export const barData = [
