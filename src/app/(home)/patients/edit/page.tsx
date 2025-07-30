@@ -22,7 +22,23 @@ export default function PatientDashboard() {
       [field]: value
     }));
   };
+  const [selectedDay, setSelectedDay] = useState<string>('');
 
+  const daysOfWeek = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday'
+  ];
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Selected day:', selectedDay);
+  };
   const appointments = [
     {
       id: 1,
@@ -93,7 +109,7 @@ export default function PatientDashboard() {
    
 
                <div className="flex justify-center py-8 px-4 sm:px-6 lg:px-8 bg-gray-100 min-h-screen">
-      <div className="w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
+      <div className="w-full max-w-[800px] bg-white rounded-xl shadow-lg overflow-hidden">
         <div className="p-6 space-y-6">
           {/* Doctor Info */}
           <div className="flex items-center space-x-4">
@@ -154,9 +170,9 @@ export default function PatientDashboard() {
           {/* Vital Signs */}
           <div className="space-y-2">
             <h3 className="text-base font-semibold text-gray-900">Vital Signs</h3>
-             <div className="p-6 space-y-4">
+             <div className="p-6 space-y-4 shadow-md rounded-md">
         {/* Height and Weight Row */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 ">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Height
@@ -165,7 +181,7 @@ export default function PatientDashboard() {
               type="text"
               value={vitalSigns.height}
               onChange={(e) => handleInputChange('height', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="Enter height"
             />
           </div>
@@ -177,7 +193,7 @@ export default function PatientDashboard() {
               type="text"
               value={vitalSigns.weight}
               onChange={(e) => handleInputChange('weight', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
         </div>
@@ -191,7 +207,7 @@ export default function PatientDashboard() {
             type="text"
             value={vitalSigns.bloodPressure}
             onChange={(e) => handleInputChange('bloodPressure', e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             placeholder="Enter blood pressure"
           />
         </div>
@@ -234,7 +250,7 @@ export default function PatientDashboard() {
             type="text"
             value={vitalSigns.heartRate}
             onChange={(e) => handleInputChange('heartRate', e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
         </div>
 
@@ -247,7 +263,7 @@ export default function PatientDashboard() {
             type="text"
             value={vitalSigns.temperature}
             onChange={(e) => handleInputChange('temperature', e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
         </div>
       </div>
@@ -293,22 +309,51 @@ export default function PatientDashboard() {
           {/* Download Report */}
           <div className="space-y-2">
             <h3 className="text-base font-semibold text-gray-900">Download Report</h3>
-            <button className=" flex justify-center items-center py-2 px-4 text-blue-600 border border-blue-600 bg-transparent rounded-md hover:bg-blue-50 transition-colors">
-              <Download className="w-4 h-4 mr-2" />
-              Download
+            <button className=" flex justify-center items-center py-2 px-4 text-[#2E8BC9] shadow-md bg-transparent rounded-md hover:bg-blue-50 transition-colors">
+           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.66667 7.99967V9.69581C2.66667 11.8591 2.66667 12.9408 3.25738 13.6735C3.37672 13.8215 3.51154 13.9563 3.65955 14.0756C4.39221 14.6663 5.47388 14.6663 7.6372 14.6663C8.1076 14.6663 8.34273 14.6663 8.55813 14.5903C8.60293 14.5745 8.6468 14.5563 8.68967 14.5359C8.89573 14.4373 9.062 14.271 9.3946 13.9384L12.5523 10.7807C12.9377 10.3953 13.1303 10.2027 13.2319 9.95761C13.3333 9.71261 13.3333 9.44007 13.3333 8.89507V6.66634C13.3333 4.15218 13.3333 2.89511 12.5523 2.11405C11.7713 1.33301 10.5141 1.33301 8 1.33301M8.66667 14.333V13.9997C8.66667 12.1141 8.66667 11.1713 9.25247 10.5855C9.83827 9.99967 10.7811 9.99967 12.6667 9.99967H13" stroke="#2E8BC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.66667 3.33301C6.27344 2.92845 5.22685 1.33301 4.66667 1.33301C4.10649 1.33301 3.05989 2.92845 2.66667 3.33301M4.66667 1.99967V6.66634" stroke="#2E8BC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+              Upload Report
             </button>
           </div>
 
           {/* Upcoming */}
-          <div className="text-sm text-gray-600">
-            Upcoming - <span className="text-blue-600">In 7 days</span>
-          </div>
+          <form 
+      onSubmit={handleSubmit}
+      className="flex flex-col items-start gap-6  w-full "
+    >
+      <div className="w-full space-y-2">
+        <label 
+          htmlFor="check-in" 
+          className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+        >
+          Next Check In
+        </label>
+        <select
+          id="check-in"
+          value={selectedDay}
+          onChange={(e) => setSelectedDay(e.target.value)}
+          className="block w-full px-4 py-2 text-base  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+        >
+          <option value="">Select days</option>
+          {daysOfWeek.map((day) => (
+            <option key={day.toLowerCase()} value={day.toLowerCase()}>
+              {day}
+            </option>
+          ))}
+        </select>
+      </div>
+      
+      
+    </form>
         </div>
 
         {/* Book Appointment Button */}
         <div className="p-6 pt-0">
           <button className="w-full py-2 px-4 bg-[#2E8BC9] hover:bg-blue-700 text-white font-medium rounded-md transition-colors">
-            Book Appointment
+            Save Change
           </button>
         </div>
       </div>

@@ -42,6 +42,100 @@ const mainMenuItems = [
     ),
   },
   {
+    id: "doctor",
+    label: "Doctor",
+    href: "/doctor",
+    onDesktop: true,
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6.5 3.5H4.5C3.94772 3.5 3.5 3.94772 3.5 4.5V8C3.5 11.0376 5.96243 13.5 9 13.5C12.0376 13.5 14.5 11.0376 14.5 8V4.5C14.5 3.94772 14.0523 3.5 13.5 3.5H11.5"
+          stroke="#7C7C7C"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M18.5 15.5V16.75C18.5 19.3734 16.3734 21.5 13.75 21.5C11.1266 21.5 9 19.3734 9 16.75V13.5"
+          stroke="#7C7C7C"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M11.5 2.5V4.5"
+          stroke="#7C7C7C"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M6.5 2.5V4.5"
+          stroke="#7C7C7C"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M20.5 13.5C20.5 14.6046 19.6046 15.5 18.5 15.5C17.3954 15.5 16.5 14.6046 16.5 13.5C16.5 12.3954 17.3954 11.5 18.5 11.5C19.6046 11.5 20.5 12.3954 20.5 13.5Z"
+          stroke="#7C7C7C"
+          strokeWidth="1.5"
+        />
+      </svg>
+    ),
+    activeIcon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6.5 3.5H4.5C3.94772 3.5 3.5 3.94772 3.5 4.5V8C3.5 11.0376 5.96243 13.5 9 13.5C12.0376 13.5 14.5 11.0376 14.5 8V4.5C14.5 3.94772 14.0523 3.5 13.5 3.5H11.5"
+          stroke="#2E8BC9"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M18.5 15.5V16.75C18.5 19.3734 16.3734 21.5 13.75 21.5C11.1266 21.5 9 19.3734 9 16.75V13.5"
+          stroke="#2E8BC9"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M11.5 2.5V4.5"
+          stroke="#2E8BC9"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M6.5 2.5V4.5"
+          stroke="#2E8BC9"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M20.5 13.5C20.5 14.6046 19.6046 15.5 18.5 15.5C17.3954 15.5 16.5 14.6046 16.5 13.5C16.5 12.3954 17.3954 11.5 18.5 11.5C19.6046 11.5 20.5 12.3954 20.5 13.5Z"
+          stroke="#2E8BC9"
+          strokeWidth="2.2"
+        />
+      </svg>
+    ),
+  },
+
+
+  {
     id: "appointment",
     label: "Appointment",
     href: "/appointment",
@@ -93,6 +187,24 @@ const mainMenuItems = [
      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.922 4.79004C16.6963 3.16245 19.0834 2.34866 20.3674 3.63261C21.6513 4.91656 20.8375 7.30371 19.21 12.078L18.1016 15.3292C16.8517 18.9958 16.2267 20.8291 15.1964 20.9808C14.9195 21.0216 14.6328 20.9971 14.3587 20.9091C13.3395 20.5819 12.8007 18.6489 11.7231 14.783C11.4841 13.9255 11.3646 13.4967 11.0924 13.1692C11.0134 13.0742 10.9258 12.9866 10.8308 12.9076C10.5033 12.6354 10.0745 12.5159 9.21705 12.2769C5.35111 11.1993 3.41814 10.6605 3.0909 9.64127C3.00292 9.36724 2.97837 9.08053 3.01916 8.80355C3.17088 7.77332 5.00419 7.14834 8.6708 5.89838L11.922 4.79004Z" stroke="#2E8BC9" stroke-width="1.5"/>
 </svg>
+
+
+
+    ),
+  },
+  {
+    id: "Reminder",
+    label: "Reminder",
+    href: "/reminder ",
+    onDesktop: true,
+    icon: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.9094 18.9994C12.8346 20.021 12.6486 20.6893 12.1866 21.1793C11.4134 21.9994 10.1689 21.9994 7.6799 21.9994C5.19089 21.9994 3.94638 21.9994 3.17314 21.1793C2.3999 20.3592 2.3999 19.0392 2.3999 16.3994V11.5994C2.3999 8.95956 2.3999 7.63963 3.17314 6.81952C3.64327 6.32091 4.28759 6.12545 5.2799 6.04883" stroke="#2E8BC9" stroke-width="1.44" stroke-linecap="round"/>
+<path d="M7.67236 19H7.68135" stroke="#2E8BC9" stroke-width="1.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.9155 2H13.8448C11.0601 2 9.66783 2 8.84136 2.90325C8.01491 3.8065 8.10176 5.23328 8.27546 8.08683L8.39627 10.0715C8.43619 10.7273 8.45615 11.0552 8.52682 11.3287C8.79973 12.3849 9.63404 13.1898 10.6778 13.4036C10.948 13.4589 11.268 13.4588 11.908 13.4588C12.7996 13.4588 12.7875 14.226 12.7875 14.9853C12.7875 15.5744 12.7875 15.869 12.9718 15.9703C13.156 16.0715 13.3947 15.9081 13.8721 15.5813L16.7131 13.6367C16.8989 13.5094 17.066 13.4588 17.2848 13.4588C18.4581 13.4588 19.0447 13.4589 19.5201 13.2751C21.1674 12.638 21.3043 11.0526 21.3994 9.48995L21.4849 8.08683C21.6585 5.23328 21.7454 3.8065 20.9189 2.90325C20.0925 2 18.7002 2 15.9155 2Z" stroke="#2E8BC9" stroke-width="1.44" stroke-linejoin="round"/>
+<path d="M13.7606 8.42857C11.4486 6.71429 14.8791 5 14.8791 5C14.8791 5 18.3114 6.71429 15.9995 8.42857M13.7606 8.42857H15.9995M13.7606 8.42857L13.2005 10.9999M15.9995 8.42857L16.7826 10.9999" stroke="#2E8BC9" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
 
 
 

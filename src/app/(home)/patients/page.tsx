@@ -272,7 +272,7 @@ const patients = [
                     </td>
                     <td className="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
                       <div className="flex items-center justify-end gap-2">
-                     <Link href="/patients/details" className="rounded-md p-1 text-gray-400 hover:text-gray-500">
+                     <Link href="/patients/appointment" className="rounded-md p-1 text-gray-400 hover:text-gray-500">
   <Eye className="h-4 w-4" />
   <span className="sr-only">View</span>
 </Link>

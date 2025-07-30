@@ -299,18 +299,19 @@ export default function PatientDashboard() {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-sm text-gray-500">Status</span>
-                    <span
-                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusClasses(
+                    <div className="flex flex-1/3"><span
+                      className={`flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusClasses(
                         appointment.status,
                       )}`}
                     >
                       {getStatusIcon(appointment.status)}
                       {appointment.status}
-                    </span>
+                    </span></div>
+                    
                   </div>
                   <div className="flex flex-col items-start md:items-end">
                     <span className="text-sm text-gray-500 md:sr-only">Action</span>
-                    <Link href="#" className="text-blue-500 hover:underline font-medium">
+                    <Link href="/patients/details" className="text-blue-500 hover:underline font-medium">
                       Details
                     </Link>
                   </div>
