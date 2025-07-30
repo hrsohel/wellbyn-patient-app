@@ -56,7 +56,7 @@ const ChatWindow = ({ contactName, messages }: ChatWindowProps) => {
               )}
               <div className={`flex items-end gap-2 ${message.sender === "user" ? "justify-end" : "justify-start"}`}>
                 {message.sender === "other" && (
-                  <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                  <div className="w-8 h-8 rounded-full bg-[#2E8BC9] flex items-center justify-center text-white">
                     {contactName.charAt(0)}
                   </div>
                 )}
@@ -64,7 +64,7 @@ const ChatWindow = ({ contactName, messages }: ChatWindowProps) => {
                   className={`max-w-[70%] p-3 rounded-lg ${
                     message.sender === "user"
                       ? "bg-gray-200 text-gray-800 rounded-br-none"
-                      : "bg-blue-500 text-white rounded-bl-none"
+                      : "bg-[#2E8BC9] text-white rounded-bl-none"
                   }`}
                 >
                   <p className="text-sm">{message.text}</p>
