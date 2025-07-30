@@ -28,6 +28,10 @@ export default function Assessment() {
             <Image src="/download-circle-01.svg" width="15" height="15" alt='download icon'/>
             Download
         </button>
+        <h3 className='text-lg mt-8'>
+            <span className='text-[#777]'>Upcoming</span>
+            <span className='text-[#2E8BC9] ml-4'>- In 7 days </span>
+        </h3>
     </div>
   )
 }

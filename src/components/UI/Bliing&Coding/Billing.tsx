@@ -4,13 +4,13 @@ import React from 'react'
 export default function Billing() {
   return (
     <div>
-        <div className='flex items-end justify-center gap-12 flex-wrap md:flex-nowrap mt-8'>
+        <div className='flex items-end justify-center gap-6 md:gap-12 mt-8'>
             <div className='w-full'>
                 <label htmlFor="box-25-1" className='text-lg'>Box 25: Federal Tax ID Number *</label>
                 <input type="text" name="box-25-1" id="box-25-1" className='text-lg p-3 mt-2 border-none outline-none rounded-md w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
             </div>
             
-            <div className='w-full flex items-center justify-center gap-4'>
+            <div className='w-[30%] flex items-center justify-center gap-4'>
                 <div className='flex items-center justify-center gap-4'>
                     <label htmlFor="ssn_ein" className='text-lg'>SSN/EIN</label>
                     <input type="radio" name="ssn_ein" id="ssn_ein" className=' w-6 h-6' placeholder=''/>
@@ -58,14 +58,14 @@ export default function Billing() {
         </div>
         <div className='mt-8 flex items-end justify-between flex-wrap md:flex-nowrap'>
             <div>
-                <p>Codes Summary</p>
+                <p>Codes Summary</p> <br />
                 <p>Diagnosis Codes (Box 21) - 0</p>
                 <p className='flex items-center justify-start gap-3'>
                     <Image  src="/information-circle-1.svg" alt='information circel' width="20" height="20"/>
                     <span className='text-red-600'>No diagnosis codes finalized</span>
                 </p>
             </div>
-            <div>
+            <div className='md:mt-4 mt-0'>
                 <p>Procedure Codes (Box 24) - 0</p>
                 <p className='flex items-center justify-start gap-3'>
                     <Image  src="/information-circle-1.svg" alt='information circel' width="20" height="20"/>

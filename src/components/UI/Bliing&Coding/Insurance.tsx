@@ -35,7 +35,7 @@ export default function Insurance() {
                 </div>
                 <div className='w-full'>
                     <label htmlFor="box-11a-2" className='text-lg'>Box 11a: Insured's Sex</label>
-                    <div className='flex gap-16 mt-4'>
+                    <div className='flex gap-8 mt-4'>
                         <div className='flex items-center'>
                             <label htmlFor="male" className='text-lg'>Male</label>
                             <input type="radio" name="insured-gender" id="male" className='ml-4 w-6 h-6' />
@@ -91,7 +91,8 @@ export default function Insurance() {
                     <span>View signature</span>
                 </button>
             </div>
-            <h3 className='text-xl font-bold text-with-line mt-8'>OR</h3>
+            <h3 className='text-xl font-bold mt-8'>OR</h3>
+            <hr className='text-[#2E8BC9] bg-[#2E8BC9]'/>
             <div className='mt-12'>
                 <label htmlFor="box-13-1" className='text-lg'>Box 13: Insured's or Authorized Person's Signature</label>
                 <div>

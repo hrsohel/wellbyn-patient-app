@@ -1,9 +1,11 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
+import AddCode from './AddCode'
 
 export default function CodeReview() {
+    const [showAddCode, setShowAddCode] = useState<boolean>(false)
   return (
-    <div className=''>
+    <div className='relative'>
         <div> <br /> 
             <h2 className='text-xl font-semibold'>SOAP Notes</h2> <br />
             <div className='flex items-stretch justify-center gap-3 mr-4'>
@@ -38,7 +40,7 @@ export default function CodeReview() {
         </div>
         <div className='flex items-center justify-between mt-4 mr-4'>
             <h3 className='text-xl font-semibold'>Suggested Codes</h3>
-            <button className='bg-[#F2F8FD] text-[#2E8BC9] px-4 py-2 flex items-center justify-center gap-2 cursor-pointer rounded-md border-[1px] border-[#2E8BC9]'>
+            <button onClick={() => setShowAddCode(true)} className='bg-[#F2F8FD] text-[#2E8BC9] px-4 py-2 flex items-center justify-center gap-2 cursor-pointer rounded-md border-[1px] border-[#2E8BC9]'>
                 <Image  src="/add-01.svg" alt='add icon' width="20" height="20" />
                 Add Code
             </button>
@@ -81,6 +83,9 @@ export default function CodeReview() {
                 </div>
             </div>
         </div>
+        {
+            showAddCode && <AddCode showAddCode={showAddCode} setShowAddCode={setShowAddCode} />
+        }
     </div>
   )
 }
