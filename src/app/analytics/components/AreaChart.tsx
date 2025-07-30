@@ -26,7 +26,7 @@ export default function AreaChartComponent() {
                 </select>
             </div>
 
-            <ResponsiveContainer width="100%" height={250}>
+            <ResponsiveContainer width="100%" height={500}>
                 <AreaChart data={data}>
                     <defs>
                         <linearGradient id="colorBlue" x1="0" y1="0" x2="0" y2="1">

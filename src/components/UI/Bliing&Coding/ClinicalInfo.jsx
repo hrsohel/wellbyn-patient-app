@@ -2,40 +2,46 @@ import React from 'react'
 
 export default function ClinicalInfo() {
   return (
-    <div className='pr-4'>
+    <div className=''>
         <div>
             <label htmlFor="box-10" className='text-lg'>Box 10: Is Patient's Condition Related to:</label>
-            <div className='flex items-center justify-start gap-8 mt-8'>
+            <div className='flex items-center justify-between mt-8'>
                 <p className='text-lg'>A. Employment</p>
-                <div className='flex items-center gap-4'>
-                    <input type="radio" name="employment" id="e-yes" className='w-6 h-6'/>
-                    <label htmlFor="e-yes" className='text-lg'>Yes</label>
-                </div>
-                <div className='flex items-center gap-4'>
-                    <input type="radio" name="employment" id="e-no" className='w-6 h-6' />
-                    <label htmlFor="e-no" className='text-lg'>No</label>
+                <div className='flex items-center justify-center gap-8 mr-0 md:mr-80'>
+                    <div className='flex items-center gap-4'>
+                        <input type="radio" name="employment" id="e-yes" className='w-6 h-6'/>
+                        <label htmlFor="e-yes" className='text-lg'>Yes</label>
+                    </div>
+                    <div className='flex items-center gap-4'>
+                        <input type="radio" name="employment" id="e-no" className='w-6 h-6' />
+                        <label htmlFor="e-no" className='text-lg'>No</label>
+                    </div>
                 </div>
             </div>
-            <div className='flex items-center justify-start gap-8 mt-8'>
+            <div className='flex items-center justify-between mt-8'>
                 <p className='text-lg'>B. Auto Accident?</p>
-                <div className='flex items-center gap-4'>
-                    <input type="radio" name="employment" id="b-yes" className='w-6 h-6'/>
-                    <label htmlFor="b-yes" className='text-lg'>Yes</label>
-                </div>
-                <div className='flex items-center gap-4'>
-                    <input type="radio" name="employment" id="b-no" className='w-6 h-6' />
-                    <label htmlFor="b-no" className='text-lg'>No</label>
+                <div className='flex items-center justify-center gap-8 mr-0 md:mr-80'>
+                    <div className='flex items-center gap-4'>
+                        <input type="radio" name="employment" id="b-yes" className='w-6 h-6'/>
+                        <label htmlFor="b-yes" className='text-lg'>Yes</label>
+                    </div>
+                    <div className='flex items-center gap-4'>
+                        <input type="radio" name="employment" id="b-no" className='w-6 h-6' />
+                        <label htmlFor="b-no" className='text-lg'>No</label>
+                    </div>
                 </div>
             </div>
-            <div className='flex items-center justify-start gap-8 mt-8'>
+            <div className='flex items-center justify-between mt-8'>
                 <p className='text-lg'>C. Other Accident?</p>
-                <div className='flex items-center gap-4'>
-                    <input type="radio" name="employment" id="c-yes" className='w-6 h-6'/>
-                    <label htmlFor="c-yes" className='text-lg'>Yes</label>
-                </div>
-                <div className='flex items-center gap-4'>
-                    <input type="radio" name="employment" id="c-no" className='w-6 h-6' />
-                    <label htmlFor="c-no" className='text-lg'>No</label>
+                <div className='flex items-center justify-center gap-8 mr-0 md:mr-80'>
+                    <div className='flex items-center gap-4'>
+                        <input type="radio" name="employment" id="c-yes" className='w-6 h-6'/>
+                        <label htmlFor="c-yes" className='text-lg'>Yes</label>
+                    </div>
+                    <div className='flex items-center gap-4'>
+                        <input type="radio" name="employment" id="c-no" className='w-6 h-6' />
+                        <label htmlFor="c-no" className='text-lg'>No</label>
+                    </div>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Insurance() {
   return (
-    <div className='pr-4'>
+    <div className=''>
         <form  method="post">
             <h3 className='text-[#7C7C7C]'>Insurance Information (Boxes 9-13)</h3>
             <div className='mt-8'>
