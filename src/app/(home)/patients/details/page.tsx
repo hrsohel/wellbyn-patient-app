@@ -170,8 +170,8 @@ export default function PatientDashboard() {
 
           {/* Tab Content */}
           {activeTab === "appointment" && (
-               <div className="flex justify-center py-8 px-4 sm:px-6 lg:px-8 bg-gray-100 min-h-screen">
-      <div className="w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
+               <div className="flex justify-center py-8 px-4 sm:px-6 lg:px-8 bg-gray-100 min-h-screen max-w-7xl">
+      <div className="w-full max-w-[7 00px] bg-white rounded-xl shadow-lg overflow-hidden">
         <div className="p-6 space-y-6">
           {/* Doctor Info */}
           <div className="flex items-center space-x-4">
