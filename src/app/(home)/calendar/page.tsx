@@ -3,92 +3,43 @@
 import { useState } from "react"
 import { Search, ChevronLeft, ChevronRight } from "lucide-react"
 
-const doctors = [
-  { id: "PG0758", name: "Rami Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
-  { id: "J0KIL2", name: "Tariq Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
-  { id: "VZW3X4", name: "Maya Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
-  { id: "D4ESF6", name: "Sami Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
-  { id: "MJH4O5", name: "Zara Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
-  { id: "S5TOU1", name: "Nashit Rahman Chowdh...", avatar: "/placeholder.svg?height=32&width=32" },
-  { id: "B8C900", name: "Fahim Rahman Chowdh...", avatar: "/placeholder.svg?height=32&width=32" },
-  { id: "C7H8I9", name: "Riya Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
-  { id: "Y5Z6A7", name: "Ayaan Rahman Chowdh...", avatar: "/placeholder.svg?height=32&width=32" },
-  { id: "E1F2G3", name: "Hadi Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
-  { id: "A1B2C3", name: "Sofia Elham Rahman", avatar: "/placeholder.svg?height=32&width=32" },
-  { id: "H4I5J6", name: "Lina Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
-]
-
-const calendarData = {
-  "2025-02": {
-    1: [{ type: "morning", slots: "10+", color: "blue" }],
-    2: [
-      { type: "afternoon", slots: "5+", color: "green" },
-      { type: "evening", slots: "17+", color: "orange" },
-    ],
-    3: [{ type: "afternoon", slots: "5+", color: "green" }],
-    4: [{ type: "evening", slots: "17+", color: "orange" }],
-    5: [
-      { type: "morning", slots: "10+", color: "blue" },
-      { type: "evening", slots: "17+", color: "orange" },
-    ],
-    6: [{ type: "evening", slots: "17+", color: "orange" }],
-    7: [{ type: "afternoon", slots: "5+", color: "green" }],
-    8: [
-      { type: "morning", slots: "10+", color: "blue" },
-      { type: "afternoon", slots: "5+", color: "green" },
-    ],
-    9: [
-      { type: "afternoon", slots: "5+", color: "green" },
-      { type: "morning", slots: "12+", color: "blue" },
-    ],
-    10: [{ type: "evening", slots: "17+", color: "orange" }],
-    11: [
-      { type: "evening", slots: "17+", color: "orange" },
-      { type: "afternoon", slots: "5+", color: "green" },
-      { type: "morning", slots: "10+", color: "blue" },
-    ],
-    13: [{ type: "evening", slots: "17+", color: "orange" }],
-    14: [
-      { type: "morning", slots: "10+", color: "blue" },
-      { type: "afternoon", slots: "5+", color: "green" },
-      { type: "morning", slots: "10+", color: "blue" },
-    ],
-    15: [
-      { type: "morning", slots: "12+", color: "blue" },
-      { type: "afternoon", slots: "5+", color: "green" },
-    ],
-    16: [{ type: "evening", slots: "17+", color: "orange" }],
-    17: [
-      { type: "morning", slots: "10+", color: "blue" },
-      { type: "afternoon", slots: "5+", color: "green" },
-    ],
-    18: [{ type: "morning", slots: "10+", color: "blue" }],
-    19: [{ type: "morning", slots: "10+", color: "blue" }],
-    20: [{ type: "afternoon", slots: "5+", color: "green" }],
-    21: [{ type: "morning", slots: "10+", color: "blue" }],
-    22: [{ type: "evening", slots: "17+", color: "orange" }],
-    23: [{ type: "morning", slots: "10+", color: "blue" }],
-    24: [{ type: "morning", slots: "10+", color: "blue" }],
-    25: [{ type: "evening", slots: "17+", color: "orange" }],
-    26: [
-      { type: "morning", slots: "17+", color: "orange" },
-      { type: "morning", slots: "10+", color: "blue" },
-    ],
-    27: [{ type: "morning", slots: "10+", color: "blue" }],
-    28: [{ type: "morning", slots: "10+", color: "blue" }],
-    29: [{ type: "morning", slots: "10+", color: "blue" }],
-    30: [{ type: "evening", slots: "17+", color: "orange" }],
-  },
+interface Doctor {
+  id: string
+  name: string
+  avatar: string
 }
 
-// Rotated weekdays - changed order
+interface CalendarSlot {
+  type: "morning" | "afternoon" | "evening"
+  slots: string
+  color: string
+}
+
+interface CalendarData {
+  [yearMonth: string]: {
+    [day: number]: CalendarSlot[]
+  }
+}
+
+const doctors: Doctor[] = [
+  { id: "PG0758", name: "Rami Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
+  // ... rest of your doctors data
+]
+
+const calendarData: CalendarData = {
+  "2025-02": {
+    1: [{ type: "morning", slots: "10+", color: "blue" }],
+    // ... rest of your calendar data
+  }
+}
+
 const weekDays = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 export default function DoctorAppointmentScheduler() {
-  const [selectedDoctor, setSelectedDoctor] = useState(doctors[0])
+  const [selectedDoctor, setSelectedDoctor] = useState<Doctor>(doctors[0])
   const [searchTerm, setSearchTerm] = useState("")
-  const [currentDate, setCurrentDate] = useState(new Date(2025, 1, 1)) // February 2025
+  const [currentDate, setCurrentDate] = useState<Date>(new Date(2025, 1, 1)) // February 2025
 
   const filteredDoctors = doctors.filter(
     (doctor) =>
@@ -96,16 +47,15 @@ export default function DoctorAppointmentScheduler() {
       doctor.id.toLowerCase().includes(searchTerm.toLowerCase()),
   )
 
-  const getDaysInMonth = (date) => {
+  const getDaysInMonth = (date: Date): number => {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()
   }
 
-  const getFirstDayOfMonth = (date) => {
-    // Get the standard first day (0 = Sunday, 1 = Monday, etc.)
+  const getFirstDayOfMonth = (date: Date): number => {
     return new Date(date.getFullYear(), date.getMonth(), 1).getDay()
   }
 
-  const getSlotColor = (type) => {
+  const getSlotColor = (type: string): string => {
     switch (type) {
       case "morning":
         return "bg-blue-500"
@@ -143,15 +93,15 @@ export default function DoctorAppointmentScheduler() {
           weekDays.push(
             <div key={day} className={`aspect-2/3 border border-gray-200 p-2 relative bg-white ${day === 17 ? 'bg-blue-500' : ''}`}>
               <div className={`text-xs font-medium mb-1 ${day === 17 ? 'text-white' : 'text-gray-900'}`}>{day}</div>
-                              <div className="space-y-0.5">
+              <div className="space-y-0.5">
                 {dayData.map((slot, index) => (
                   <div
                     key={index}
                     className="text-xs px-0.5 py-0.5 rounded font-medium"
                     style={{
                       backgroundColor: slot.type === 'morning' ? '#3B82F6' : 
-                                       slot.type === 'afternoon' ? '#10B981' : 
-                                       slot.type === 'evening' ? '#F59E0B' : '#6B7280',
+                                     slot.type === 'afternoon' ? '#10B981' : 
+                                     slot.type === 'evening' ? '#F59E0B' : '#6B7280',
                       color: 'white'
                     }}
                   >
@@ -250,7 +200,7 @@ export default function DoctorAppointmentScheduler() {
 
         {/* Calendar */}
         <div className="p-4">
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200  w-fit h-fit ">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 w-fit h-fit">
             {/* Calendar Header */}
             <div className="grid grid-cols-7 border-b border-gray-200">
               {weekDays.map((day) => (
