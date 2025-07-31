@@ -4,12 +4,12 @@ import { Calendar, Clock, CheckCircle, MapPin, Download } from "lucide-react"
 export default function Component() {
   return (
     <div className="flex justify-center py-8 px-4 sm:px-6 lg:px-8 bg-gray-100 min-h-screen">
-      <div className="w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
+      <div className=" w-2/4   bg-white rounded-xl shadow-lg overflow-hidden">
         <div className="p-6 space-y-6">
           {/* Doctor Info */}
           <div className="flex items-center space-x-4">
             <Image
-              src="/doc.jpg"
+              src="/placeholder.svg"
               alt="Dr. Moule Marrk"
               width={64}
               height={64}

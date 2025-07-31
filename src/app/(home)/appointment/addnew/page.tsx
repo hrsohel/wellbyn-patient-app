@@ -28,18 +28,18 @@ export default function AppointmentForm() {
   ]
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-sm">
+    <div className="max-w-2/4 mx-auto p-6 bg-white rounded-lg shadow-sm">
       <div className="space-y-6">
         {/* Visit Reason */}
         <div className="space-y-2">
           <label htmlFor="visit-reason" className="block text-sm font-medium text-gray-700">
             Visit Reason
           </label>
-          <textarea
+          <input
             id="visit-reason"
             placeholder="I need a cleaning"
             defaultValue="I need a cleaning"
-            className="min-h-[60px] w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="min-h-[30px] w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -51,7 +51,7 @@ export default function AppointmentForm() {
           <select
             id="visit-type"
             defaultValue="new-patient"
-            className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="new-patient">New Patient Visit</option>
             <option value="follow-up">Follow-up Visit</option>
@@ -68,7 +68,7 @@ export default function AppointmentForm() {
             id="email"
             type="email"
             defaultValue="sakib@email.com"
-            className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -81,19 +81,19 @@ export default function AppointmentForm() {
             id="phone"
             type="tel"
             defaultValue="+1 9999999999"
-            className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
         {/* Preferred Doctor */}
         <div className="space-y-2">
-          <label htmlFor="doctor" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="doctor" className="block text-sm  text-gray-700">
             Preferred Doctor (Optional)
           </label>
           <select
             id="doctor"
             defaultValue="dr-sakib"
-            className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="dr-sakib">Dr. Sakib Ahamed</option>
             <option value="dr-smith">Dr. Smith Johnson</option>
@@ -130,9 +130,9 @@ export default function AppointmentForm() {
                 <button
                   type="button"
                   onClick={() => setSelectedDate(day.date)}
-                  className={`w-8 h-8 rounded-full text-sm font-medium ${
+                  className={`w-14 h-6 rounded-md text-sm font-medium ${
                     selectedDate === day.date
-                      ? 'bg-blue-500 text-white hover:bg-blue-600'
+                      ? 'bg-[#2E8BC9] text-white hover:bg-blue-600'
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
@@ -144,7 +144,7 @@ export default function AppointmentForm() {
         </div>
 
         {/* Time Slots */}
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-6 gap-2">
           {timeSlots.map((time, index) => (
             <button
               key={index}
@@ -152,7 +152,7 @@ export default function AppointmentForm() {
               onClick={() => setSelectedTime(time)}
               className={`text-xs py-1.5 px-2 rounded-md border ${
                 selectedTime === time
-                  ? 'bg-blue-500 border-blue-500 text-white hover:bg-blue-600'
+                  ? 'bg-[#2E8BC9] border-blue-500 text-white hover:bg-blue-600'
                   : 'border-gray-300 text-gray-700 hover:bg-gray-50'
               }`}
             >
@@ -164,7 +164,7 @@ export default function AppointmentForm() {
         {/* Book Appointment Button */}
         <button
           type="button"
-          className="w-full py-3 px-4 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          className="w-full py-3 px-4 bg-[#2E8BC9] hover:bg-blue-600 text-white font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
           Book Appointment
         </button>

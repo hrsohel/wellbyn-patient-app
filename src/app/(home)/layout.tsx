@@ -1,5 +1,3 @@
-// src/app/(dashboard)/layout.tsx
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
@@ -20,6 +18,7 @@ export const metadata: Metadata = {
   description:
     "Manage your healthcare appointments, doctors, and medical information.",
 };
+
 
 export default function DashboardLayout({
   children,
@@ -185,12 +184,3 @@ export default function DashboardLayout({
   );
 }
 
-// Additional utility file for cn function if you don't have it
-// src/lib/utils.ts
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-import Image from "next/image";
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
