@@ -50,9 +50,9 @@ export default function CodeReview() {
                 <div>
                     <div className='flex items-start justify-start mb-2'>
                     <br />
-                        <span className='text-[#2B4DCA] bg-[#F0F5FE] px-2 rounded-full text-[12px] font-[500]'>ICD-10</span>
-                        <span className='mx-3 text-[12px] font-[500]'>Z00.00</span>
-                        <span className='flex items-center justify-center gap-2 text-[#237B10] bg-[#EEFEE7] text-[12px] font-[500] px-3 rounded-full'>
+                        <span className='text-[#2B4DCA] bg-[#F0F5FE] rounded-full text-[12px] px-[8px] py-[6px] font-[500]'>ICD-10</span>
+                        <span className='mx-3 text-[12px] font-[500] px-[8px] py-[6px]'>Z00.00</span>
+                        <span className='flex items-center justify-center gap-2 text-[#237B10] bg-[#EEFEE7] text-[12px] font-[500] px-[8px] py-[6px] rounded-full'>
                             <Image src="/tick-02.svg" alt='tik icon' width="20" height="20"/>
                             ICD-10
                         </span>
@@ -68,9 +68,9 @@ export default function CodeReview() {
                 <div>
                     <div className='flex items-start justify-start mb-2'>
                     <br />
-                        <span className='text-[#8226CA] bg-[#FAF5FF] px-2 rounded-full text-[12px] font-[500]'>ICD-10</span>
-                        <span className='mx-3 text-[12px] font-[500]'>Z00.00</span>
-                        <span className='flex items-center justify-center gap-2 text-[#93531F] bg-[#FBF7EB]  px-3 rounded-full text-[12px] font-[500]'>
+                        <span className='text-[#8226CA] bg-[#FAF5FF] rounded-full text-[12px] font-[500] px-[8px] py-[6px]'>ICD-10</span>
+                        <span className='mx-3 text-[12px] font-[500] px-[8px] py-[6px]'>Z00.00</span>
+                        <span className='flex items-center justify-center gap-2 text-[#93531F] bg-[#FBF7EB]  px-[8px] py-[6px] rounded-full text-[12px] font-[500]'>
                             <Image src="/information-circle.svg" alt='tik icon' width="20" height="20"/>
                             ICD-10
                         </span>

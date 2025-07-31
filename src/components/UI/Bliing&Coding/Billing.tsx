@@ -4,27 +4,30 @@ import React from 'react'
 export default function Billing() {
   return (
     <div>
-        <div className='flex items-end justify-center gap-6 md:gap-12 mt-8'>
+        <div className='flex items-center justify-center gap-8 mt-4'>
             <div className='w-full'>
-                <label htmlFor="box-25-1" className='text-lg'>Box 25: Federal Tax ID Number *</label>
-                <input type="text" name="box-25-1" id="box-25-1" className='text-lg p-3 mt-2 border-none outline-none rounded-md w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                <label htmlFor="box-25-1" className='font-[500] text-[18px] text-[#3D3D3D]'>Box 25: Federal Tax ID Number *</label>
+                <input type="text" name="box-25-1" id="box-25-1" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full ' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
             </div>
             
-            <div className='w-[30%] flex items-center justify-center gap-4'>
-                <div className='flex items-center justify-center gap-4'>
-                    <label htmlFor="ssn_ein" className='text-lg'>SSN/EIN</label>
-                    <input type="radio" name="ssn_ein" id="ssn_ein" className=' w-6 h-6' placeholder=''/>
+            <div className='w-[40%] flex items-center justify-start gap-4'>
+                <div className='flex items-center justify-center gap-4 flex-col'>
+                    <label htmlFor="" className='font-[500] text-[18px] text-[#3D3D3D]'>SSN/EIN</label>
+                    <div className='flex items-center justify-center gap-4'>
+                        <label htmlFor="ssn_ein" className='font-[500] text-[18px] text-[#3D3D3D]'>SSN</label>
+                        <input type="radio" name="ssn_ein" id="ssn_ein" className=' w-6 h-6' placeholder=''/>
+                    </div>
                 </div>
             </div>
         </div>
-         <div className='mt-8'>
-            <label htmlFor="box-26-1" className='text-lg'>Box 26: Patient's Account Number</label>
-            <input type="text" name="box-26-1" id="box-26-1" className='text-lg p-3 mt-2 border-none outline-none rounded-md w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+         <div className='mt-4'>
+            <label htmlFor="box-26-1" className='font-[500] text-[18px] text-[#3D3D3D]'>Box 26: Patient's Account Number</label>
+            <input type="text" name="box-26-1" id="box-26-1" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full ' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
         </div> 
-        <div className='flex items-center justify-center flex-wrap md:flex-nowrap mt-8'>
+        <div className='flex items-center justify-center flex-wrap md:flex-nowrap mt-4'>
             
             <div className='w-full'>
-                <label htmlFor="box-27" className='text-lg'>Box 27: Accept Assignment?</label>
+                <label htmlFor="box-27" className='font-[500] text-[18px] text-[#3D3D3D]'>Box 27: Accept Assignment?</label>
                 <div className='flex mt-4 gap-16'>
                     <div className='flex items-center'>
                         <input type="radio" name="accept-assignment" id="yes" className='ml-4 w-6 h-6' />
@@ -37,26 +40,26 @@ export default function Billing() {
                 </div>
             </div>
         </div>
-        <div className='mt-8'>
-            <label htmlFor="box-28-1" className='text-lg'>Box 28: Total Charge</label>
-            <input type="text" name="box-28-1" id="box-28-1" className='text-lg p-3 mt-2 border-none outline-none rounded-md w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+        <div className='mt-4'>
+            <label htmlFor="box-28-1" className='font-[500] text-[18px] text-[#3D3D3D]'>Box 28: Total Charge</label>
+            <input type="text" name="box-28-1" id="box-28-1" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
         </div>
-        <div className='mt-8'>
-            <label htmlFor="box-29-1" className='text-lg'>Box 29: Amount Paid</label>
-            <input type="text" name="box-29-1" id="box-29-1" className='text-lg p-3 mt-2 border-none outline-none rounded-md w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+        <div className='mt-4'>
+            <label htmlFor="box-29-1" className='font-[500] text-[18px] text-[#3D3D3D]'>Box 29: Amount Paid</label>
+            <input type="text" name="box-29-1" id="box-29-1" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
         </div>
-        <div className='flex items-end justify-center gap-12 flex-wrap md:flex-nowrap mt-8'>
+        <div className='flex items-end justify-center gap-6 flex-wrap md:flex-nowrap mt-4'>
             
             <div className='w-full'>
-                <label htmlFor="box-33a" className='text-lg'>Box 33a: NPI *</label>
-                <input type="text" name="box-33a" id="box-33a" className='text-lg p-3 mt-2 border-none outline-none rounded-md w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                <label htmlFor="box-33a" className='font-[500] text-[18px] text-[#3D3D3D]'>Box 33a: NPI *</label>
+                <input type="text" name="box-33a" id="box-33a" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
             </div>
             <div className='w-full'>
-                <label htmlFor="box-33b" className='text-lg'>Box 33b: Other ID#</label>
-                <input type="text" name="box-33b" id="box-33b" className='text-lg p-3 mt-2 border-none outline-none rounded-md w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                <label htmlFor="box-33b" className='font-[500] text-[18px] text-[#3D3D3D]'>Box 33b: Other ID#</label>
+                <input type="text" name="box-33b" id="box-33b" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
             </div>
         </div>
-        <div className='mt-8 flex items-end justify-between flex-wrap md:flex-nowrap'>
+        <div className='mt-4 flex items-end justify-between flex-wrap md:flex-nowrap'>
             <div>
                 <p>Codes Summary</p> <br />
                 <p>Diagnosis Codes (Box 21) - 0</p>

@@ -14,10 +14,10 @@ export default function page() {
                 <MenuBar />
                 <br />
                 <br />
-                <div className='flex items-center justify-between flex-wrap gap-4'>
+                <div className='flex items-center justify-between flex-wrap md:flex-nowrap gap-[24px]'>
                     {
                         firstCardInfo.map(info =>
-                            <div key={info.id} className='relative p-4 rounded-sm bg-white md:w-[20rem] w-full shadow-md'>
+                            <div key={info.id} className='relative p-4 rounded-sm bg-white w-full shadow-md'>
                                 <Image src={info.imagePath} alt={info.text} width="48" height="48" className='' />
                                 <br />
                                 <p className='font-[500] text-[#999] text-[18px]'>{info.text}</p>
@@ -41,18 +41,18 @@ export default function page() {
                             <p className='font-[400] text-[16px] text-[#737373]'>Total: 120</p>
                         </div>
                         <div className='flex items-center justify-center gap-4 flex-wrap mt-8 md:mt-0'>
-                            <div className='flex items-center justify-center gap-2 rounded-md px-2 py-0.5 shadow-md'>
+                            <div className='flex items-center justify-center gap-2 rounded-md px-2 py-0.5 shadow-md focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none'>
                                 <label htmlFor="search"><Image src="/search.svg" alt='search image' width="25" height="25" /></label>
                                 <input className='border-none outline-none p-1 text-lg w-full' type="search" name="search" id="search" placeholder='Search here...' />
                             </div>
-                            <div>
+                            <div className='focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none'>
                                 <select name="type" id="type" className='shadow-md w-full flex items-center justify-center gap-2 rounded-md p-2 border-none outline-none text-lg'>
                                     <option value="">All types</option>
                                     <option value="">Type 1</option>
                                     <option value="">Type 2</option>
                                 </select>
                             </div>
-                            <div>
+                            <div className='focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none'>
                                 <select name="time" id="time" className='shadow-md w-full flex items-center justify-center gap-2 rounded-md p-2 border-none outline-none text-lg'>
                                     <option value="">Today</option>
                                     <option value="">Tomorrow</option>

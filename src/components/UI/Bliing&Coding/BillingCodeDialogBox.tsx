@@ -47,17 +47,17 @@ export default function BillingCodeDialogBox({showDialogBox, setShowDialogBox}: 
 
         <div
           style={{ boxShadow: "0 -6px 15px rgba(0, 0, 0, 0.1)" }}
-          className="bg-white p-4 flex items-center justify-center gap-4 mr-4"
+          className="bg-white p-4 flex items-center justify-center gap-4"
         >
-          <button onClick={() => setShowDialogBox(false)} className="border-[1px] border-[#2E8BC9] rounded-md w-full py-2 text-center cursor-pointer">
+          <button onClick={() => setShowDialogBox(false)} className="border-[1px] text-[#2E8BC9] border-[#2E8BC9] rounded-md w-full py-2 text-center cursor-pointer text-[18px] font-[500]">
             Close
           </button>
-          <button className="bg-[#2E8BC9] rounded-md w-full py-2 text-center flex items-center justify-center gap-2 text-white cursor-pointer">
+          <button className="bg-[#2E8BC9] rounded-md w-full py-2 text-center flex items-center justify-center gap-2 text-white cursor-pointer text-[18px] font-[500]">
             <Image
               src="/checkmark-circle-02.svg"
               alt="checkmark"
-              width="15"
-              height="15"
+              width="24"
+              height="24"
             />
             Finalize
           </button>

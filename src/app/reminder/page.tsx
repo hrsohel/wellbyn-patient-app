@@ -41,15 +41,14 @@ const Reminder = () => {
                         + Add Task
                     </button>
                 </div>
-
-                <div className="md:space-y-4 mt-4 bg-white flex items-start justify-center md:flex-nowrap flex-wrap">
-                    <div className='w-full rounded-l-lg relative'>
+                <div className="mt-4 bg-white flex gap-4 justify-between overflow-x-auto items-start">
+                    <div className='w-full rounded-l-lg relative min-w-[800px] md:w-full '>
                         {tasks.map((task) => (
                             <div
                                 key={task.id}
-                                className="flex flex-wrap md:flex-nowrap items-center justify-between border-b border-[#e9e9e9] rounded-md p-3 py-6"
+                                className="flex flex-wrap md:flex-nowrap items-center justify-between border-b border-[#e9e9e9] rounded-md p-3 py-4"
                             >
-                                <div className="flex items-center gap-2 w-full md:w-1/3">
+                                <div className="flex items-center gap-2 flex-1 min-w-0">
                                     <input
                                         type="checkbox"
                                         checked={task.completed}
@@ -57,19 +56,17 @@ const Reminder = () => {
                                         className="w-5 h-5 appearance-none border-none outline-none ring-1 ring-gray-300 rounded-sm shadow-md checked:bg-blue-500 checked:ring-blue-500 transition-all"
                                     />
                                     <span
-                                        className={`text-base ${task.completed ? 'line-through text-gray-400' : 'text-black'
-                                            }`}
+                                        className={`text-base truncate ${task.completed ? 'line-through text-gray-400' : 'text-black'}`}
                                     >
                                         {task.name}
                                     </span>
                                     {task.status === 'new' && (
-                                        <span className="bg-blue-100 text-[#2E8BC9] px-2 py-0.5 text-xs rounded-full">
+                                        <span className="bg-blue-100 text-[#2E8BC9] px-2 py-0.5 text-xs rounded-full whitespace-nowrap">
                                             New
                                         </span>
                                     )}
                                 </div>
-
-                                <div className="flex items-center gap-2 w-full md:w-1/3 justify-center md:justify-start">
+                                <div className="flex items-center gap-2 flex-1 justify-center">
                                     {task.status === 'complete' ? (
                                         <span className="text-green-600 text-sm bg-green-100 px-2 py-0.5 rounded-full">
                                             ✓ Complete
@@ -84,8 +81,7 @@ const Reminder = () => {
                                         </span>
                                     ) : null}
                                 </div>
-
-                                <div className="flex items-center gap-2 w-full md:w-1/3 justify-end">
+                                <div className="flex items-center gap-4 flex-1 justify-end min-w-0">
                                     <div className="flex items-center">
                                         {[1, 2, 3].map((_, i) => (
                                             <img
@@ -95,23 +91,35 @@ const Reminder = () => {
                                                 className="w-9 h-9 rounded-full -ml-2 border-2 border-white"
                                             />
                                         ))}
-                                        <div className="bg-[#2E8BC9] w-9 h-9 text-white text-center text-xs pt-2 rounded-full border-2 -ml-2 border-white">
-                                            +5
+                                        <div className="bg-[#2E8BC9] w-9 h-9 text-white text-xs rounded-full border-2 -ml-2 border-white flex items-center justify-center">
+                                            <span>+5 </span>
                                         </div>
                                     </div>
-                                    <span className="text-sm text-gray-500">{task.date}</span>
-                                    <Image src="/Frame 2147226750.svg" alt='update' width="30" height="30" className="text-blue-500 hover:text-blue-700 cursor-pointer " />
-                                    <Image src="/delete-02.svg" alt='delete' width="20" height="20" className="text-blue-500 hover:text-blue-700 cursor-pointer " />
+                                    <span className="text-sm text-gray-500 truncate">{task.date}</span>
+                                    <Image
+                                        src="/Frame 2147226750.svg"
+                                        alt="update"
+                                        width="30"
+                                        height="30"
+                                        className="text-blue-500 hover:text-blue-700 cursor-pointer"
+                                    />
+                                    <Image
+                                        src="/delete-02.svg"
+                                        alt="delete"
+                                        width="20"
+                                        height="20"
+                                        className="text-blue-500 hover:text-blue-700 cursor-pointer"
+                                    />
                                 </div>
                             </div>
                         ))}
                     </div>
                     {
-                        showTaskform ? <div className='p-3 md:w-[40%] md:static absolute top-0 left-0 w-full min-h-full bg-slate-100'>
+                        showTaskform ? <div className='p-3 md:w-[30%] w-full md:static absolute top-0 left-0 min-h-full bg-slate-100'>
                             <form method="post" className=' w-full'>
                                 <div className='w-full'>
                                     <label htmlFor="title" className='text-lg'>Title</label>
-                                    <input type="text" name="title" id="title" className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white' placeholder='Write...' />
+                                    <input type="text" name="title" id="title" className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none' placeholder='Write...' />
                                 </div>
                                 <p className='text-lg pt-8'>Priority</p>
                                 <div className='flex items-center justify-start gap-8 mt-4'>
@@ -126,7 +134,7 @@ const Reminder = () => {
                                 </div>
                                 <div className='mt-8'>
                                     <label htmlFor="name" className='text-lg'>Choose name</label>
-                                    <select name="name" id="name" className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white' >
+                                    <select name="name" id="name" className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none' >
                                         <option value="">Select name</option>
                                         <option value="">Value 2</option>
                                         <option value="">Value 3</option>
@@ -135,11 +143,11 @@ const Reminder = () => {
                                 </div>
                                 <div className='mt-8'>
                                     <label htmlFor="note" className='text-lg'>Note</label>
-                                    <textarea name="note" id="note" placeholder='Type note' className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white'></textarea>
+                                    <textarea name="note" id="note" placeholder='Type note' className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none'></textarea>
                                 </div>
                                 <div className='mt-8'>
                                     <label htmlFor="due-date" className='text-lg'>Due date</label>
-                                    <input type='date' name="due-date" id="due-date" placeholder='Type note' className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white' />
+                                    <input type='date' name="due-date" id="due-date" placeholder='Type note' className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none' />
                                 </div>
                                 <div className='mt-8 flex items-center justify-center gap-4'>
                                     <button className='w-full bg-[#2E8BC9] text-white text-center py-2 rounded-md cursor-pointer'>Save</button>

@@ -34,7 +34,7 @@ export default function page() {
                     <p className="text-xl font-bold text-blue-600">1,234</p>
                 </div>
             </div>
-            <div className="bg-gray-50 p-6 rounded-xl mt-4">
+            <div className="bg-gray-50 p-6 rounded-xl mt-4 shadow-md">
                 <h2 className="text-xl font-semibold text-gray-800 mb-4">Message volume</h2>
                 <div className="space-y-4">
                     {messageData.map((item, idx) => (
@@ -49,12 +49,12 @@ export default function page() {
                                     {item.icon}
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-500">{item.title}</p>
-                                    <p className="text-xl font-bold text-gray-800">{item.value}</p>
+                                    <p className="text-[18px] font-[500] text-gray-500">{item.title}</p>
+                                    <p className="text-[32px] font-[700] text-gray-800">{item.value}</p>
                                 </div>
                             </div>
                             <div
-                                className={`flex items-center gap-1 text-sm font-medium px-2 py-1 rounded-full ${item.changeBg} ${item.changeColor}`}
+                                className={`flex items-center gap-1 text-sm font-medium p-[4px] rounded-full ${item.changeBg} ${item.changeColor}`}
                             >
                                 {item.direction === "up" ? "↑" : "↓"} {item.change}
                             </div>
