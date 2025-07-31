@@ -12,31 +12,31 @@ export default function BillingCodeDialogBox({showDialogBox, setShowDialogBox}: 
       className={`fixed top-0 w-screen h-screen z-50 flex justify-end ${showDialogBox ? "left-0" : "left-[110%]"} transition-all duration-500`}
       style={showDialogBox ? { background: "rgba(0, 0, 0, 0.5)" } : {}}
     >
-      <div className="bg-white md:w-1/2 w-full h-full flex flex-col relative">
+      <div className="bg-white md:w-1/2 w-full h-full flex flex-col relative pr-3">
       
         <div className="flex-1 overflow-y-auto p-4">
-          <h1 className="text-2xl font-semibold">Code Review</h1>
+          <h1 className="text-[24px] font-[500] text-[#3D3D3D]">Code Review</h1>
           <br />
           <div className="bg-slate-100 flex items-center justify-between p-2 md:p-4 rounded-md">
             <div>
               <p className="text-[#7C7C7C]">Patient</p>
-              <p className="text-[2xl]">John Smith</p>
+              <p className="text-[18px] font-[500] text-[#3D3D3D]">John Smith</p>
             </div>
             <div>
               <p className="text-[#7C7C7C]">Appointment time</p>
-              <p className="text-[2xl]">09:00 AM</p>
+              <p className="text-[18px] font-[500] text-[#3D3D3D]">09:00 AM</p>
             </div>
             <div>
               <p className="text-[#7C7C7C]">Doctor</p>
-              <p className="text-[2xl]">Dr. Sarah Chen</p>
+              <p className="text-[18px] font-[500] text-[#3D3D3D]">Dr. Sarah Chen</p>
             </div>
           </div>
 
           <div className="bg-slate-100 flex items-center justify-between p-2 md:p-4 rounded-md mt-8">
-            <button onClick={() => setShowAssessment(1)} className={`cursor-pointer ${showAssessment === 1 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>Assessment</button>
-            <button onClick={() => setShowAssessment(2)} className={`cursor-pointer ${showAssessment === 2 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>Code Review</button>
-            <button onClick={() => setShowAssessment(3)} className={`cursor-pointer ${showAssessment === 3 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>CMS-1500 Data</button>
-            <button className="cursor-pointer">Form Preview</button>
+            <button onClick={() => setShowAssessment(1)} className={`cursor-pointer text-[#3D3D3D] font-[500] text-[16px] ${showAssessment === 1 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>Assessment</button>
+            <button onClick={() => setShowAssessment(2)} className={`cursor-pointer text-[#3D3D3D] font-[500] text-[16px] ${showAssessment === 2 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>Code Review</button>
+            <button onClick={() => setShowAssessment(3)} className={`cursor-pointer text-[#3D3D3D] font-[500] text-[16px] ${showAssessment === 3 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>CMS-1500 Data</button>
+            <button className="cursor-pointer text-[#3D3D3D] font-[500] text-[16px]">Form Preview</button>
           </div>
           {
             showAssessment === 1 ? <Assessment /> :
