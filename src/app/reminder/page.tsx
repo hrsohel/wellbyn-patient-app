@@ -37,7 +37,7 @@ const Reminder = () => {
                         <h2 className="text-xl font-semibold">Reminder</h2>
                         <p className="text-sm text-gray-500">Manage all the task reminder</p>
                     </div>
-                    <button onClick={() => setTaskForm(true)} className="bg-[#2E8BC9] hover:opacity-90 text-white px-4 py-2 rounded-md">
+                    <button onClick={() => setTaskForm(true)} className="bg-[#2E8BC9] hover:opacity-90 text-white px-4 py-2 rounded-md cursor-pointer">
                         + Add Task
                     </button>
                 </div>
@@ -150,8 +150,8 @@ const Reminder = () => {
                                     <input type='date' name="due-date" id="due-date" placeholder='Type note' className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none' />
                                 </div>
                                 <div className='mt-8 flex items-center justify-center gap-4'>
-                                    <button className='w-full bg-[#2E8BC9] text-white text-center py-2 rounded-md cursor-pointer'>Save</button>
-                                    <button onClick={() => setTaskForm(false)} className='w-full text-red-600 border-[1px] border-red-600 text-center py-2 rounded-md cursor-pointer'>Cancel</button>
+                                    <button className='w-full hover:opacity-80 bg-[#2E8BC9] text-white text-center py-2 rounded-md cursor-pointer'>Save</button>
+                                    <button onClick={() => setTaskForm(false)} className='w-full hover:opacity-80 text-red-600 border-[1px] border-red-600 text-center py-2 rounded-md cursor-pointer'>Cancel</button>
                                 </div>
                             </form>
                         </div> : <></>

@@ -9,6 +9,7 @@ import {
     CartesianGrid,
 } from "recharts";
 import { data } from '../data'
+import ArrowDownIcon from '@/components/UI/ArrowDownIcon';
 
 export default function AreaChartComponent() {
     return (
@@ -20,10 +21,13 @@ export default function AreaChartComponent() {
                         This graph displays the number of appointment in Wellbyn.
                     </p>
                 </div>
-                <select className="border rounded px-2 py-4 text-[16px] font-[500] text-gray-700">
-                    <option>Weekly</option>
-                    <option>Monthly</option>
-                </select>
+                <div className="relative inline-block gap-8 focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:border-none rounded-lg">
+                    <select className="text-[16px] border rounded-lg p-[12px] text-gray-700 appearance-none w-[134px] outline-none">
+                        <option>Yearly</option>
+                        <option>Monthly</option>
+                    </select>
+                    <ArrowDownIcon />
+                </div>
             </div>
             <ResponsiveContainer width="100%" height={500} >
                 <AreaChart data={data}>

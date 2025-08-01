@@ -40,7 +40,7 @@ export default function CodeReview() {
         </div>
         <div className='flex items-center justify-between mt-4 mr-0'>
             <h3 className='text-[24px] font-[500] text-[#3D3D3D]'>Suggested Codes</h3>
-            <button onClick={() => setShowAddCode(true)} className='bg-[#F2F8FD] text-[#2E8BC9] px-4 py-2 shadow-md flex items-center justify-center gap-2 cursor-pointer rounded-md border-[1px] border-[#2E8BC9]'>
+            <button onClick={() => setShowAddCode(true)} className='bg-[#F2F8FD] hover:opacity-80 text-[#2E8BC9] px-4 py-2 shadow-md flex items-center justify-center gap-2 cursor-pointer rounded-md border-[1px] border-[#2E8BC9]'>
                 <Image  src="/add-01.svg" alt='add icon' width="20" height="20" />
                 Add Code
             </button>

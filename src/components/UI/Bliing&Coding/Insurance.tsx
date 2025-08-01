@@ -11,27 +11,27 @@ export default function Insurance() {
                     <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-9">Box 9: Other Insured's Name</label>
                 </div>
                 <div className='flex items-center justify-center gap-3 flex-wrap md:flex-nowrap'>
-                    <input type="text" name="box-9-fname" id="box-9-fname" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='First Name' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
-                    <input type="text" name="box-9-mname" id="box-9-mname" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='Middle' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
-                    <input type="text" name="box-9-lname" id="box-2-lname" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='Last' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                    <input type="text" name="box-9-fname" id="box-9-fname" className='text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full' placeholder='First Name' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                    <input type="text" name="box-9-mname" id="box-9-mname" className='text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full' placeholder='Middle' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                    <input type="text" name="box-9-lname" id="box-2-lname" className='text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full' placeholder='Last' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
                 </div>
             </div>
             <div className='mt-4'>
                 <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-9a">Box 9a: Other Insured's Policy or Group Number</label>
-                <input type="text" name="box-9a" id="box-9a" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                <input type="text" name="box-9a" id="box-9a" className='text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
             </div>
             <div className='mt-4'>
                 <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-9d">Box 9d: Insurance Plan Name or Program Name</label>
-                <input type="text" name="box-9d" id="box-9d" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                <input type="text" name="box-9d" id="box-9d" className='text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
             </div>
             <div className='mt-4'>
                 <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-11">Box 11: Insured's Policy Group or FECA Number</label>
-                <input type="text" name="box-11" id="box-11" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                <input type="text" name="box-11" id="box-11" className='text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
             </div>
             <div className='flex items-center justify-center gap-6 flex-wrap md:flex-nowrap mt-4'>
                 <div className='w-full'>
                     <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-11a-1">Box 11a: Insured's Date of Birth</label>
-                    <input type="date" name="box-11a" id="box-11a" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='Group Health Plan' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                    <input type="date" name="box-11a" id="box-11a" className='text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full' placeholder='Group Health Plan' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
                 </div>
                 <div className='w-full'>
                     <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-11a-2">Box 11a: Insured's Sex</label>
@@ -53,11 +53,11 @@ export default function Insurance() {
             </div>
             <div className='mt-4'>
                 <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-11b">Box 11b: Other Claim ID (Designated by NUCC)</label>
-                <input type="text" name="box-11b" id="box-11b" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                <input type="text" name="box-11b" id="box-11b" className='text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full' placeholder='' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
             </div>
             <div className='mt-4'>
                 <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-11c">Box 11c: Insurance Plan Name or Program Name *</label>
-                <input type="text" name="box-11c" id="box-11c" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='G987654321' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                <input type="text" name="box-11c" id="box-11c" className='text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full' placeholder='G987654321' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
             </div>
             <div className='flex items-center justify-center gap-6 flex-wrap md:flex-nowrap mt-4'>
                 <div className='w-full'>
@@ -77,11 +77,11 @@ export default function Insurance() {
             <div className='flex items-end justify-center gap-6 flex-wrap md:flex-nowrap mt-4'>
                 <div className=''>
                     <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-12-1">Box 12: Patient's or Authorized Person's Signature</label>
-                    <input type="text" name="box-12-1" id="box-12-1" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='G987654321' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                    <input type="text" name="box-12-1" id="box-12-1" className='text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full' placeholder='G987654321' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
                 </div>
                 <div className='w-full'>
                     <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-12-2">Box 12: Date</label>
-                    <input type="date" name="box-12-2" id="box-12-2" className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' placeholder='Group Health Plan' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
+                    <input type="date" name="box-12-2" id="box-12-2" className='text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full' placeholder='Group Health Plan' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}/>
                 </div>
             </div>
             <div className='mt-4'>
@@ -96,7 +96,7 @@ export default function Insurance() {
             <div className='mt-4'>
                 <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-13-1">Box 13: Insured's or Authorized Person's Signature</label>
                 <div>
-                    <textarea name="box-13-1" id="box-13-1" placeholder='' className='text[16px] mt-2 border-none outline-none rounded-[8px] p-[12px] w-full' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}></textarea>
+                    <textarea name="box-13-1" id="box-13-1" placeholder='' className='text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full' style={{boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)"}}></textarea>
                 </div>
             </div>
         </form>

@@ -88,8 +88,8 @@ export default function PieChartComponent() {
                         This graph displays the number of Patient in Wellbyn.
                     </p>
                 </div>
-                <div className="relative inline-block w-[100px] gap-8">
-                    <select className="text-[16px] border rounded-lg p-[12px] text-gray-700 appearance-none">
+                <div className="relative inline-block gap-8 focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:border-none rounded-lg">
+                    <select className="text-[16px] border rounded-lg p-[12px] text-gray-700 appearance-none w-[134px] outline-none">
                         <option>Yearly</option>
                         <option>Monthly</option>
                     </select>
