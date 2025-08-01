@@ -1,25 +1,32 @@
 "use client";
-import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Logo from "@/assets/logo";
 import { ArrowLeft } from "lucide-react";
 import Card from "@/components/UI/Card";
 import Button from "@/components/UI/Button";
 
-// export const metadata: Metadata = {
-//   title: "Verify Code | Wellbyn",
-//   description: "Enter the verification code sent to your email",
-//   keywords: ["verify", "otp", "code", "reset password"],
-// };
+// Loading component for Suspense fallback
+const LoadingSpinner = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="w-8 h-8 border-2 border-primary-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
-const VerifyCodePage = () => {
+// Separate component that uses useSearchParams
+const VerifyCodeContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const email = searchParams.get("email") || "example@gmail.com";
-  const flow = searchParams.get("flow") || "forgot-password"; // 'forgot-password' or 'create-account'
+  const [email, setEmail] = useState("example@gmail.com");
+  const [flow, setFlow] = useState("forgot-password"); // 'forgot-password' or 'create-account'
+
+  useEffect(() => {
+    if (searchParams) {
+      setEmail(searchParams.get("email") || "example@gmail.com");
+      setFlow(searchParams.get("flow") || "forgot-password");
+    }
+  }, [searchParams]);
 
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [isLoading, setIsLoading] = useState(false);
@@ -93,8 +100,8 @@ const VerifyCodePage = () => {
         // Mock validation
         // Redirect based on flow
         if (flow === "create-account") {
-          // Redirect to HIPAA concent page
-          router.push("/hipaa-concent");
+          // Redirect to HIPAA consent page
+          router.push("/hipaa-consent");
         } else {
           // Redirect to reset password page (forgot password flow)
           router.push(
@@ -157,7 +164,7 @@ const VerifyCodePage = () => {
         </h1>
 
         <div className="w-full flex flex-col items-center">
-          <p className="font-normal text-center text-[18px] text-brand-500 leading-relaxed w-[540px]  object-center tracking-wide">
+          <p className="font-normal text-center text-[18px] text-brand-500 leading-relaxed w-[540px] object-center tracking-wide">
             We sent OTP code to your email{" "}
             <span className="font-bold text-brand-500">{email}</span>. Enter the
             code below to verify.
@@ -242,6 +249,15 @@ const VerifyCodePage = () => {
         </Link>
       </Card>
     </div>
+  );
+};
+
+// Main component with Suspense wrapper
+const VerifyCodePage = () => {
+  return (
+    <Suspense fallback={<LoadingSpinner />}>
+      <VerifyCodeContent />
+    </Suspense>
   );
 };
 

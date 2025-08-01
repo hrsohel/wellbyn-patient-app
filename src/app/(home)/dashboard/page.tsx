@@ -133,11 +133,11 @@ export default function Dashboard() {
   ]);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4 md:p-6 lg:p-8">
+    <div className="min-h-screen bg-[#F6F9FC] p-3 md:p-5 lg:p-7">
       {/* Stats Cards */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-6">
         {stats.map((stat, index) => (
-          <div key={index} className="bg-white rounded-lg  p-3 shadow-sm">
+          <div key={index} className="bg-white rounded-lg  p-3 shadow-md">
            <div className="m-2">
                 {stat.icon}
               </div> <div className="">
@@ -145,7 +145,7 @@ export default function Dashboard() {
                 <h3 className="text-sm font-medium text-gray-600">{stat.title}</h3>
                 <div className="mt-2 flex w-full justify-between">
                   <div className="text-2xl font-bold">{stat.value}</div>
-                  <div className={`flex items-center text-sm ${stat.isPositive ? 'text-green-600' : 'text-red-600'}`}>
+                  <div className={`flex items-center h-6 p-1 rounded-4xl  text-sm ${stat.isPositive ? ' bg-[#EEFEE7]  text-green-600' : ' bg-[#FEF2F2] text-red-600'}`}>
                     {stat.isPositive ? (
                       <ArrowUpIcon className="h-3 w-3 mr-1" />
                     ) : (
@@ -166,11 +166,11 @@ export default function Dashboard() {
         {/* Appointments Table */}
         <div className="bg-white rounded-lg 
          shadow-sm lg:col-span-2">
-          <div className="flex items-center justify-between p-6 ">
+          <div className="flex items-center justify-between p-3 ">
             <h2 className="text-lg font-semibold">Appointments</h2>
             <button className="text-sm text-blue-600 hover:underline">View all</button>
           </div>
-          <div className="p-6">
+          <div className="">
             <div className="overflow-x-auto">
            <table className="min-w-full">
   <thead className="border-none">
@@ -197,7 +197,7 @@ export default function Dashboard() {
       <tr key={index} className="border-none">
         <td className="px-4 py-3 whitespace-nowrap">
           <div className="flex items-center">
-            <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-300 flex items-center justify-center text-xs font-medium text-gray-600">
+            <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#D6EBFD] flex items-center justify-center text-xs font-medium text-[#2E8BC9]">
               {appointment.name.charAt(0)}
             </div>
             <div className="ml-2 font-medium">{appointment.name}</div>
@@ -224,16 +224,16 @@ export default function Dashboard() {
         </div>
 
         {/* Today's Activity */}
-        <div className="bg-white rounded-lg  shadow-sm">
-          <div className="flex items-center justify-between p-6 border-b">
-            <h2 className="text-lg font-semibold">Today's Activity</h2>
+        <div className="bg-white rounded-lg   shadow-sm">
+          <div className="flex items-center justify-between p-3 ">
+            <h2 className="text-sm ">Today's Activity</h2>
             <button className="text-sm text-blue-600 hover:underline">View all</button>
           </div>
-          <div className="p-6 space-y-4">
+          <div className="p-3 space-y-2">
             {activities.map((activity, index) => (
               <div
                 key={index}
-                className="flex items-center justify-between pb-3 border-b last:border-b-0 last:pb-0"
+                className="flex items-center justify-between pb-3 border-b first:border-[#93531F] last:border-none border-[#DCDCDC] last:pb-0"
               >
                 <div>
                   <p className="font-medium">{activity.name}</p>
@@ -242,11 +242,11 @@ export default function Dashboard() {
                   </p>
                 </div>
                 {activity.status === "check-in" ? (
-                  <button className="px-3 py-1 text-sm border border-yellow-200 bg-yellow-100 text-yellow-800 rounded-md hover:bg-yellow-200">
+                  <button className="px-3 py-1 text-sm border shadow-md border-yellow-200 bg-[#FBF7EB] text-yellow-800 rounded-md hover:bg-yellow-200">
                     Check In
                   </button>
                 ) : (
-                  <button className="px-3 py-1 text-sm border border-gray-200 rounded-md hover:bg-gray-50">
+                  <button className="px-3 py-1 text-sm bg-[#1A588A] text-white border border-gray-200 rounded-md hover:bg-gray-50">
                     Details
                   </button>
                 )}
@@ -256,8 +256,8 @@ export default function Dashboard() {
         </div>
 
         {/* Peak Hours Chart */}
-        <div className="bg-white rounded-lg border shadow-sm lg:col-span-2">
-          <div className="p-6 border-b">
+        <div className="bg-white rounded-lg  shadow-sm lg:col-span-2">
+          <div className="p-6 ">
             <h2 className="text-lg font-semibold">Peak Hours</h2>
             <p className="text-sm text-gray-500 mt-1">
               This graph displays the number of appointment peak hour.

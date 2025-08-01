@@ -1,18 +1,21 @@
 "use client";
-
 import { useState } from "react";
 import { MessageSquare, CheckCircle2, XCircle, Download, CheckCircle, Clock, Calendar, MapPin, Eye, User, FileText, DownloadCloud, Settings } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/app/components/ui/Button";
+
 export default function PatientDashboard() {
   const [activeTab, setActiveTab] = useState("appointment");
   const [noteText, setNoteText] = useState("");
+  
   const documents = [
     { name: "Document_Name.jpeg", size: "25kb", status: "downloading" },
     { name: "Document_Name.jpeg", size: "25kb", status: "ready" },
     { name: "Document_Name.jpeg", size: "25kb", status: "ready" },
     { name: "Document_Name.jpeg", size: "25kb", status: "ready" },
-  ]
+  ];
+
   const appointments = [
     {
       id: 1,
@@ -51,6 +54,30 @@ export default function PatientDashboard() {
     },
   ];
 
+  const insuranceData = {
+    insuranceName: "Bluesky",
+    contractId: "G987654321",
+    groupNumber: "H123456789",
+    expirationDate: "31/12/2025",
+    patientRelationship: "Father",
+    firstName: "Kamal",
+    middleName: "Ahmed",
+    lastName: "Dane",
+    patientContractId: "G987654321",
+    addressLine1: "G987654321",
+    city: "Manhattan",
+    state: "NYC",
+    zip: "00976",
+    employerName: "Mahmudcompany",
+    sex: "Male",
+    dateOfBirth: "31/12/2006",
+  };
+
+  const caregivers = [
+    { id: 1, name: "Jamal" },
+    { id: 2, name: "Jony" },
+  ];
+
   const getStatusClasses = (status: string) => {
     switch (status) {
       case "Upcoming":
@@ -76,9 +103,16 @@ export default function PatientDashboard() {
         return null;
     }
   };
+
+  const DataField = ({ label, value }: { label: string; value: string }) => (
+    <div className="grid gap-1">
+      <p className="text-sm text-muted-foreground">{label}</p>
+      <p className="font-medium">{value}</p>
+    </div>
+  );
+
   const InsuranceColumn = () => (
     <div className="space-y-6">
-      {/* Insurance Details Section */}
       <div className="space-y-4">
         <DataField label="Insurance Name" value={insuranceData.insuranceName} />
         <DataField label="Contract ID" value={insuranceData.contractId} />
@@ -87,14 +121,12 @@ export default function PatientDashboard() {
       </div>
       <hr className="border-t border-gray-200" />
 
-      {/* Patient Relationship Section */}
       <div className="space-y-4">
         <p className="text-sm text-muted-foreground">Patient Relationship to Policy Holder</p>
         <p className="font-medium">{insuranceData.patientRelationship}</p>
       </div>
       <hr className="border-t border-gray-200" />
 
-      {/* Patient Details Section */}
       <div className="grid grid-cols-3 gap-4">
         <DataField label="First Name" value={insuranceData.firstName} />
         <DataField label="Middle Name" value={insuranceData.middleName} />
@@ -111,7 +143,6 @@ export default function PatientDashboard() {
       </div>
       <hr className="border-t border-gray-200" />
 
-      {/* Employment and Personal Info Section */}
       <div className="space-y-4">
         <DataField label="Employer Name" value={insuranceData.employerName} />
         <DataField label="Sex" value={insuranceData.sex} />
@@ -119,7 +150,6 @@ export default function PatientDashboard() {
       </div>
       <hr className="border-t border-gray-200" />
 
-      {/* Documents and Signature Section */}
       <div className="space-y-4">
         <div className="grid gap-1">
           <p className="text-sm text-muted-foreground">Insurance Card</p>
@@ -147,48 +177,19 @@ export default function PatientDashboard() {
         </div>
       </div>
     </div>
-  )
+  );
 
-// Reusable component for displaying a data field
-  const DataField = ({ label, value }: { label: string; value: string }) => (
-    <div className="grid gap-1">
-      <p className="text-sm text-muted-foreground">{label}</p>
-      <p className="font-medium">{value}</p>
-    </div>
-  )
-    const insuranceData = {
-    insuranceName: "Bluesky",
-    contractId: "G987654321",
-    groupNumber: "H123456789",
-    expirationDate: "31/12/2025",
-    patientRelationship: "Father",
-    firstName: "Kamal",
-    middleName: "Ahmed",
-    lastName: "Dane",
-    patientContractId: "G987654321",
-    addressLine1: "G987654321", // This appears to be a placeholder for an actual address line in the image
-    city: "Manhattan",
-    state: "NYC",
-    zip: "00976",
-    employerName: "Mahmudcompany",
-    sex: "Male",
-    dateOfBirth: "31/12/2006",
-  }
-  const caregivers = [
-    { id: 1, name: "Jamal" },
-    { id: 2, name: "Jony" },
-  ]
   return (
     <div className="min-h-screen bg-gray-100 p-4 md:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Top Section: Patient Profile and Notes */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-white rounded-lg shadow p-6">
           {/* Patient Profile */}
-          <div className="flex flex-col items-start gap-4">
+          <div className="flex flex-col items-start border-r border-[#DCDCDC] gap-4 pr-5">
+            <div className="w-16 h-16 rounded-full bg-[#2E8BC9] flex items-center justify-center text-white text-xl font-semibold">
+              Ma
+            </div>
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center text-white text-xl font-semibold">
-                Ma
-              </div>
               <div>
                 <div className="flex items-center gap-2">
                   <h2 className="text-2xl font-bold">Mahmudur Rahman</h2>
@@ -199,8 +200,7 @@ export default function PatientDashboard() {
                 <p className="text-sm text-gray-500">Patient ID: P6Q7R8</p>
               </div>
             </div>
-            <button className="w-full md:w-auto bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md flex items-center justify-center">
-              <MessageSquare className="w-4 h-4 mr-2" />
+            <button className="w-full bg-[#2E8BC9] hover:bg-blue-600 text-white px-4 py-2 rounded-md flex items-center justify-center">
               Send Message
             </button>
           </div>
@@ -213,7 +213,7 @@ export default function PatientDashboard() {
             </p>
             <textarea
               placeholder="Type your note..."
-              className="min-h-[100px] w-full p-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="min-h-[100px] w-full p-2 shadow-md bg-[#F5F7F9] rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
               value={noteText}
               onChange={(e) => setNoteText(e.target.value)}
             />
@@ -223,11 +223,11 @@ export default function PatientDashboard() {
         {/* Bottom Section: Tabbed Interface */}
         <div className="w-full bg-white rounded-lg shadow p-6">
           {/* Tabs */}
-          <div className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-1 mb-6">
+          <div className="grid w-3/4 grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-1 bg-[#F5F7F9] p-3 rounded-md mb-6">
             <button
               onClick={() => setActiveTab("appointment")}
               className={`py-2 px-4 text-sm font-medium rounded-md ${
-                activeTab === "appointment" ? "bg-blue-100 text-blue-600" : "text-gray-500 hover:text-gray-700"
+                activeTab === "appointment" ? "bg-white shadow-md p-5 text-gray-500" : "text-gray-500 hover:text-gray-700"
               }`}
             >
               Appointment
@@ -235,7 +235,7 @@ export default function PatientDashboard() {
             <button
               onClick={() => setActiveTab("patients-info")}
               className={`py-2 px-4 text-sm font-medium rounded-md ${
-                activeTab === "patients-info" ? "bg-blue-100 text-blue-600" : "text-gray-500 hover:text-gray-700"
+                activeTab === "patients-info" ? "bg-white shadow-md p-5 text-gray-500" : "text-gray-500 hover:text-gray-700"
               }`}
             >
               Patients Info
@@ -243,7 +243,7 @@ export default function PatientDashboard() {
             <button
               onClick={() => setActiveTab("document")}
               className={`py-2 px-4 text-sm font-medium rounded-md ${
-                activeTab === "document" ? "bg-blue-100 text-blue-600" : "text-gray-500 hover:text-gray-700"
+                activeTab === "document" ? "bg-white p-5 shadow-md text-gray-500" : "text-gray-500 hover:text-gray-700"
               }`}
             >
               Document
@@ -251,7 +251,7 @@ export default function PatientDashboard() {
             <button
               onClick={() => setActiveTab("medication")}
               className={`py-2 px-4 text-sm font-medium rounded-md ${
-                activeTab === "medication" ? "bg-blue-100 text-blue-600" : "text-gray-500 hover:text-gray-700"
+                activeTab === "medication" ? "bg-white p-5 shadow-md text-gray-500" : "text-gray-500 hover:text-gray-700"
               }`}
             >
               Medication
@@ -259,7 +259,7 @@ export default function PatientDashboard() {
             <button
               onClick={() => setActiveTab("insurance-info")}
               className={`py-2 px-4 text-sm font-medium rounded-md ${
-                activeTab === "insurance-info" ? "bg-blue-100 text-blue-600" : "text-gray-500 hover:text-gray-700"
+                activeTab === "insurance-info" ? "bg-white p-5 shadow-md text-gray-500" : "text-gray-500 hover:text-gray-700"
               }`}
             >
               Insurance Info
@@ -267,7 +267,7 @@ export default function PatientDashboard() {
             <button
               onClick={() => setActiveTab("caregiver")}
               className={`py-2 px-4 text-sm font-medium rounded-md ${
-                activeTab === "caregiver" ? "bg-blue-100 text-blue-600" : "text-gray-500 hover:text-gray-700"
+                activeTab === "caregiver" ? "bg-white p-5 shadow-md text-gray-500" : "text-gray-500 hover:text-gray-700"
               }`}
             >
               Caregiver
@@ -276,13 +276,13 @@ export default function PatientDashboard() {
 
           {/* Tab Content */}
           {activeTab === "appointment" && (
-               <div className="flex justify-center py-8 px-4 sm:px-6 lg:px-8 bg-gray-100 min-h-screen max-w-7xl">
-      <div className="w-full max-w-[7 00px] bg-white rounded-xl shadow-lg overflow-hidden">
+               <div className="flex justify-center py-8 px-4 sm:px-6 lg:px-8 bg-white min-h-screen max-w-7xl">
+      <div className="w-2/3 max-w-[7 00px] bg-white rounded-xl shadow-lg overflow-hidden">
         <div className="p-6 space-y-6">
           {/* Doctor Info */}
           <div className="flex items-center space-x-4">
             <Image
-              src="/doc.jpg"
+              src="/placeholder.svg"
               alt="Dr. Moule Marrk"
               width={64}
               height={64}
@@ -504,8 +504,8 @@ export default function PatientDashboard() {
         <div className="pt-4">
           <p className="text-sm text-muted-foreground mb-3">Upload Driver&apos;s License Images</p>
           <div className="flex gap-3">
-            <button variant="outline">Front Of License</button>
-            <button variant="outline">Back Of License</button>
+            <Button variant="outline">Front Of License</Button>
+            <Button variant="outline">Back Of License</Button>
           </div>
         </div>
       </div>
@@ -515,7 +515,7 @@ export default function PatientDashboard() {
      <div className="w-full max-w-2xl mx-auto p-4 md:p-6 lg:p-8">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-semibold text-gray-800">Files/Documents</h2>
-        <button variant="ghost" className="text-blue-600 hover:bg-blue-50">
+        <button  className="text-blue-600 hover:bg-blue-50">
           <DownloadCloud className="w-5 h-5 mr-2" />
           Download all
         </button>
@@ -539,7 +539,7 @@ export default function PatientDashboard() {
                 <Download className="w-4 h-4 text-blue-600" />
               </div>
             ) : (
-              <button variant="ghost" size="icon" className="text-blue-600 hover:bg-blue-50">
+              <button   className="text-blue-600 hover:bg-blue-50">
                 <Download className="w-5 h-5" />
               </button>
             )}
