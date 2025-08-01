@@ -4,6 +4,7 @@ import { useState } from "react";
 import { MessageSquare, CheckCircle2, XCircle, Settings, DownloadCloud, FileText, Download, User, Eye } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/app/components/ui/Button";
 export default function PatientDashboard() {
   const [activeTab, setActiveTab] = useState("appointment");
   const [noteText, setNoteText] = useState("");
@@ -187,13 +188,13 @@ export default function PatientDashboard() {
     <div className="min-h-screen bg-gray-100 p-4 md:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Top Section: Patient Profile and Notes */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-white rounded-lg shadow p-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-white rounded-lg shadow p-6 ">
           {/* Patient Profile */}
-          <div className="flex flex-col items-start gap-4">
-            <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center text-white text-xl font-semibold">
+          <div className="flex flex-col items-start border-r border-[#DCDCDC] gap-4 pr-5">
+             <div className="w-16 h-16 rounded-full bg-[#2E8BC9] flex items-center justify-center text-white text-xl font-semibold">
                 Ma
-              </div>
+              </div> <div className="flex items-center gap-4 ">
+            
               <div>
                 <div className="flex items-center gap-2">
                   <h2 className="text-2xl font-bold">Mahmudur Rahman</h2>
@@ -204,8 +205,8 @@ export default function PatientDashboard() {
                 <p className="text-sm text-gray-500">Patient ID: P6Q7R8</p>
               </div>
             </div>
-            <button className="w-full md:w-auto bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md flex items-center justify-center">
-              <MessageSquare className="w-4 h-4 mr-2" />
+            <button className="w-full  bg-[#2E8BC9] hover:bg-blue-600 text-white px-4 py-2 rounded-md flex items-center justify-center">
+      
               Send Message
             </button>
           </div>
@@ -218,7 +219,7 @@ export default function PatientDashboard() {
             </p>
             <textarea
               placeholder="Type your note..."
-              className="min-h-[100px] w-full p-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="min-h-[100px] w-full p-2 shadow-md bg-[#F5F7F9] rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
               value={noteText}
               onChange={(e) => setNoteText(e.target.value)}
             />
@@ -228,11 +229,11 @@ export default function PatientDashboard() {
         {/* Bottom Section: Tabbed Interface */}
         <div className="w-full bg-white rounded-lg shadow p-6">
           {/* Tabs */}
-          <div className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-1 mb-6">
+          <div className="grid w-3/4 grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-1 bg-[#F5F7F9] p-3  rounded-md mb-6">
             <button
               onClick={() => setActiveTab("appointment")}
               className={`py-2 px-4 text-sm font-medium rounded-md ${
-                activeTab === "appointment" ? "bg-blue-100 text-blue-600" : "text-gray-500 hover:text-gray-700"
+                activeTab === "appointment" ? "bg-white p-5 text-gray-500" : "text-gray-500 hover:text-gray-700"
               }`}
             >
               Appointment
@@ -240,7 +241,7 @@ export default function PatientDashboard() {
             <button
               onClick={() => setActiveTab("patients-info")}
               className={`py-2 px-4 text-sm font-medium rounded-md ${
-                activeTab === "patients-info" ? "bg-blue-100 text-blue-600" : "text-gray-500 hover:text-gray-700"
+                activeTab === "patients-info" ? "bg-white p-5 text-gray-500" : "text-gray-500 hover:text-gray-700"
               }`}
             >
               Patients Info
@@ -285,8 +286,8 @@ export default function PatientDashboard() {
               {appointments.map((appointment) => (
                 <div
                   key={appointment.id}
-                  className={`grid grid-cols-1 md:grid-cols-4 items-center gap-4 p-4 rounded-lg border ${
-                    appointment.isHighlighted ? "border-l-4 border-blue-500 bg-blue-50" : "bg-white"
+                  className={`grid grid-cols-1 md:grid-cols-4 items-center gap-4 p-4 rounded-lg shadow-sm ${
+                    appointment.isHighlighted ? "border-l-4 border-[#2E8BC9] bg-blue-50" : "bg-white border-l-4 border-[#DCDCDC]"
                   }`}
                 >
                   <div className="flex flex-col">
@@ -310,7 +311,7 @@ export default function PatientDashboard() {
                     
                   </div>
                   <div className="flex flex-col items-start md:items-end">
-                    <span className="text-sm text-gray-500 md:sr-only">Action</span>
+                    <span className="text-sm text-gray-500 ">Action</span>
                     <Link href="/patients/details" className="text-blue-500 hover:underline font-medium">
                       Details
                     </Link>
@@ -418,8 +419,8 @@ export default function PatientDashboard() {
         <div className="pt-4">
           <p className="text-sm text-muted-foreground mb-3">Upload Driver&apos;s License Images</p>
           <div className="flex gap-3">
-            <button variant="outline">Front Of License</button>
-            <button variant="outline">Back Of License</button>
+            <Button variant="outline">Front Of License</Button>
+            <Button variant="outline">Back Of License</Button>
           </div>
         </div>
       </div>
@@ -429,10 +430,10 @@ export default function PatientDashboard() {
      <div className="w-full max-w-2xl mx-auto p-4 md:p-6 lg:p-8">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-semibold text-gray-800">Files/Documents</h2>
-        <button variant="ghost" className="text-blue-600 hover:bg-blue-50">
+        <Button  className="text-blue-600 hover:bg-blue-50">
           <DownloadCloud className="w-5 h-5 mr-2" />
           Download all
-        </button>
+        </Button>
       </div>
       <div className="space-y-4">
         {documents.map((doc, index) => (
@@ -453,9 +454,9 @@ export default function PatientDashboard() {
                 <Download className="w-4 h-4 text-blue-600" />
               </div>
             ) : (
-              <button variant="ghost" size="icon" className="text-blue-600 hover:bg-blue-50">
+              <Button  className="text-blue-600 hover:bg-blue-50">
                 <Download className="w-5 h-5" />
-              </button>
+              </Button>
             )}
           </div>
         ))}

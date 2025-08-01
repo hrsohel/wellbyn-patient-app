@@ -29,6 +29,7 @@ const doctors: Doctor[] = [
 const calendarData: CalendarData = {
   "2025-02": {
     1: [{ type: "morning", slots: "10+", color: "blue" }],
+     5: [{ type: "morning", slots: "20+", color: "red" }],
     // ... rest of your calendar data
   }
 }
@@ -92,20 +93,20 @@ export default function DoctorAppointmentScheduler() {
 
           weekDays.push(
             <div key={day} className={`aspect-2/3 border border-gray-200 p-2 relative bg-white ${day === 17 ? 'bg-blue-500' : ''}`}>
-              <div className={`text-xs font-medium mb-1 ${day === 17 ? 'text-white' : 'text-gray-900'}`}>{day}</div>
+              <div className={`text-md text-end font-medium mb-1 ${day === 17 ? 'text-white ' : 'text-gray-900'}`}>{day}</div>
               <div className="space-y-0.5">
                 {dayData.map((slot, index) => (
                   <div
                     key={index}
-                    className="text-xs px-0.5 py-0.5 rounded font-medium"
+                    className="text-xs px-1.5 py-0.5 rounded font-medium flex justify-between"
                     style={{
-                      backgroundColor: slot.type === 'morning' ? '#3B82F6' : 
-                                     slot.type === 'afternoon' ? '#10B981' : 
-                                     slot.type === 'evening' ? '#F59E0B' : '#6B7280',
-                      color: 'white'
+                      backgroundColor: slot.type === 'morning' ? '#FBF7EB' : 
+                                     slot.type === 'afternoon' ? '#F0F5FE' : 
+                                     slot.type === 'evening' ? '#F0F5FE' : '#EDF0F3',
+                      color: 'black'
                     }}
                   >
-                    {slot.slots}
+                   <div> Dr.sakil</div>{slot.slots}
                   </div>
                 ))}
               </div>
@@ -144,11 +145,25 @@ export default function DoctorAppointmentScheduler() {
         </div>
 
         <div className="flex-1 overflow-y-auto">
+<div className="flex p-4 bg-[#EDF4FA]">
+ <div className="text-xs text-gray-500 w-12 mr-3">
+  ID
+ </div>
+ <div className="flex-1">
+  <div className="text-xs text-gray-500 w-12 mr-3">
+ Doctor
+ </div>
+ </div>
+  
+
+</div>
+
+
           {filteredDoctors.map((doctor) => (
             <div
               key={doctor.id}
               className={`flex items-center p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 ${
-                selectedDoctor.id === doctor.id ? "bg-blue-50 border-l-4 border-l-blue-500" : ""
+                selectedDoctor.id === doctor.id ? "bg-white " : ""
               }`}
               onClick={() => setSelectedDoctor(doctor)}
             >
@@ -202,7 +217,7 @@ export default function DoctorAppointmentScheduler() {
         <div className="p-4">
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 w-fit h-fit">
             {/* Calendar Header */}
-            <div className="grid grid-cols-7 border-b border-gray-200">
+            <div className="grid grid-cols-12 border-b border-gray-200">
               {weekDays.map((day) => (
                 <div key={day} className="p-3 text-center text-sm font-medium text-gray-700 bg-gray-50 border-r border-gray-200 last:border-r-0 w-24">
                   {day}

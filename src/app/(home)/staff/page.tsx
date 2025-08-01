@@ -1,4 +1,5 @@
 import { Plus, Download, SquarePen, Trash2 } from "lucide-react";
+import Link from "next/link";
 
 const staffData = [
   {
@@ -101,10 +102,13 @@ export default function StaffTable() {
               <Download className="h-4 w-4" />
               Export Data
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md bg-[#2E8BC9] text-white hover:bg-blue-700">
+            <Link href="/staff/info1">
+             <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md bg-[#2E8BC9] text-white hover:bg-blue-700">
               <Plus className="h-4 w-4" />
               Add New
             </button>
+            </Link>
+           
           </div>
         </div>
         <div className="overflow-x-auto">
@@ -154,10 +158,13 @@ export default function StaffTable() {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <div className="flex items-center space-x-2">
-                      <button className="p-2 text-blue-600 hover:text-blue-800 rounded-full hover:bg-blue-50">
+                      <Link href="/staff/info">
+                           <button className="p-2 text-blue-600 hover:text-blue-800 rounded-full hover:bg-blue-50">
                         <SquarePen className="h-4 w-4" />
                         <span className="sr-only">Edit</span>
                       </button>
+                      </Link>
+                 
                       <button className="p-2 text-red-600 hover:text-red-800 rounded-full hover:bg-red-50">
                         <Trash2 className="h-4 w-4" />
                         <span className="sr-only">Delete</span>

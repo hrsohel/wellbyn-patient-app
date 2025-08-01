@@ -4,10 +4,20 @@ import { useState } from "react";
 import { MessageSquare, CheckCircle2, XCircle, Download, CheckCircle, Clock, Calendar, MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+
+type VitalSigns = {
+  height: string;
+  weight: string;
+  bloodPressure: string;
+  upperRespiratoryInfection: boolean;
+  heartRate: string;
+  temperature: string;
+};
+
 export default function PatientDashboard() {
   const [activeTab, setActiveTab] = useState("appointment");
   const [noteText, setNoteText] = useState("");
- const [vitalSigns, setVitalSigns] = useState({
+  const [vitalSigns, setVitalSigns] = useState<VitalSigns>({
     height: '',
     weight: '72',
     bloodPressure: '',
@@ -16,7 +26,7 @@ export default function PatientDashboard() {
     temperature: '98 bpm'
   });
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: keyof VitalSigns, value: string | boolean) => {
     setVitalSigns(prev => ({
       ...prev,
       [field]: value
