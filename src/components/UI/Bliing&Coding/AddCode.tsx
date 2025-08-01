@@ -8,7 +8,7 @@ export default function AddCode({showAddCode, setShowAddCode}: {showAddCode: boo
         <div className='flex items-center justify-center gap-4 flex-wrap md:flex-nowrap'>
             <div className='w-full'>
                 <label htmlFor="code-type">Code Type </label>
-                <select name="code-type" id="code-type" className='w-full px-2 text-lg border-none outline-none mt-3 shadow-md py-3 rounded-md'>
+                <select name="code-type" id="code-type" className='w-full px-2 text-lg border-none outline-none mt-3 shadow-md py-3 rounded-md focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none'>
                     <option value="">Select type</option>
                     <option value="">Option 1</option>
                     <option value="">Option 2</option>
@@ -16,21 +16,21 @@ export default function AddCode({showAddCode, setShowAddCode}: {showAddCode: boo
             </div>
             <div className='w-full'>
                 <label htmlFor="code">Code </label>
-                <input type="text" name="code" id="code" placeholder='96541' className='w-full px-2 text-lg border-none outline-none mt-3 shadow-md py-3 rounded-md'/>
+                <input type="text" name="code" id="code" placeholder='96541' className='w-full px-2 text-lg border-none outline-none mt-3 shadow-md py-3 rounded-md focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none'/>
             </div>
         </div>
         <div className='mt-8'>
             <label htmlFor="description">Description </label>
-            <textarea name="description" id="description" placeholder='Enter code description...' className='w-full px-2 text-lg border-none outline-none mt-3 shadow-md py-3 rounded-md'></textarea>
+            <textarea name="description" id="description" placeholder='Enter code description...' className='w-full px-2 text-lg border-none outline-none mt-3 shadow-md py-3 rounded-md focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none'></textarea>
         </div>
         <div className='flex items-center justify-center gap-4 flex-wrap md:flex-nowrap mt-8'>
             <div className='w-full'>
                 <label htmlFor="modifier">Modifier </label>
-                <input type="text" name="modifier" id="modifier" placeholder='25,59, etc.' className='w-full px-2 text-lg border-none outline-none mt-3 shadow-md py-3 rounded-md'/>
+                <input type="text" name="modifier" id="modifier" placeholder='25,59, etc.' className='w-full px-2 text-lg border-none outline-none mt-3 shadow-md py-3 rounded-md focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none'/>
             </div>
             <div className='w-full'>
                 <label htmlFor="units">Units </label>
-                <input type="text" name="units" id="units" placeholder='1' className='w-full px-2 text-lg border-none outline-none mt-3 shadow-md py-3 rounded-md'/>
+                <input type="text" name="units" id="units" placeholder='1' className='w-full px-2 text-lg border-none outline-none mt-3 shadow-md py-3 rounded-md focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none '/>
             </div>
         </div>
         <div className='mt-8 flex gap-4'>
