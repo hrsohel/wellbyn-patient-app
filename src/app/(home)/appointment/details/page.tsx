@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Calendar, Users, Eye, Edit, Search, TrendingUp } from "lucide-react"
+import { Calendar, Users, Eye, Edit, Search, TrendingUp, User, Mail, Phone } from "lucide-react"
 
 const appointmentsData = [
   {
@@ -81,75 +81,79 @@ export default function Component() {
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Doctor Profile Card */}
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden lg:col-span-1">
-            <div className="p-6">
-              <div className="flex items-start space-x-4">
+
+    <div className="w-full mx-auto p-6 bg-gray-50">
+      <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div className="p-6">
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Doctor Profile Section */}
+            <div className="flex-1 lg:w-1/2">
+              <div className="flex items-start gap-4">
                 <div className="relative">
-                  <Image
-                    src="/placeholder.svg?height=60&width=60"
-                    alt="Dr. Mahmudur Rahman"
-                    width={60}
-                    height={60}
-                    className="rounded-full object-cover"
-                  />
+                  <div className="w-20 h-20 bg-teal-500 rounded-full flex items-center justify-center">
+                    <User className="w-10 h-10 text-white" />
+                  </div>
                 </div>
-                <div className="flex-1 space-y-2">
-                  <h2 className="text-lg font-semibold text-gray-900">Dr. Mahmudur Rahman</h2>
-                  <div className="space-y-1 text-sm text-gray-600">
-                    <div className="flex items-center space-x-2">
-                      <span className="text-blue-600">🆔</span>
-                      <span>Doctor ID: P60768</span>
+                <div className="flex-1">
+                  <h2 className="text-xl font-semibold text-gray-900 mb-4">Dr. Mahmudur Rahman</h2>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3 text-sm text-gray-600">
+                      <User className="w-4 h-4" />
+                      <span className="font-medium">Doctor ID :</span>
+                      <span>PGD7RB</span>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-gray-500">📧</span>
-                      <span>omahmudur9@gmail.com</span>
+                    
+                    <div className="flex items-center gap-3 text-sm text-gray-600">
+                      <Mail className="w-4 h-4" />
+                      <span className="font-medium">Email :</span>
+                      <span>omahmuduhr@gmail.com</span>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-gray-500">📱</span>
-                      <span>+8801770504677</span>
+                    
+                    <div className="flex items-center gap-3 text-sm text-gray-600">
+                      <Phone className="w-4 h-4" />
+                      <span className="font-medium">Mobile :</span>
+                      <span>+8801770504877</span>
                     </div>
                   </div>
-                  <button className="p-0 h-auto text-blue-600 text-sm hover:text-blue-800 hover:underline focus:outline-none">
-                    ✏️ Edit
+                  
+                  <button className="mt-4 text-teal-600 hover:text-teal-700 hover:bg-teal-50 p-2 rounded-md text-sm font-medium inline-flex items-center transition-colors">
+                    <Edit className="w-4 h-4 mr-1" />
+                    Edit
                   </button>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Appointments Summary */}
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden lg:col-span-2">
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-semibold text-gray-900">Appointments</h3>
-              </div>
-              <div className="grid grid-cols-2 gap-6">
+            
+            {/* Appointments Section */}
+            <div className="flex-1 lg:w-1/2">
+              <h3 className="text-lg font-medium text-gray-900 mb-4">Appointments</h3>
+              
+              <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
-                  <div className="flex items-center justify-center space-x-2 mb-2">
-                    <Calendar className="h-5 w-5 text-blue-600" />
-                    <span className="text-sm text-gray-600">Today</span>
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <Calendar className="w-6 h-6 text-blue-500" />
                   </div>
-                  <div className="text-3xl font-bold text-gray-900">10</div>
+                  <div className="text-sm text-gray-600 mb-1">Today</div>
+                  <div className="text-2xl font-bold text-gray-900">10</div>
                 </div>
+                
                 <div className="text-center">
-                  <div className="flex items-center justify-center space-x-2 mb-2">
-                    <Users className="h-5 w-5 text-purple-600" />
-                    <span className="text-sm text-gray-600">Total Patient</span>
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <User className="w-6 h-6 text-purple-500" />
                   </div>
-                  <div className="flex items-center justify-center space-x-2">
-                    <div className="text-3xl font-bold text-gray-900">7</div>
-                    <div className="flex items-center text-green-600 text-sm">
-                      <TrendingUp className="h-4 w-4 mr-1" />
-                      +19%
-                    </div>
+                  <div className="text-sm text-gray-600 mb-1">Total Patient</div>
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="text-2xl font-bold text-gray-900">7</div>
+                    <div className="text-xs text-green-600 font-medium">+18%</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
 
         {/* Appointments Table */}
         <div className="bg-white rounded-lg shadow-sm overflow-hidden">

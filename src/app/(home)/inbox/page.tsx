@@ -39,9 +39,9 @@ const ChatWindow = ({ contactName, messages }: ChatWindowProps) => {
   }
 
   return (
-    <div className="flex-1 flex flex-col bg-gray-50">
+    <div className="flex-1 flex flex-col bg-white">
       {/* Chat header */}
-      <div className="p-4 border-b bg-white">
+      <div className="p-4 border-b border-[#F3F3F3] bg-[#DCDCDC]">
         <h2 className="text-xl font-semibold">{contactName}</h2>
       </div>
 
@@ -126,14 +126,14 @@ const getAvatarColor = (initial: string) => {
 
 const InboxSidebar = ({ contacts }: InboxSidebarProps) => {
   return (
-    <div className="w-full md:w-1/3 lg:w-1/4 border-r bg-white flex flex-col">
+    <div className="w-full p-2 md:w-1/3 lg:w-1/4  px-2 bg-white flex flex-col">
       {/* Sidebar header */}
-      <div className="p-4 border-b">
+      <div className="p-4 ">
         <h2 className="text-xl font-semibold">Inbox</h2>
       </div>
 
       {/* Message type tabs */}
-      <div className="p-4 space-y-2 border-b">
+      <div className="p-4 space-y-2 ">
         <div className="flex items-center gap-2 p-2 rounded-lg bg-blue-50 text-blue-700 font-medium">
          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M6.72266 1.59961H17.2773C20.1121 1.59969 22.4101 3.89769 22.4102 6.73242V17.2871C22.4101 20.1218 20.1121 22.4198 17.2773 22.4199H6.72266C3.88792 22.4198 1.58993 20.1218 1.58984 17.2871V6.73242C1.58993 3.89769 3.88792 1.59969 6.72266 1.59961Z" fill="url(#paint0_linear_3247_51400)" stroke="white"/>
@@ -246,7 +246,7 @@ export default function ChatApp() {
   ]
 
   return (
-    <div className="flex h-screen bg-white">
+    <div className="flex gap-4 p-5 h-screen bg-[#F6F8FA]">
       <InboxSidebar contacts={contacts} />
       <ChatWindow contactName={activeContact} messages={messages} />
     </div>
