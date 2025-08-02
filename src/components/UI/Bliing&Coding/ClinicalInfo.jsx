@@ -162,7 +162,7 @@ export default function ClinicalInfo() {
                 <div>
                     <label htmlFor="box-17" className='font-[500] text-[18px] text-[#3D3D3D]'>Box 17: Name of Referring Provider or Other Source</label>
                 </div>
-                <div className='flex items-center justify-center gap-3 flex-wrap md:flex-nowrap'>
+                <div className='flex items-center justify-center gap-2 flex-wrap md:flex-nowrap'>
                     {
                         ["First Name", "Middle", "Last"].map((nameData, index) => (
                             <InputComponent

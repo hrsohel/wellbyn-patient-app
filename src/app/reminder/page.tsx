@@ -31,8 +31,8 @@ const Reminder = () => {
     return (
         <div className="p-2 md:p-8">
             <MenuBar />
-            <div className=" rounded-xl shadow-md p-3 md:p-6 mt-8">
-                <div className="flex justify-between items-center mb-4 bg-white p-4 rounded-md">
+            <div className=" rounded-xl  mt-8">
+                <div className="flex justify-between items-center mb-4 bg-white p-4 rounded-md shadow-md">
                     <div>
                         <h2 className="text-xl font-semibold">Reminder</h2>
                         <p className="text-sm text-gray-500">Manage all the task reminder</p>
@@ -41,8 +41,8 @@ const Reminder = () => {
                         + Add Task
                     </button>
                 </div>
-                <div className="mt-4 bg-white flex gap-4 justify-between overflow-x-auto items-start">
-                    <div className='w-full rounded-l-lg relative min-w-[600px] md:w-full '>
+                <div className="mt-6 bg-white flex gap-4 justify-between overflow-x-auto items-start shadow-md rounded-md">
+                    <div className='w-full rounded-l-lg relative min-w-[600px] md:w-full p-2'>
                         {tasks.map((task) => (
                             <div
                                 key={task.id}
@@ -53,7 +53,7 @@ const Reminder = () => {
                                         type="checkbox"
                                         checked={task.completed}
                                         onChange={() => toggleComplete(task.id)}
-                                        className="min-w-5 min-h-5 appearance-none border-none outline-none ring-1 ring-gray-300 rounded-sm shadow-md checked:bg-blue-500 checked:ring-blue-500 transition-all"
+                                        className="min-w-6 min-h-6 appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
                                     />
                                     <span
                                         className={`text-base truncate ${task.completed ? 'line-through text-gray-400' : 'text-black'}`}
@@ -124,10 +124,10 @@ const Reminder = () => {
                         showTaskform ? <div className='p-3 md:w-[30%] w-full md:static absolute top-0 left-0 min-h-full bg-slate-100'>
                             <form method="post" className=' w-full'>
                                 <div className='w-full'>
-                                    <label htmlFor="title" className='text-lg'>Title</label>
+                                    <label htmlFor="title" className='text-[20px] font-[500]'>Title</label>
                                     <input type="text" name="title" id="title" className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none' placeholder='Write...' />
                                 </div>
-                                <p className='text-lg pt-8'>Priority</p>
+                                <p className='text-[20px] font-[500] pt-8'>Priority</p>
                                 <div className='flex items-center justify-start gap-8 mt-4'>
                                     <div className='flex items-center justify-center gap-3'>
                                         <input type="radio" name="priority" className='w-5 h-5' id="high" />
@@ -139,7 +139,7 @@ const Reminder = () => {
                                     </div>
                                 </div>
                                 <div className='mt-8'>
-                                    <label htmlFor="name" className='text-lg'>Choose name</label>
+                                    <label htmlFor="name" className='text-[20px] font-[500]'>Choose name</label>
                                     <select name="name" id="name" className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none' >
                                         <option value="">Select name</option>
                                         <option value="">Value 2</option>
@@ -148,11 +148,11 @@ const Reminder = () => {
                                     </select>
                                 </div>
                                 <div className='mt-8'>
-                                    <label htmlFor="note" className='text-lg'>Note</label>
+                                    <label htmlFor="note" className='text-[20px] font-[500]'>Note</label>
                                     <textarea name="note" id="note" placeholder='Type note' className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none'></textarea>
                                 </div>
                                 <div className='mt-8'>
-                                    <label htmlFor="due-date" className='text-lg'>Due date</label>
+                                    <label htmlFor="due-date" className='text-[20px] font-[500]'>Due date</label>
                                     <input type='date' name="due-date" id="due-date" placeholder='Type note' className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none' />
                                 </div>
                                 <div className='mt-8 flex items-center justify-center gap-4'>
