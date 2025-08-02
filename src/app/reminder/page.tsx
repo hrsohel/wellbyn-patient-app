@@ -42,18 +42,18 @@ const Reminder = () => {
                     </button>
                 </div>
                 <div className="mt-4 bg-white flex gap-4 justify-between overflow-x-auto items-start">
-                    <div className='w-full rounded-l-lg relative min-w-[800px] md:w-full '>
+                    <div className='w-full rounded-l-lg relative min-w-[600px] md:w-full '>
                         {tasks.map((task) => (
                             <div
                                 key={task.id}
                                 className="flex flex-wrap md:flex-nowrap items-center justify-between border-b border-[#e9e9e9] rounded-md p-3 py-4"
                             >
-                                <div className="flex items-center gap-2 flex-1 min-w-0">
+                                <div className="flex items-center gap-6 flex-1 min-w-0">
                                     <input
                                         type="checkbox"
                                         checked={task.completed}
                                         onChange={() => toggleComplete(task.id)}
-                                        className="w-5 h-5 appearance-none border-none outline-none ring-1 ring-gray-300 rounded-sm shadow-md checked:bg-blue-500 checked:ring-blue-500 transition-all"
+                                        className="min-w-5 min-h-5 appearance-none border-none outline-none ring-1 ring-gray-300 rounded-sm shadow-md checked:bg-blue-500 checked:ring-blue-500 transition-all"
                                     />
                                     <span
                                         className={`text-base truncate ${task.completed ? 'line-through text-gray-400' : 'text-black'}`}
@@ -66,11 +66,15 @@ const Reminder = () => {
                                         </span>
                                     )}
                                 </div>
-                                <div className="flex items-center gap-2 flex-1 justify-center">
+                                <div className="flex items-center gap-2 flex-1 justify-center -ml-12">
                                     {task.status === 'complete' ? (
-                                        <span className="text-green-600 text-sm bg-green-100 px-2 py-0.5 rounded-full">
-                                            ✓ Complete
-                                        </span>
+                                        <div className="text-green-600 text-sm bg-green-100 px-2 py-0.5 rounded-full flex items-center justify-center gap-1">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M14.6668 8.00065C14.6668 4.31875 11.682 1.33398 8.00016 1.33398C4.31826 1.33398 1.3335 4.31875 1.3335 8.00065C1.3335 11.6825 4.31826 14.6673 8.00016 14.6673C11.682 14.6673 14.6668 11.6825 14.6668 8.00065Z" stroke="#237B10" stroke-width="1.5"/>
+                                                <path d="M5.3335 8.33333L7.00016 10L10.6668 6" stroke="#237B10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Complete
+                                        </div>
                                     ) : task.priority === 'high' ? (
                                         <span className="text-red-600 text-sm bg-red-100 px-2 py-0.5 rounded-full">
                                             ↑ High
@@ -81,22 +85,23 @@ const Reminder = () => {
                                         </span>
                                     ) : null}
                                 </div>
-                                <div className="flex items-center gap-4 flex-1 justify-end min-w-0">
-                                    <div className="flex items-center">
+                                <div className="flex items-center gap-6 flex-1 justify-end min-w-0 -ml-12">
+                                    <div className="flex items-center w-[7rem] ">
                                         {[1, 2, 3].map((_, i) => (
                                             <img
                                                 key={i}
                                                 src={`https://i.pravatar.cc/150?img=${i + 1}`}
                                                 alt="Avatar"
-                                                className="w-9 h-9 rounded-full -ml-2 border-2 border-white"
+                                                className="min-w-9 min-h-9 rounded-full -ml-2 border-2 border-white"
                                             />
                                         ))}
-                                        <div className="bg-[#2E8BC9] w-9 h-9 text-white text-xs rounded-full border-2 -ml-2 border-white flex items-center justify-center">
-                                            <span>+5 </span>
+                                        <div className="bg-[#2E8BC9] min-w-9 min-h-9 text-white text-xs rounded-full border-2 -ml-2 border-white flex items-center justify-center">
+                                            <span>+5</span>
                                         </div>
                                     </div>
-                                    <span className="text-sm text-gray-500 truncate">{task.date}</span>
-                                    <Image
+                                    <span className="text-sm text-gray-500 -ml-2">{task.date}</span>
+                                    <div className='flex items-center justify-center gap-6'>
+                                        <Image
                                         src="/Frame 2147226750.svg"
                                         alt="update"
                                         width="30"
@@ -108,8 +113,9 @@ const Reminder = () => {
                                         alt="delete"
                                         width="20"
                                         height="20"
-                                        className="text-blue-500 hover:text-blue-700 cursor-pointer"
+                                        className="text-blue-500 hover:text-blue-700 cursor-pointer -ml-2"
                                     />
+                                    </div>
                                 </div>
                             </div>
                         ))}
