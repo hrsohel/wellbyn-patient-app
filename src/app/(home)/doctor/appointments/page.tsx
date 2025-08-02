@@ -4,7 +4,7 @@ import { Stethoscope, Mail, Phone, Edit, CalendarDays, Clock, Plus, X, Info, Che
 import Link from 'next/link';
 
 export default function DoctorDashboard() {
-  const [activeTab, setActiveTab] = useState('availability');
+  const [activeTab, setActiveTab] = useState('appointment');
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
 
@@ -127,7 +127,7 @@ const patients = [
   const availableSlotsSunday = [
     { start: "11:45 AM", end: "4:30 PM" },
     { start: "6:20 PM", end: "10:05 PM" },
-    // ... rest of the slots
+     { start: "6:20 PM", end: "10:05 PM" }, { start: "6:20 PM", end: "10:05 PM" }, { start: "6:20 PM", end: "10:05 PM" },
   ];
  const appointments = [
     {
@@ -284,10 +284,10 @@ const patients = [
       <div className="bg-white rounded-lg shadow-sm p-6">
         {/* Tabs */}
         <div className="flex mb-6">
-          <div className="flex space-x-1 rounded-lg bg-gray-100 p-1 max-w-md">
+          <div className="flex space-x-1 rounded-lg bg-gray-100 p-3 max-w-md">
             <button
               onClick={() => setActiveTab('appointment')}
-              className={`px-4 py-2 text-sm font-medium rounded-md ${activeTab === 'all-appointment' ? 'bg-white shadow-sm text-gray-900' : 'text-gray-600'}`}
+              className={`px-4 py-2 text-sm font-medium rounded-md ${activeTab === 'appointment' ? 'bg-white shadow-sm text-gray-900' : 'text-gray-600'}`}
             >
               All Appointment
             </button>
@@ -332,10 +332,11 @@ const patients = [
               </div>
 
               {/* Right Column: Available Slot Management */}
-              <div className="space-y-6 w-1/4 p-4 border rounded-lg bg-white">
-                <h4 className="text-lg font-semibold">Available Slot Sunday</h4>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
+              <div className="space-y-2 w-1/4 p-4  rounded-lg bg-[#F5F7F9]">
+                <h4 className="text-sm ">Available Slot </h4>
+                <div>Sunday</div>
+                <div className="grid grid-cols-2 gap-4 border-t border-[#DCDCDC]">
+                  <div className='pt-2'>
                     <label htmlFor="start-time" className="block text-sm font-medium text-gray-700 mb-1">
                       Start Time
                     </label>
@@ -344,15 +345,23 @@ const patients = [
                         id="start-time"
                         type="text"
                         placeholder="4:30 AM"
-                        className="block w-full pl-8 pr-8 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="block w-full pl-8 pr-8 py-2 bg-white rounded-md shadow-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                         value={startTime}
                         onChange={(e) => setStartTime(e.target.value)}
                       />
-                      <Clock className="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                      <Info className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                
+                     
+                     <span className="absolute right-[15px] top-[16px] -translate-y-1/2 w-4 h-4 rounded-lg  text-white"> 
+
+<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.5 22C18.0228 22 22.5 17.5228 22.5 12C22.5 6.47715 18.0228 2 12.5 2C6.97715 2 2.5 6.47715 2.5 12C2.5 17.5228 6.97715 22 12.5 22Z" fill="#2E8BC9"/>
+<path d="M12.5 9V13L14.5 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </span>
                     </div>
                   </div>
-                  <div>
+                  <div className='pt-2'>
                     <label htmlFor="end-time" className="block text-sm font-medium text-gray-700 mb-1">
                       End Time
                     </label>
@@ -361,12 +370,19 @@ const patients = [
                         id="end-time"
                         type="text"
                         placeholder="4:30 PM"
-                        className="block w-full pl-8 pr-8 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="block w-full pl-8 pr-8 py-2 bg-white rounded-md shadow-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                         value={endTime}
                         onChange={(e) => setEndTime(e.target.value)}
                       />
-                      <Clock className="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                      <Info className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                       
+                     <span className="absolute right-[15px] top-[16px] -translate-y-1/2 w-4 h-4 rounded-lg  text-white"> 
+
+<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.5 22C18.0228 22 22.5 17.5228 22.5 12C22.5 6.47715 18.0228 2 12.5 2C6.97715 2 2.5 6.47715 2.5 12C2.5 17.5228 6.97715 22 12.5 22Z" fill="#2E8BC9"/>
+<path d="M12.5 9V13L14.5 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </span>
                     </div>
                   </div>
                 </div>
@@ -374,22 +390,22 @@ const patients = [
                 <div className="space-y-3">
                   {availableSlotsSunday.map((slot, index) => (
                     <div key={index} className="flex items-center gap-2">
-                      <button className="flex-1 flex justify-between items-center px-4 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50">
+                      <button className="flex-1  flex justify-between items-center px-4 py-2 shadow-md rounded-md bg-white hover:bg-gray-50">
                         {slot.start} <X className="w-4 h-4 text-gray-500" />
                       </button>
-                      <button className="flex-1 flex justify-between items-center px-4 py-2 border border-gray-300 rounded-md bg-transparent hover:bg-gray-50">
+                      <button className="flex-1  flex justify-between items-center px-4 py-2 shadow-md rounded-md bg-white hover:bg-gray-50">
                         {slot.end} <X className="w-4 h-4 text-gray-500" />
                       </button>
                     </div>
                   ))}
-                </div>
-
-                <button className="w-full flex items-center justify-center text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-4 py-2 rounded-md">
+                 <button className=" flex items-center shadow-md bg-white text-[#3D3D3D] hover:text-blue-800 hover:bg-blue-50 px-4 py-2 rounded-md">
                   <Plus className="w-4 h-4 mr-2" />
                   Add New
-                </button>
+                </button> </div>
 
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md shadow-sm">
+              
+
+                <button className="w-full bg-[#2E8BC9] hover:bg-blue-700 text-white px-4 py-2 rounded-md shadow-md">
                   Save Change
                 </button>
               </div>
@@ -397,9 +413,9 @@ const patients = [
           </div>
         )}
           {activeTab === "appointment" && (
-            <div> <div className="flex items-center gap-4">
+            <div> <div className="flex items-center w-full gap-4">
   {/* Patients/Doctors Select */}
-  <div className="relative w-32">
+  <div className="relative w-1/2">
     <select 
       defaultValue="patients"
       className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none bg-white"
@@ -415,7 +431,7 @@ const patients = [
   </div>
 
   {/* Status Select */}
-  <div className="relative w-32">
+  <div className="relative w-1/2">
     <select 
       defaultValue="upcoming"
       className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none bg-white"
@@ -433,7 +449,7 @@ const patients = [
 
   {/* Clear Filter Button */}
   <button 
-    className="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    className="px-3 w-30 py-2 text-sm font-medium text-[#2B4DCA]   rounded-md  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
   >
     Clear filter
   </button>

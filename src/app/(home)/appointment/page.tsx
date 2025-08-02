@@ -62,23 +62,23 @@ export default function AppointmentDashboard() {
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header Tabs */}
-        <div className="flex gap-1 p-3 mb-8 bg-white w-md rounded-lg">
+        <div className="flex gap-3 p-3 mb-8 bg-white w-md rounded-lg">
           <button
             onClick={() => setActiveTab("doctor")}
-            className={`px-4 py-2 text-sm font-medium border border-gray-200 rounded-l-md ${
+            className={`px-4 py-2 text-sm font-medium   ${
               activeTab === "doctor"
-                ? "bg-white shadow-md text-gray-700"
-                : "bg-gray-100 text-gray-500"
+                ? "bg-white shadow-md rounded-md text-gray-700"
+                : " text-gray-500"
             } hover:bg-gray-50`}
           >
             View As Doctor
           </button>
           <button
             onClick={() => setActiveTab("patient")}
-            className={`px-4 py-2 text-sm font-medium border border-gray-200 rounded-r-md ${
+            className={`px-4 py-2 text-sm font-medium  ${
               activeTab === "patient"
-                ? "bg-white shadow-md text-gray-700"
-                : "bg-gray-100 text-gray-500"
+             ? "bg-white shadow-md rounded-md text-gray-700"
+                : " text-gray-500"
             } hover:bg-gray-50`}
           >
             View As Patient
@@ -106,7 +106,7 @@ export default function AppointmentDashboard() {
             <div className="flex gap-4 mb-8">
               {/* Today Select */}
               <div className="relative w-full">
-                <select className="w-full px-3 py-2 text-sm shadow-md rounded-md appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <select className="w-full px-3 py-2 text-sm shadow-sm rounded-md appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
                   <option value="today">Today</option>
                   <option value="tomorrow">Tomorrow</option>
                   <option value="this-week">This Week</option>
@@ -130,7 +130,7 @@ export default function AppointmentDashboard() {
 
               {/* Doctor Select */}
               <div className="relative w-full">
-                <select className="w-full px-3 py-2 text-sm shadow-md rounded-md appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <select className="w-full px-3 py-2 text-sm shadow-sm rounded-md appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
                   <option value="">Select doctor name</option>
                   <option value="dr-marrk">Dr. Moule Marrk</option>
                   <option value="dr-smith">Dr. John Smith</option>
@@ -155,7 +155,7 @@ export default function AppointmentDashboard() {
 
               {/* Discipline Select */}
               <div className="relative w-full">
-                <select className="w-full px-3 py-2 text-sm shadow-md rounded-md appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <select className="w-full px-3 py-2 text-sm shadow-sm rounded-md appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
                   <option value="">Discipline</option>
                   <option value="cardiology">Cardiology</option>
                   <option value="neurology">Neurology</option>
