@@ -70,8 +70,8 @@ const Reminder = () => {
                                     {task.status === 'complete' ? (
                                         <div className="text-green-600 text-sm bg-green-100 px-2 py-0.5 rounded-full flex items-center justify-center gap-1">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M14.6668 8.00065C14.6668 4.31875 11.682 1.33398 8.00016 1.33398C4.31826 1.33398 1.3335 4.31875 1.3335 8.00065C1.3335 11.6825 4.31826 14.6673 8.00016 14.6673C11.682 14.6673 14.6668 11.6825 14.6668 8.00065Z" stroke="#237B10" stroke-width="1.5"/>
-                                                <path d="M5.3335 8.33333L7.00016 10L10.6668 6" stroke="#237B10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M14.6668 8.00065C14.6668 4.31875 11.682 1.33398 8.00016 1.33398C4.31826 1.33398 1.3335 4.31875 1.3335 8.00065C1.3335 11.6825 4.31826 14.6673 8.00016 14.6673C11.682 14.6673 14.6668 11.6825 14.6668 8.00065Z" stroke="#237B10" strokeWidth="1.5"/>
+                                                <path d="M5.3335 8.33333L7.00016 10L10.6668 6" stroke="#237B10" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             Complete
                                         </div>

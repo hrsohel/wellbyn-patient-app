@@ -68,7 +68,7 @@ export default function Component() {
               </div>
               <div className="flex items-center space-x-1 text-[#237B10]">
                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.33301 9.33301L5.66634 11.6663L12.6663 4.33301" stroke="#237B10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.33301 9.33301L5.66634 11.6663L12.6663 4.33301" stroke="#237B10" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
                 <span>Complete</span>
