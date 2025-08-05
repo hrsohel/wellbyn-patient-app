@@ -15,7 +15,7 @@ export const stats = [
     change: "+12%",
     positive: true,
     iconBg: "bg-blue-100",
-    icon: "📅",
+    icon: "/today appointment.svg",
   },
   {
     label: "Avg. Appointment Duration",
@@ -23,7 +23,7 @@ export const stats = [
     change: "-13%",
     positive: false,
     iconBg: "bg-orange-100",
-    icon: "🕒",
+    icon: "/avg appointment.svg",
   },
   {
     label: "Missed Appointments",
@@ -31,7 +31,7 @@ export const stats = [
     change: "+5%",
     positive: true,
     iconBg: "bg-purple-100",
-    icon: "😴",
+    icon: "/missed appointment.svg",
   },
   {
     label: "Time Saved with AI",
@@ -39,7 +39,7 @@ export const stats = [
     change: "+110%",
     positive: true,
     iconBg: "bg-pink-100",
-    icon: "🤖",
+    icon: "/time saved with ai.svg",
   },
 ];
 
@@ -61,12 +61,13 @@ export const barData = [
   { year: "2023", newUser: 290, oldUser: 90 },
 ];
 
+
 export const messageData = [
   {
     title: "Whats app volume",
     value: 485,
     iconBg: "bg-green-100",
-    icon: "🟢",
+    icon: "/whatsapp (1).svg",
     change: "+12%",
     changeColor: "text-green-600",
     changeBg: "bg-green-100",
@@ -76,17 +77,17 @@ export const messageData = [
     title: "SMS volume",
     value: 285,
     iconBg: "bg-blue-100",
-    icon: "💬",
+    icon: "/sms.svg",
     change: "-12%",
-    changeColor: "text-red-600",
-    changeBg: "bg-red-100",
+    changeColor: "text-[#93531F]",
+    changeBg: "bg-[#FBF7EB]",
     direction: "down",
   },
   {
     title: "Email volume",
     value: 196,
     iconBg: "bg-rose-100",
-    icon: "✉️",
+    icon: "/email .svg",
     change: "+12%",
     changeColor: "text-green-600",
     changeBg: "bg-green-100",
@@ -96,7 +97,7 @@ export const messageData = [
     title: "Average response time",
     value: "12 min",
     iconBg: "bg-purple-100",
-    icon: "🟣",
+    icon: "/average respoonse time.svg",
     change: "+5%",
     changeColor: "text-green-600",
     changeBg: "bg-green-100",
