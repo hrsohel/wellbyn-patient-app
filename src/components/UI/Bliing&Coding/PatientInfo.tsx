@@ -5,7 +5,7 @@ export default function PatientInfo() {
     return (
         <div className='mt-[32px]'>
             <form method="post">
-                <div className='flex items-center justify-center gap-6 flex-wrap md:flex-nowrap'>
+                <div className='flex items-stretch justify-center gap-6 flex-wrap md:flex-nowrap'>
                     <div className='w-full'>
                         <InputComponent
                             inputComponentProps={{
@@ -17,7 +17,8 @@ export default function PatientInfo() {
                                 inputType: "select",
                                 name: "box-1",
                                 inputTag: "select",
-                                options: ["Group Health Plan", "1", "2"]
+                                options: ["Group Health Plan", "1", "2"],
+                                errorClass: "text-[#B42121] mt-3 flex gap-2"
                             }}
                         />
                     </div>
@@ -40,7 +41,7 @@ export default function PatientInfo() {
                     <div>
                         <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-2">Box 2: Patient's Name *</label>
                     </div>
-                    <div className='flex items-center justify-center gap-6 flex-wrap md:flex-nowrap'>
+                    <div className='flex items-center justify-center gap-2 flex-wrap md:flex-nowrap'>
                         {
                             ["First Name", "Middle", "Last"].map((nameData, index) => (
                                 <InputComponent
@@ -98,7 +99,7 @@ export default function PatientInfo() {
                     <div>
                         <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-4">Box 4: Insured's Name *</label>
                     </div>
-                    <div className='flex items-center justify-center gap-6 flex-wrap md:flex-nowrap'>
+                    <div className='flex items-center justify-center gap-2 flex-wrap md:flex-nowrap'>
                         {
                             ["First Name", "Middle", "Last"].map((nameData, index) => (
                                 <InputComponent
@@ -132,7 +133,7 @@ export default function PatientInfo() {
                             placeholder: "Street address"
                         }}
                     />
-                    <div className='flex items-center justify-center gap-6 flex-wrap md:flex-nowrap mt-2'>
+                    <div className='flex items-center justify-center gap-2 flex-wrap md:flex-nowrap mt-2'>
                         <div className='w-full'>
                             <InputComponent
                                 inputComponentProps={{
@@ -198,7 +199,7 @@ export default function PatientInfo() {
                     </div>
                 </div>
                 <div className='mt-8'>
-                    <div className='relative inline-block gap-8 rounded-lg w-full'>
+                    <div className='relative inline-block gap-2 rounded-lg w-full'>
                         <InputComponent
                             inputComponentProps={{
                                 label: "Box 6: Patient Relationship to Insured",
@@ -229,7 +230,7 @@ export default function PatientInfo() {
                                 placeholder: "Street address"
                             }}
                         />
-                        <div className='flex items-center justify-center gap-6 flex-wrap md:flex-nowrap mt-2'>
+                        <div className='flex items-center justify-center gap-2 flex-wrap md:flex-nowrap mt-2'>
                             <div className='w-full'>
                                 <InputComponent
                                     inputComponentProps={{
