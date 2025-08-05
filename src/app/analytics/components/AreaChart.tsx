@@ -29,7 +29,7 @@ export default function AreaChartComponent() {
                     <ArrowDownIcon />
                 </div>
             </div>
-            <ResponsiveContainer width="100%" height={500} >
+            <ResponsiveContainer width="100%" height={286} >
                 <AreaChart data={data}>
                     <defs>
                         <linearGradient id="colorBlue" x1="0" y1="0" x2="0" y2="1">
