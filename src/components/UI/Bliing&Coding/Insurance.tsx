@@ -11,7 +11,7 @@ export default function Insurance() {
                     <div>
                         <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-9">Box 9: Other Insured's Name</label>
                     </div>
-                    <div className='flex items-center justify-center gap-3 flex-wrap md:flex-nowrap'>
+                    <div className='flex items-center justify-center gap-2 flex-wrap md:flex-nowrap'>
                         {
                             ["First Name", "Middle", "Last"].map((nameData, index) => (
                                 <InputComponent

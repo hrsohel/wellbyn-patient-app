@@ -158,8 +158,8 @@ export default function Billing() {
       </div>
       <div className="mt-4 flex items-end justify-between flex-wrap md:flex-nowrap">
         <div>
-          <p>Codes Summary</p> <br />
-          <p>Diagnosis Codes (Box 21) - 0</p>
+          <p>Codes Summary</p>
+          <p className="my-[12px]">Diagnosis Codes (Box 21) - 0</p>
           <p className="flex items-center justify-start gap-3">
             <Image
               src="/information-circle-1.svg"
@@ -172,7 +172,7 @@ export default function Billing() {
         </div>
         <div className="md:mt-4 mt-0">
           <p>Procedure Codes (Box 24) - 0</p>
-          <p className="flex items-center justify-start gap-3">
+          <p className="flex items-center justify-start gap-3 mt-[12px]">
             <Image
               src="/information-circle-1.svg"
               alt="information circel"
