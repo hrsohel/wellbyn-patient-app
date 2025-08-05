@@ -1,6 +1,7 @@
 import { InputComponentProps } from '@/app/billing_and_coding/data';
 import React, { useState } from 'react';
 import ArrowDownIcon from '../ArrowDownIcon';
+import Image from 'next/image';
 
 const InputComponent = ({ inputComponentProps }: {inputComponentProps: InputComponentProps}) => {
     switch (inputComponentProps.inputTag) {
@@ -38,7 +39,10 @@ const InputComponent = ({ inputComponentProps }: {inputComponentProps: InputComp
                     </select>
                     <ArrowDownIcon />
                 </div>
-                {inputComponentProps.errorMessage && <span className={inputComponentProps.errorClass}>{inputComponentProps.errorMessage}</span>}
+                {inputComponentProps.errorMessage && <span className={inputComponentProps.errorClass}>
+                  <Image src="/information-circle-1.svg" width={24} height={24} alt='public\information-circle-1.svg'/>
+                  {inputComponentProps.errorMessage}
+                </span>}
             </div>
         );
       case 'radio':

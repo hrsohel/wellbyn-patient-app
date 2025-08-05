@@ -3,15 +3,45 @@ import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts'
 import { pieData, stats } from '../data'
 import ArrowDownIcon from '@/components/UI/ArrowDownIcon'
 
+
+const renderCustomizedLabel = ({
+  cx,
+  cy,
+  midAngle,
+  innerRadius,
+  outerRadius,
+  percent,
+  index
+}: any) => {
+  const RADIAN = Math.PI / 180;
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <text
+      x={x}
+      y={y}
+      fill="white"
+      textAnchor="middle"
+      dominantBaseline="central"
+      fontSize={14}
+      fontWeight={700}
+    >
+      {`${(percent * 100).toFixed(0)}%`}
+    </text>
+  );
+};
+
 export default function PieChartComponent() {
     return (
         <div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-gray-100 p-6">
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 bg-white rounded-xl shadow-md">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6  rounded-xl">
 
-                <div className="col-span-1 bg-white flex flex-col items-center mb-8 rounded-md">
-                    <h2 className="text-[18px] font-[700] mb-4 text-center">
+                <div className="col-span-1 bg-white flex flex-col items-center mb-8 rounded-lg p-6 h-[100%] shadow-sm">
+                    <h2 className="text-[18px] font-[700] mb-4 text-center pb-6 border-b-[1px] border-[#DCDCDC] w-[110%]">
                         New patients vs Old patients
                     </h2>
                     <ResponsiveContainer width="100%" height={400}>
@@ -23,8 +53,8 @@ export default function PieChartComponent() {
                                 innerRadius={60}
                                 outerRadius={150}
                                 dataKey="value"
-                                label={({ percent }) => percent ? `${(percent * 100).toFixed(0)}%` : ''}
-                                labelLine={true}
+                                label={renderCustomizedLabel}
+                                labelLine={false}
                             >
                                 {pieData.map((entry, index) => (
                                     <Cell key={`cell-${index}`} fill={entry.color} />
@@ -33,7 +63,7 @@ export default function PieChartComponent() {
                         </PieChart>
                     </ResponsiveContainer>
 
-                    <div className="bg-blue-50 mt-6 px-4 py-2 rounded-lg w-48 text-sm font-medium text-gray-700">
+                    <div className="bg-blue-50 mt-6 px-4 py-2 rounded-lg text-sm font-medium text-gray-700 w-[304px]">
                         {pieData.map((item, i) => (
                             <div key={i} className="flex justify-between items-center mb-1">
                                 <div className="flex items-center gap-2">
@@ -51,11 +81,12 @@ export default function PieChartComponent() {
                 <div className='md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4'>
                     {
                         stats.map((card, index) => (
-                            <div className='p-4 rounded-md shadow-md w-full' key={index}>
+                            <div className='px-4 py-12 rounded-md shadow-md w-full bg-white' key={index}>
                                 <div
                                     className={`w-10 h-10 flex items-center justify-center rounded-lg text-lg ${card.iconBg}`}
                                 >
-                                    {card.icon}
+                                    {/* {card.icon} */}
+                                    <img src={card.icon} alt={card.label} width="48" height="48" />
                                 </div>
                                 <div className='mt-8'>
                                     <div className="text-[18px] text-gray-500 font-[500]">
@@ -79,21 +110,6 @@ export default function PieChartComponent() {
                             </div>
                         ))
                     }
-                </div>
-            </div>
-            <div className="flex justify-between items-center mt-8 bg-white rounded-lg p-2">
-                <div>
-                    <h2 className="text-[32px] font-[700] text-gray-800">Patient Flow</h2>
-                    <p className="text-[16px] font-[500] text-[#7C7C7C]">
-                        This graph displays the number of Patient in Wellbyn.
-                    </p>
-                </div>
-                <div className="relative inline-block gap-8 focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:border-none rounded-lg">
-                    <select className="text-[16px] border rounded-lg p-[12px] text-gray-700 appearance-none w-[134px] outline-none">
-                        <option>Yearly</option>
-                        <option>Monthly</option>
-                    </select>
-                    <ArrowDownIcon />
                 </div>
             </div>
         </div>
