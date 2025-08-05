@@ -71,7 +71,7 @@ export default function ProviderInfo() {
             placeholder: "456 Medical Boulevard",
           }}
         />
-        <div className="flex items-center justify-center gap-3 flex-wrap md:flex-nowrap">
+        <div className="flex items-center justify-center gap-2 flex-wrap md:flex-nowrap">
           <InputComponent
             inputComponentProps={{
               inputClass:
@@ -192,7 +192,7 @@ export default function ProviderInfo() {
             placeholder: "456 Medical Boulevard",
           }}
         />
-        <div className="flex items-center justify-center gap-3 flex-wrap md:flex-nowrap">
+        <div className="flex items-center justify-center gap-2 flex-wrap md:flex-nowrap">
           <InputComponent
             inputComponentProps={{
               inputClass:
