@@ -563,12 +563,14 @@ function SidebarItem({ item, isActive, onClick }: SidebarItemProps) {
       <button
         onClick={onClick}
         className={cn(
-          "w-full flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-all duration-500 group",
+          "w-full flex relative items-center gap-3 px-4 py-3 text-left rounded-lg transition-all duration-500 group",
           isActive
-            ? " text-primary-500 shadow-[0px_3px_4px_0px_rgba(26,64,96,0.10)] before:w-1 before:h-8 before:-left-1 z-0 before:absolute before:bg-primary-500 before:rounded-l-3xl"
+            ? " text-primary-500   shadow-[0px_3px_4px_0px_rgba(26,64,96,0.10)]  before:w-1 before:h-8 before:-left-1 z-0 before:absolute  before:rounded-l-3xl"
             : "text-Text-secondary hover:bg-[#F3F3F3] hover:text-text-primary hover:shadow-[0px_3px_4px_0px_rgba(26,64,96,0.10)]"
         )}
-      >
+      >{isActive && (
+    <span className="absolute left-0 top-6 h-6 w-1  bg-[#2E8BC9]  transform -translate-y-2" />
+  )}
         <div
           className={cn(
             "flex-shrink-0 transition-colors",
@@ -829,7 +831,7 @@ export function Sidebar() {
                 <div
                   className={`${
                     activeItem === item.id
-                      ? "text-primary-500"
+                      ? "text-primary-500 "
                       : "text-text-primary"
                   }`}
                 >

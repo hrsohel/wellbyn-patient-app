@@ -182,16 +182,20 @@ export default function Component() {
               <h3 className="text-lg font-semibold text-gray-900">Appointment</h3>
               <div className="flex items-center space-x-4">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+                  <div className="absolute left-2 top-4 transform -translate-y-1/2 text-gray-400 h-4 w-4" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 17L21 21" stroke="#3D3D3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="#3D3D3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
                   <input
                     type="text"
                     placeholder="Search here..."
-                    className="pl-10 w-64 py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="pl-10 w-64 py-2 px-3 shadow-sm rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
                 <select
                   defaultValue="all"
-                  className="w-32 py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-32 py-2 px-3 shadow-sm rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="all">All Status</option>
                   <option value="in-care">In Care</option>
@@ -199,7 +203,7 @@ export default function Component() {
                 </select>
                 <select
                   defaultValue="today"
-                  className="w-24 py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-24 py-2 px-3 shadow-sm rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="today">Today</option>
                   <option value="week">This Week</option>
@@ -242,7 +246,7 @@ export default function Component() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center space-x-3">
-                          <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-medium text-sm">
+                          <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-[#2E8BC9] font-medium text-sm">
                             {appointment.initial}
                           </div>
                           <span className="text-sm text-gray-900">{appointment.patientName}</span>
@@ -251,7 +255,7 @@ export default function Component() {
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm">
                           {appointment.contact.split("\n").map((line, index) => (
-                            <div key={index} className={index === 0 ? "text-blue-600" : "text-gray-600"}>
+                            <div key={index} className={index === 0 ? "text-gray-600" : "text-gray-600"}>
                               {line}
                             </div>
                           ))}

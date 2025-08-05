@@ -1,14 +1,54 @@
 "use client";
 
 import { useState } from "react";
-import { MessageSquare, CheckCircle2, XCircle, Settings, DownloadCloud, FileText, Download, User, Eye } from "lucide-react";
+import { MessageSquare, CheckCircle2, XCircle, Settings, DownloadCloud, FileText, Download, User, Eye, MapPin, Calendar, Clock, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/app/components/ui/Button";
+type VitalSigns = {
+  height: string;
+  weight: string;
+  bloodPressure: string;
+  upperRespiratoryInfection: boolean;
+  heartRate: string;
+  temperature: string;
+};
+
 export default function PatientDashboard() {
   const [activeTab, setActiveTab] = useState("appointment");
   const [noteText, setNoteText] = useState("");
+const [vitalSigns, setVitalSigns] = useState<VitalSigns>({
+    height: '',
+    weight: '72',
+    bloodPressure: '130/65 mmHg',
+    upperRespiratoryInfection: false,
+    heartRate: '88 bpm',
+    temperature: '100.20F'
+  });
 
+  const handleInputChange = (field: keyof VitalSigns, value: string | boolean) => {
+    setVitalSigns(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+  const [selectedDay, setSelectedDay] = useState<string>('');
+
+  const daysOfWeek = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday'
+  ];
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Selected day:', selectedDay);
+  };
   const appointments = [
     {
       id: 1,
@@ -331,16 +371,225 @@ export default function PatientDashboard() {
                   </div>
                   <div className="flex flex-col items-start md:items-end">
                     <span className="text-sm text-gray-500 ">Action</span>
-                    <Link href="/patients/details" className="text-blue-500 hover:underline font-medium">
+                    <button onClick={() => setActiveTab("details")} className="text-blue-500 hover:underline font-medium">
                       Details
-                    </Link>
+                    </button>
                   </div>
                 </div>
               ))}
             </div>
           )}
           {/* Other tab contents would go here */}
-         
+              {activeTab === "details" && (
+           <div className="min-h-screen bg-gray-100 p-4 md:p-6 lg:p-8">
+      <div className="max-w-7xl mx-auto space-y-6">
+   
+
+               <div className="flex justify-center py-8 px-4 sm:px-6 lg:px-8 bg-gray-100 min-h-screen">
+      <div className="w-full max-w-[800px] bg-white rounded-xl shadow-lg overflow-hidden">
+        <div className="p-6 space-y-6">
+          {/* Doctor Info */}
+          <div className="flex items-center space-x-4">
+            <Image
+              src="/placeholder.svg"
+              alt="Dr. Moule Marrk"
+              width={64}
+              height={64}
+              className="rounded-full border-2 border-gray-200 w-20 h-20"
+            />
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900">Dr. Moule Marrk</h2>
+              <p className="text-sm text-gray-500">Cardiology</p>
+              <div className="flex items-center text-sm text-gray-500 mt-1">
+                <MapPin className="w-4 h-4 mr-1" />
+                <span>Sylhet Health Center</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Last Appointment Time */}
+          <div className="space-y-2">
+            <p className="text-sm font-medium text-gray-700">Last Appointment Time</p>
+            <div className="flex items-center justify-between text-sm text-gray-600">
+              <div className="flex items-center space-x-2">
+                <Calendar className="w-4 h-4" />
+                <span>May 16, 2025</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Clock className="w-4 h-4" />
+                <span>10:30 PM</span>
+              </div>
+              <div className="flex items-center space-x-1 text-blue-600">
+                <CheckCircle className="w-4 h-4" />
+                <span>Complete</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Reason for Visit */}
+          <div className="space-y-2">
+            <p className="text-sm font-medium text-gray-700">Reason for Visit</p>
+            <p className="text-sm text-gray-600">Need a cleaning</p>
+          </div>
+
+          {/* Visit Type */}
+          <div className="space-y-2">
+            <p className="text-sm font-medium text-gray-700">Visit Type</p>
+            <p className="text-sm text-gray-600">New Patient Visit</p>
+          </div>
+
+          {/* Insurance */}
+          <div className="space-y-2">
+            <p className="text-sm font-medium text-gray-700">Insurance</p>
+            <p className="text-sm text-gray-600">Blusky</p>
+          </div>
+
+          {/* Vital Signs */}
+          <div className="space-y-2">
+            <h3 className="text-base font-semibold text-gray-900">Vital Signs</h3>
+             <div className="space-y-4 ">
+    
+
+        {/* Blood Pressure */}
+        <div>
+          <label className="text-sm font-medium text-gray-700 mb-1">
+            Blood Pressure : 
+          </label>
+          <input
+            type="text"
+            value={vitalSigns.bloodPressure}
+            onChange={(e) => handleInputChange('bloodPressure', e.target.value)}
+            className="focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            placeholder="130/85 mmHg "
+          />
+        </div>
+
+       
+
+        {/* Heart Rate */}
+        <div>
+          <label className="text-sm font-medium text-gray-700 mb-1">
+            Heart Rate :
+          </label>
+          <input
+            type="text"
+            value={vitalSigns.heartRate}
+            onChange={(e) => handleInputChange('heartRate', e.target.value)}
+            className="focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+        </div>
+
+        {/* Temperature */}
+        <div>
+          <label className="text-sm font-medium text-gray-700 mb-1">
+            Temperature :
+          </label>
+          <input
+            type="text"
+            value={vitalSigns.temperature}
+            onChange={(e) => handleInputChange('temperature', e.target.value)}
+             className="focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+        </div>
+      </div>
+          </div>
+
+          {/* SOAP Notes */}
+          <div className="space-y-4">
+            <h3 className="text-base font-semibold text-gray-900">SOAP Notes</h3>
+
+            {/* Subjective */}
+            <div className="rounded-md p-3 text-sm text-gray-700">
+              <p className="font-semibold mb-1">Subjective</p>
+              <p className="shadow-md rounded-md p-2">
+                Patient presents for routine annual physical examination. Reports feeling well overall with no acute
+                complaints. Denies chest pain, shortness of breath, or palpitations.
+              </p>
+            </div>
+
+            {/* Objective */}
+            <div className=" rounded-md p-3 text-sm text-gray-700">
+              <p className="font-semibold mb-1">Objective</p>
+              <p className="shadow-md rounded-md p-2">
+                Vital signs stable. BP 120/80, HR 72, Temp 98.6°F. Physical examination unremarkable. Heart regular rate
+                and rhythm, lungs clear bilaterally.
+              </p>
+            </div>
+
+            {/* Assessment */}
+            <div className=" rounded-md p-3 text-sm text-gray-700">
+              <p className="font-semibold mb-1">Assessment</p>
+              <p className="shadow-md rounded-md p-2">Healthy adult male for routine preventive care visit.</p>
+            </div>
+
+            {/* Plan */}
+            <div className=" rounded-md p-3 text-sm text-gray-700">
+              <p className="font-semibold mb-1">Plan</p>
+              <p className="shadow-md rounded-md p-2">
+                Continue current lifestyle habits. Return in 1 year for annual physical. Labs ordered for screening.
+              </p>
+            </div>
+          </div>
+
+          {/* Download Report */}
+          <div className="space-y-2">
+            <h3 className="text-base font-semibold text-gray-900">Download Report</h3>
+            <button className=" flex justify-center items-center py-2 px-4 text-[#2E8BC9] shadow-md bg-transparent rounded-md hover:bg-blue-50 transition-colors">
+       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.00004 14.6663C11.6819 14.6663 14.6667 11.6816 14.6667 7.99967C14.6667 4.31778 11.6819 1.33301 8.00004 1.33301C4.31814 1.33301 1.33337 4.31778 1.33337 7.99967C1.33337 11.6816 4.31814 14.6663 8.00004 14.6663Z" stroke="#2E8BC9" stroke-width="1.5"/>
+<path d="M8.00004 10.6663V5.33301M8.00004 10.6663C7.53324 10.6663 6.66106 9.33681 6.33337 8.99967M8.00004 10.6663C8.46684 10.6663 9.33904 9.33681 9.66671 8.99967" stroke="#2E8BC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+              Download
+            </button>
+          </div>
+
+          {/* Upcoming */}
+          <form 
+      onSubmit={handleSubmit}
+      className="flex flex-col items-start gap-6  w-full "
+    >
+      <div className="w-full space-y-2 flex gap-2 items-center">
+        <label 
+          htmlFor="check-in" 
+          className="pt-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+        >
+          Upcoming
+        </label>
+        <select
+          id="check-in"
+          value={selectedDay}
+          onChange={(e) => setSelectedDay(e.target.value)}
+          className=" text-base  rounded-md  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+        >
+          <option value=""> - in 7  days</option>
+          {daysOfWeek.map((day) => (
+            <option key={day.toLowerCase()} value={day.toLowerCase()}>
+              {day}
+            </option>
+          ))}
+        </select>
+      </div>
+      
+      
+    </form>
+        </div>
+
+        {/* Book Appointment Button */}
+        <div className="p-6 pt-0">
+          <button className="w-full py-2 px-4 bg-[#2E8BC9] hover:bg-blue-700 text-white font-medium rounded-md transition-colors">
+            Save Change
+          </button>
+        </div>
+      </div>
+    </div>
+      
+          {/* Other tab contents would go here */}
+     
+      </div>
+    </div>
+          )}
           {activeTab === "patients-info" && (
            <div className="container mx-auto px-4 py-8 md:px-6 lg:px-8">
       <div className="flex items-center gap-2 text-lg font-semibold text-gray-700 dark:text-gray-300 mb-6">

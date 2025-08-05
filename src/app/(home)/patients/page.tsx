@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, Search, Eye, Pencil } from "lucide-react";
+import { ChevronDown, Search, Eye, Pencil, Download, Plus } from "lucide-react";
 import Link from "next/link";
 
 export default function PatientsDashboard() {
@@ -130,9 +130,17 @@ const patients = [
             <h1 className="text-2xl font-semibold">Patients</h1>
             <p className="text-sm text-gray-500">Manage all the patients</p>
           </div>
-          <button className="rounded-md text-[#2E8BC9] shadow-md px-4 py-2 text-sm font-medium hover:bg-gray-50">
-            Export Data
-          </button>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <button className="inline-flex items-center justify-center rounded-md shadow-md bg-transparent px-4 py-2 text-sm font-medium  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+              <Download className="w-4 h-4 mr-2" />
+              Export Data
+            </button>
+                   <Link href="/doctor/abelite">
+            <button className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#2E8BC9] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+              <Plus className="w-4 h-4 mr-2" />
+              Add New
+            </button></Link>
+          </div>
         </div>
 
         {/* Filters */}
@@ -141,7 +149,7 @@ const patients = [
           <div className="relative">
             <button
               onClick={() => setIsGenderOpen(!isGenderOpen)}
-              className="flex items-center gap-2 rounded-md shadow-md bg-white px-3 py-2 text-sm hover:bg-gray-50"
+              className="flex items-center gap-2 rounded-md shadow-sm bg-white px-3 py-2 text-sm hover:bg-gray-50"
             >
               Gender <ChevronDown className="h-4 w-4" />
             </button>
@@ -160,7 +168,7 @@ const patients = [
           <div className="relative">
             <button
               onClick={() => setIsVisitTypeOpen(!isVisitTypeOpen)}
-              className="flex items-center gap-2 rounded-md shadow-md bg-white px-3 py-2 text-sm hover:bg-gray-50"
+              className="flex items-center gap-2 rounded-md shadow-sm bg-white px-3 py-2 text-sm hover:bg-gray-50"
             >
               Visit Type <ChevronDown className="h-4 w-4" />
             </button>
@@ -179,7 +187,7 @@ const patients = [
           <div className="relative">
             <button
               onClick={() => setIsStatusOpen(!isStatusOpen)}
-              className="flex items-center gap-2 rounded-md shadow-md bg-white px-3 py-2 text-sm hover:bg-gray-50"
+              className="flex items-center gap-2 rounded-md shadow-sm bg-white px-3 py-2 text-sm hover:bg-gray-50"
             >
               Status <ChevronDown className="h-4 w-4" />
             </button>
@@ -198,7 +206,7 @@ const patients = [
           <div className="relative">
             <button
               onClick={() => setIsSortOpen(!isSortOpen)}
-              className="flex items-center gap-2 rounded-md shadow-md bg-white px-3 py-2 text-sm hover:bg-gray-50"
+              className="flex items-center gap-2 rounded-md shadow-sm bg-white px-3 py-2 text-sm hover:bg-gray-50"
             >
               Sort by <ChevronDown className="h-4 w-4" />
             </button>
@@ -219,7 +227,7 @@ const patients = [
             <input
               type="text"
               placeholder="Look for patient name"
-              className="w-full shadow-md rounded-md py-2 pl-9 pr-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full shadow-sm rounded-md py-2 pl-9 pr-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
           </div>
         </div>

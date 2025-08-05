@@ -89,20 +89,23 @@ const ChatWindow = ({ contactName, messages }: ChatWindowProps) => {
       </div>
 
       {/* Message input */}
-      <div className="p-4 border-t bg-white flex items-center gap-2">
+      <div className="p-4  bg-white flex items-center gap-2">
         <input
           type="text"
           placeholder="Type your message"
-          className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="flex-1 px-3 py-2 shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
         />
         <button
-          className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="p-2 rounded-full bg-[#292929] text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           onClick={handleSendMessage}
         >
-          <Send className="w-5 h-5" />
+         <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.732427 4.41935C0.723882 3.09442 11.0712 -0.534539 12.4468 0.946875C13.7893 2.39261 10.0342 12.654 8.75437 12.5974C7.95144 12.562 7.59915 10.9748 6.89746 7.78384C6.84953 7.56585 6.79921 7.39681 6.73266 7.2617C6.73637 7.25822 6.74004 7.25467 6.74367 7.25104L8.9542 5.04051C9.13771 4.857 9.14005 4.55709 8.95942 4.37064C8.77879 4.1842 8.48358 4.18182 8.30007 4.36534L6.08954 6.57587C6.0452 6.62021 6.01144 6.67134 5.98828 6.72603C5.95694 6.71647 5.92442 6.70699 5.89066 6.69752C5.67494 6.63699 5.35059 6.57091 4.96754 6.49288C3.36661 6.16675 0.740245 5.63173 0.732427 4.41935Z" fill="white"/>
+</svg>
+
         </button>
       </div>
     </div>
@@ -111,14 +114,8 @@ const ChatWindow = ({ contactName, messages }: ChatWindowProps) => {
 
 const getAvatarColor = (initial: string) => {
   const colors = [
-    "bg-blue-500",
-    "bg-green-500",
-    "bg-red-500",
-    "bg-purple-500",
-    "bg-yellow-500",
-    "bg-pink-500",
-    "bg-indigo-500",
-    "bg-teal-500",
+    "#F2F8FD",
+   
   ]
   const charCode = initial.charCodeAt(0)
   return colors[charCode % colors.length]
@@ -176,7 +173,7 @@ const InboxSidebar = ({ contacts }: InboxSidebarProps) => {
       </div>
 
       {/* Search bar */}
-      <div className="p-4 border-b">
+      <div className="p-4 ">
         <div className="flex items-center gap-2 p-2 rounded-lg bg-blue-50 text-blue-700 font-medium">
          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M6.72266 1.59961H17.2773C20.1121 1.59969 22.4101 3.89769 22.4102 6.73242V17.2871C22.4101 20.1218 20.1121 22.4198 17.2773 22.4199H6.72266C3.88792 22.4198 1.58993 20.1218 1.58984 17.2871V6.73242C1.58993 3.89769 3.88792 1.59969 6.72266 1.59961Z" fill="url(#paint0_linear_3247_51400)" stroke="white"/>
@@ -194,12 +191,17 @@ const InboxSidebar = ({ contacts }: InboxSidebarProps) => {
 
           <span>WhatsApp</span>
         </div>
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+        <div className="relative pt-2 px-2">
+          <div className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 17L21 21" stroke="#3D3D3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="#3D3D3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
           <input
             type="text"
             placeholder="Search here ..."
-            className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full pl-9 pr-3 py-2 shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -215,7 +217,7 @@ const InboxSidebar = ({ contacts }: InboxSidebarProps) => {
                 contact.selected ? "bg-blue-50 font-medium" : ""
               }`}
             >
-              <div className={`w-9 h-9 rounded-full ${getAvatarColor(contact.initial)} flex items-center justify-center text-white`}>
+              <div className={`w-9 h-9 rounded-full bg-[#F2F8FD] flex items-center justify-center text-[#2E8BC9]`}>
                 {contact.initial}
               </div>
               <span className="text-sm">{contact.name}</span>

@@ -138,7 +138,7 @@ export default function Dashboard() {
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-6">
         {stats.map((stat, index) => (
           <div key={index} className="bg-white rounded-lg  p-3 shadow-md">
-           <div className="m-2">
+           <div className="mb-2">
                 {stat.icon}
               </div> <div className="">
               <div>
