@@ -1,12 +1,28 @@
 import React from 'react'
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { barData } from '../data'
+import ArrowDownIcon from '@/components/UI/ArrowDownIcon'
 
 export default function BarChartComponent() {
     return (
         <div>
-            <div className="w-full h-[500px] bg-white rounded-b-md">
-                <ResponsiveContainer width="100%" height="100%">
+            <div className="flex justify-between items-center mt-8 bg-white rounded-lg p-6">
+                            <div>
+                                <h2 className="text-[32px] font-[700] text-gray-800">Patient Flow</h2>
+                                <p className="text-[16px] font-[500] text-[#7C7C7C]">
+                                    This graph displays the number of Patient in Wellbyn.
+                                </p>
+                            </div>
+                            <div className="relative inline-block gap-8 focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:border-none rounded-lg">
+                                <select className="text-[16px] border rounded-lg p-[12px] text-gray-700 appearance-none w-[134px] outline-none">
+                                    <option>Yearly</option>
+                                    <option>Monthly</option>
+                                </select>
+                                <ArrowDownIcon />
+                            </div>
+                        </div>
+            <div className="w-full h-[286px] bg-white rounded-b-md">
+                <ResponsiveContainer width="100%" height="100%" className="p-0" style={{padding: "0 24px 0 0"}}>
                     <BarChart data={barData}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="year" />
