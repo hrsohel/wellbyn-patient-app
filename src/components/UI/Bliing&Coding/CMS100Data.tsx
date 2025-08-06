@@ -12,17 +12,17 @@ export default function CMS100Data() {
   return (
     <div>
         <div className='flex items-center justify-center md:justify-between gap-8 flex-wrap mb-4 md:mb-0'>
-            <div className='flex items-center justify-start gap-6 mt-4 border-b-[1px] border-[#888]'>
-                <button onClick={() => setShowPatientInfo(1)} className={`cursor-pointer ${showPatientInfo === 1 ? "border-[#2E8BC9] border-b-[2px] text-[#2E8BC9]" : ""}`}>Patient Info</button>
-                <button onClick={() => setShowPatientInfo(2)} className={`cursor-pointer ${showPatientInfo === 2 ? "border-[#2E8BC9] border-b-[2px] text-[#2E8BC9]" : ""}`}>Insurance</button>
-                <button onClick={() => setShowPatientInfo(3)} className={`cursor-pointer ${showPatientInfo === 3 ? "border-[#2E8BC9] border-b-[2px] text-[#2E8BC9]" : ""}`}>Clinical Info</button>
-                <button onClick={() => setShowPatientInfo(4)} className={`cursor-pointer ${showPatientInfo === 4 ? "border-[#2E8BC9] border-b-[2px] text-[#2E8BC9]" : ""}`}>Provider Info</button>
-                <button onClick={() => setShowPatientInfo(5)} className={`cursor-pointer ${showPatientInfo === 5 ? "border-[#2E8BC9] border-b-[2px] text-[#2E8BC9]" : ""}`}>Billing</button>
+            <div className='flex items-center justify-start gap-6 mt-4 border-b-[1px] border-[#DCDCDC]'>
+                <button onClick={() => setShowPatientInfo(1)} className={`font-[500] pb-[12px] text-[16px] cursor-pointer ${showPatientInfo === 1 ? "border-[#2E8BC9] border-b-[2px] text-[#2E8BC9]" : "text-[#7C7C7C]"}`}>Patient Info</button>
+                <button onClick={() => setShowPatientInfo(2)} className={`font-[500] pb-[12px] text-[16px] cursor-pointer ${showPatientInfo === 2 ? "border-[#2E8BC9] border-b-[2px] text-[#2E8BC9]" : "text-[#7C7C7C]"}`}>Insurance</button>
+                <button onClick={() => setShowPatientInfo(3)} className={`font-[500] pb-[12px] text-[16px] cursor-pointer ${showPatientInfo === 3 ? "border-[#2E8BC9] border-b-[2px] text-[#2E8BC9]" : "text-[#7C7C7C]"}`}>Clinical Info</button>
+                <button onClick={() => setShowPatientInfo(4)} className={`font-[500] pb-[12px] text-[16px] cursor-pointer ${showPatientInfo === 4 ? "border-[#2E8BC9] border-b-[2px] text-[#2E8BC9]" : "text-[#7C7C7C]"}`}>Provider Info</button>
+                <button onClick={() => setShowPatientInfo(5)} className={`font-[500] pb-[12px] text-[16px] cursor-pointer ${showPatientInfo === 5 ? "border-[#2E8BC9] border-b-[2px] text-[#2E8BC9]" : "text-[#7C7C7C]"}`}>Billing</button>
             </div>
-            <div className='border-[1px] border-slate-500 flex items-center justify-center mr-4 p-4 rounded-md mt-2 md:mt-4'>
-                <div className='text-center mx-auto flex items-center justify-center flex-col gap-1'>
+            <div className='border-[1px] border-slate-500 flex items-center justify-center p-[8px] rounded-[8px] mt-2 md:mt-4 w-[62px] h-[73px]'>
+                <div className='text-center mx-auto flex items-center justify-center flex-col gap-1 w-full'>
                     <ProgressBar />
-                    <span className='mt-4'>Total 32</span>
+                    {/* <span className='mt-4'>Total 32</span> */}
                 </div>
             </div>
         </div>

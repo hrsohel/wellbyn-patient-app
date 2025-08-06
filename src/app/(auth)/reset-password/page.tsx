@@ -1,8 +1,6 @@
 "use client";
-import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Logo from "@/assets/logo";
 import { Eye, EyeOff, Check, ArrowLeft } from "lucide-react";
@@ -10,13 +8,15 @@ import Card from "@/components/UI/Card";
 import Input from "@/components/UI/Input";
 import Button from "@/components/UI/Button";
 
-// export const metadata: Metadata = {
-//   title: "Reset Password | Wellbyn",
-//   description: "Create a new password for your Wellbyn account",
-//   keywords: ["reset password", "new password", "wellbyn"],
-// };
+// Loading component for Suspense fallback
+const LoadingSpinner = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="w-8 h-8 border-2 border-primary-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
-const ResetPasswordPage = () => {
+// Separate component that uses useSearchParams
+const ResetPasswordContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
@@ -128,18 +128,11 @@ const ResetPasswordPage = () => {
               icon={showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               onclick={() => setShowPassword((prev) => !prev)}
             />
-            {/* <button
-              type="button"
-              className="absolute right-3 top-12 text-gray-500 hover:text-gray-700 transition-colors"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-            </button> */}
           </div>
 
           {/* Password Requirements */}
           {formData.password && (
-            <div className="bg-gray-50 rounded-lg space-y-2">
+            <div className="bg-gray-50 rounded-lg p-4 space-y-2">
               <p className="text-sm font-medium text-gray-700 mb-2">
                 Password must contain:
               </p>
@@ -234,6 +227,15 @@ const ResetPasswordPage = () => {
         </Link>
       </Card>
     </div>
+  );
+};
+
+// Main component with Suspense wrapper
+const ResetPasswordPage = () => {
+  return (
+    <Suspense fallback={<LoadingSpinner />}>
+      <ResetPasswordContent />
+    </Suspense>
   );
 };
 
