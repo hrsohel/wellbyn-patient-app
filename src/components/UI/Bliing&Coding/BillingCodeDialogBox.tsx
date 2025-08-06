@@ -14,29 +14,29 @@ export default function BillingCodeDialogBox({showDialogBox, setShowDialogBox}: 
     >
       <div className="bg-white md:w-1/2 w-full h-full flex flex-col relative">
       
-        <div className="flex-1 overflow-y-auto p-4">
-          <h1 className="text-2xl font-semibold">Code Review</h1>
+        <div className="flex-1 overflow-y-auto md:p-4 p-1">
+          <h1 className="text-[24px] font-[500] text-[#3D3D3D]">Code Review</h1>
           <br />
-          <div className="bg-slate-100 flex items-center justify-between p-2 md:p-4 rounded-md mr-0 md:mr-4">
+          <div className="bg-slate-100 flex items-center justify-between p-2 md:p-4 rounded-md">
             <div>
               <p className="text-[#7C7C7C]">Patient</p>
-              <p className="text-[2xl]">John Smith</p>
+              <p className="text-[18px] font-[500] text-[#3D3D3D]">John Smith</p>
             </div>
             <div>
               <p className="text-[#7C7C7C]">Appointment time</p>
-              <p className="text-[2xl]">09:00 AM</p>
+              <p className="text-[18px] font-[500] text-[#3D3D3D]">09:00 AM</p>
             </div>
             <div>
               <p className="text-[#7C7C7C]">Doctor</p>
-              <p className="text-[2xl]">Dr. Sarah Chen</p>
+              <p className="text-[18px] font-[500] text-[#3D3D3D]">Dr. Sarah Chen</p>
             </div>
           </div>
 
-          <div className="bg-slate-100 flex items-center justify-between p-2 md:p-4 rounded-md mr-0 md:mr-4 mt-8">
-            <button onClick={() => setShowAssessment(1)} className={`cursor-pointer ${showAssessment === 1 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>Assessment</button>
-            <button onClick={() => setShowAssessment(2)} className={`cursor-pointer ${showAssessment === 2 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>Code Review</button>
-            <button onClick={() => setShowAssessment(3)} className={`cursor-pointer ${showAssessment === 3 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>CMS-1500 Data</button>
-            <button className="cursor-pointer">Form Preview</button>
+          <div className="bg-slate-100 flex items-center justify-between p-2 md:p-4 rounded-md mt-8">
+            <button onClick={() => setShowAssessment(1)} className={`cursor-pointer text-[#3D3D3D] font-[500] text-[16px] ${showAssessment === 1 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>Assessment</button>
+            <button onClick={() => setShowAssessment(2)} className={`cursor-pointer text-[#3D3D3D] font-[500] text-[16px] ${showAssessment === 2 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>Code Review</button>
+            <button onClick={() => setShowAssessment(3)} className={`cursor-pointer text-[#3D3D3D] font-[500] text-[16px] ${showAssessment === 3 ? "shadow-md bg-white p-2 rounded-md" : ""}`}>CMS-1500 Data</button>
+            <button className="cursor-pointer text-[#3D3D3D] font-[500] text-[16px]">Form Preview</button>
           </div>
           {
             showAssessment === 1 ? <Assessment /> :
@@ -47,17 +47,17 @@ export default function BillingCodeDialogBox({showDialogBox, setShowDialogBox}: 
 
         <div
           style={{ boxShadow: "0 -6px 15px rgba(0, 0, 0, 0.1)" }}
-          className="bg-white p-4 flex items-center justify-center gap-4 mr-4"
+          className="bg-white p-4 flex items-center justify-center gap-4"
         >
-          <button onClick={() => setShowDialogBox(false)} className="border-[1px] border-[#2E8BC9] rounded-md w-full py-2 text-center cursor-pointer">
+          <button onClick={() => setShowDialogBox(false)} className="hover:opacity-90 border-[1px] text-[#2E8BC9] border-[#2E8BC9] rounded-md w-full py-2 text-center cursor-pointer text-[18px] font-[500]">
             Close
           </button>
-          <button className="bg-[#2E8BC9] rounded-md w-full py-2 text-center flex items-center justify-center gap-2 text-white cursor-pointer">
+          <button className="hover:opacity-90 bg-[#2E8BC9] rounded-md w-full py-2 text-center flex items-center justify-center gap-2 text-white cursor-pointer text-[18px] font-[500]">
             <Image
               src="/checkmark-circle-02.svg"
               alt="checkmark"
-              width="15"
-              height="15"
+              width="24"
+              height="24"
             />
             Finalize
           </button>

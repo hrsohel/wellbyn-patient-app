@@ -3,40 +3,44 @@ import { Calendar, CheckCircle, Clock } from "lucide-react";
 import React, { useState } from "react";
 
 const HomePage = () => {
-  const doctors = [
-    {
-      id: 1,
-      name: "Dr. Alice Smith",
-      specialty: "Cardiologist",
-      location: "New York, NY",
-      isFavorite: true,
-      image: "https://randomuser.me/api/portraits/men/44.jpg",
-    },
-    {
-      id: 2,
-      name: "Dr. John Doe",
-      specialty: "Dermatologist",
-      location: "Los Angeles, CA",
-      isFavorite: false,
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
-    },
-    {
-      id: 3,
-      name: "Dr. Max Garcia",
-      specialty: "Pediatrician",
-      location: "Chicago, IL",
-      isFavorite: false,
-      image: "https://randomuser.me/api/portraits/men/68.jpg",
-    },
-    {
-      id: 4,
-      name: "Dr. John Cena",
-      specialty: "Pediatrician",
-      location: "Chicago, IL",
-      isFavorite: false,
-      image: "https://randomuser.me/api/portraits/men/76.jpg",
-    },
-  ];
+const doctors = [
+  {
+    id: 1,
+    name: "Dr. Alice Smith",
+    specialty: "Cardiologist",
+    location: "New York, NY",
+    isFavorite: true,
+    image: "https://randomuser.me/api/portraits/men/44.jpg",
+    availableTimes: 5, // Added this property
+  },
+  {
+    id: 2,
+    name: "Dr. John Doe",
+    specialty: "Dermatologist",
+    location: "Los Angeles, CA",
+    isFavorite: false,
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    availableTimes: 3, // Added this property
+  },
+  {
+    id: 3,
+    name: "Dr. Max Garcia",
+    specialty: "Pediatrician",
+    location: "Chicago, IL",
+    isFavorite: false,
+    image: "https://randomuser.me/api/portraits/men/68.jpg",
+    availableTimes: 2, // Added this property
+  },
+  {
+    id: 4,
+    name: "Dr. John Cena",
+    specialty: "Pediatrician",
+    location: "Chicago, IL",
+    isFavorite: false,
+    image: "https://randomuser.me/api/portraits/men/76.jpg",
+    availableTimes: 4, // Added this property
+  },
+];
 
   return (
     <>
@@ -188,7 +192,7 @@ const HomePage = () => {
                 </div>
                 <div className="flex items-center gap-1">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.33301 9.33398L5.66634 11.6673L12.6663 4.33398" stroke="#237B10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.33301 9.33398L5.66634 11.6673L12.6663 4.33398" stroke="#237B10" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 
                   <span className="text-green-600 text-sm font-medium">Complete</span>

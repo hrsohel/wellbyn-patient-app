@@ -1,9 +1,8 @@
-// src/app/(dashboard)/layout.tsx
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { Sidebar } from "@/components/layout/Sidebar";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,6 +19,7 @@ export const metadata: Metadata = {
   description:
     "Manage your healthcare appointments, doctors, and medical information.",
 };
+
 
 export default function DashboardLayout({
   children,
@@ -38,7 +38,8 @@ export default function DashboardLayout({
           <header className="  px-6 py-4">
             <div className="flex items-center justify-between">
               {/* Back Button */}
-              <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors hidden md:block">
+              <Link href="/dashboard">
+               <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors hidden md:block">
                 <svg
                   width="20"
                   height="20"
@@ -68,12 +69,14 @@ export default function DashboardLayout({
                   />
                 </svg>
               </button>
+              </Link>
+             
 
               <div className="flex items-center justify-between w-[560px]">
                 {/* Search Bar */}
-                <div className="flex-1 max-w-xl mx-6 hidden md:block">
+                <div className="flex-1 bg-white max-w-xl mx-6 hidden md:block">
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <div className="absolute inset-y-0  left-0 pl-3 flex items-center pointer-events-none">
                       <svg
                         width="24"
                         height="24"
@@ -100,7 +103,7 @@ export default function DashboardLayout({
                     <input
                       type="search"
                       placeholder="Search for a doctor by name or discipline..."
-                      className="w-full pl-12 pr-4 px-5 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-text-primary placeholder:text-text-primary"
+                      className="w-full pl-12 pr-4 px-5 py-4 shadow-md rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-text-primary placeholder:text-text-primary"
                     />
                   </div>
                 </div>
@@ -185,12 +188,3 @@ export default function DashboardLayout({
   );
 }
 
-// Additional utility file for cn function if you don't have it
-// src/lib/utils.ts
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-import Image from "next/image";
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
