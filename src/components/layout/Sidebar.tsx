@@ -12,31 +12,33 @@ import Link from "next/link";
 // Define sidebar menu items based on the image
 const mainMenuItems = [
   {
-    id: "home",
-    label: "Home",
-    href: "/home",
+    id: "Dashboard",
+    label: "Dashboard",
+    href: "/dashboard",
     onDesktop: true,
     icon: (
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M15 17C14.2005 17.6224 13.1502 18 12 18C10.8497 18 9.79953 17.6224 9 17"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M2.35139 13.2135C1.99837 10.9162 1.82186 9.76763 2.25617 8.74938C2.69047 7.73112 3.65403 7.03443 5.58114 5.64106L7.02099 4.6C9.41829 2.86667 10.6169 2 12 2C13.383 2 14.5817 2.86667 16.979 4.6L18.4188 5.64106C20.346 7.03443 21.3095 7.73112 21.7438 8.74938C22.1781 9.76763 22.0016 10.9162 21.6486 13.2135L21.3476 15.1724C20.8471 18.4289 20.5969 20.0572 19.429 21.0286C18.2611 22 16.5536 22 13.1388 22H10.8612C7.44634 22 5.73891 22 4.571 21.0286C3.40309 20.0572 3.15287 18.4289 2.65243 15.1724L2.35139 13.2135Z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
-      </svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5 8.75V6.75C10.5 5.10626 10.5 4.28439 10.046 3.73121C9.96291 3.62995 9.87005 3.53709 9.76879 3.45398C9.21561 3 8.39374 3 6.75 3C5.10626 3 4.28439 3 3.73121 3.45398C3.62995 3.53709 3.53709 3.62995 3.45398 3.73121C3 4.28439 3 5.10626 3 6.75V8.75C3 10.3937 3 11.2156 3.45398 11.7688C3.53709 11.8701 3.62995 11.9629 3.73121 12.046C4.28439 12.5 5.10626 12.5 6.75 12.5C8.39374 12.5 9.21561 12.5 9.76879 12.046C9.87005 11.9629 9.96291 11.8701 10.046 11.7688C10.5 11.2156 10.5 10.3937 10.5 8.75Z" stroke="#7C7C7C" strokeWidth="1.5" strokeLinejoin="round"/>
+<path d="M7.75 15.5H5.75C5.05222 15.5 4.70333 15.5 4.41943 15.5861C3.78023 15.78 3.28002 16.2802 3.08612 16.9194C3 17.2033 3 17.5522 3 18.25C3 18.9478 3 19.2967 3.08612 19.5806C3.28002 20.2198 3.78023 20.72 4.41943 20.9139C4.70333 21 5.05222 21 5.75 21H7.75C8.44778 21 8.79667 21 9.08057 20.9139C9.71977 20.72 10.22 20.2198 10.4139 19.5806C10.5 19.2967 10.5 18.9478 10.5 18.25C10.5 17.5522 10.5 17.2033 10.4139 16.9194C10.22 16.2802 9.71977 15.78 9.08057 15.5861C8.79667 15.5 8.44778 15.5 7.75 15.5Z" stroke="#7C7C7C" strokeWidth="1.5" strokeLinejoin="round"/>
+<path d="M21 17.25V15.25C21 13.6063 21 12.7844 20.546 12.2312C20.4629 12.1299 20.3701 12.0371 20.2688 11.954C19.7156 11.5 18.8937 11.5 17.25 11.5C15.6063 11.5 14.7844 11.5 14.2312 11.954C14.1299 12.0371 14.0371 12.1299 13.954 12.2312C13.5 12.7844 13.5 13.6063 13.5 15.25V17.25C13.5 18.8937 13.5 19.7156 13.954 20.2688C14.0371 20.3701 14.1299 20.4629 14.2312 20.546C14.7844 21 15.6063 21 17.25 21C18.8937 21 19.7156 21 20.2688 20.546C20.3701 20.4629 20.4629 20.3701 20.546 20.2688C21 19.7156 21 18.8937 21 17.25Z" stroke="#7C7C7C" strokeWidth="1.5" strokeLinejoin="round"/>
+<path d="M18.25 3H16.25C15.5522 3 15.2033 3 14.9194 3.08612C14.2802 3.28002 13.78 3.78023 13.5861 4.41943C13.5 4.70333 13.5 5.05222 13.5 5.75C13.5 6.44778 13.5 6.79667 13.5861 7.08057C13.78 7.71977 14.2802 8.21998 14.9194 8.41388C15.2033 8.5 15.5522 8.5 16.25 8.5H18.25C18.9478 8.5 19.2967 8.5 19.5806 8.41388C20.2198 8.21998 20.72 7.71977 20.9139 7.08057C21 6.79667 21 6.44778 21 5.75C21 5.05222 21 4.70333 20.9139 4.41943C20.72 3.78023 20.2198 3.28002 19.5806 3.08612C19.2967 3 18.9478 3 18.25 3Z" stroke="#7C7C7C" strokeWidth="1.5" strokeLinejoin="round"/>
+</svg>
+
+    ),
+  },
+  {
+    id: "Patients",
+    label: "Patients",
+    href: "/patients",
+    onDesktop: true,
+    icon: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 22V19C20 16.1716 20 14.7573 19.1213 13.8787C18.2426 13 16.8284 13 14 13H10C7.17157 13 5.75736 13 4.87868 13.8787C4 14.7573 4 16.1716 4 19C4 19.9319 4 20.3978 4.15224 20.7653C4.35523 21.2554 4.74458 21.6447 5.23463 21.8477C5.60218 22 6.06812 22 7 22" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M9.5 13L12.5 22M7 13.5V22" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M12 19H14.5C15.3284 19 16 19.6716 16 20.5C16 21.3284 15.3284 22 14.5 22H12.5" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M15.5 6.5V5.5C15.5 3.567 13.933 2 12 2C10.067 2 8.5 3.567 8.5 5.5V6.5C8.5 8.433 10.067 10 12 10C13.933 10 15.5 8.433 15.5 6.5Z" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
+
     ),
   },
   {
@@ -53,60 +55,177 @@ const mainMenuItems = [
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M20 22V19C20 16.1716 20 14.7574 19.1213 13.8787C18.2426 13 16.8284 13 14 13L12 15L10 13C7.17157 13 5.75736 13 4.87868 13.8787C4 14.7574 4 16.1716 4 19V22"
-          stroke="currentColor"
+          d="M6.5 3.5H4.5C3.94772 3.5 3.5 3.94772 3.5 4.5V8C3.5 11.0376 5.96243 13.5 9 13.5C12.0376 13.5 14.5 11.0376 14.5 8V4.5C14.5 3.94772 14.0523 3.5 13.5 3.5H11.5"
+          stroke="#7C7C7C"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
-          d="M16 13V18.5"
-          stroke="currentColor"
+          d="M18.5 15.5V16.75C18.5 19.3734 16.3734 21.5 13.75 21.5C11.1266 21.5 9 19.3734 9 16.75V13.5"
+          stroke="#7C7C7C"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
-          d="M8.5 13V17M8.5 17C9.60457 17 10.5 17.8954 10.5 19V20M8.5 17C7.39543 17 6.5 17.8954 6.5 19V20"
-          stroke="currentColor"
+          d="M11.5 2.5V4.5"
+          stroke="#7C7C7C"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
-          d="M15.5 6.5V5.5C15.5 3.567 13.933 2 12 2C10.067 2 8.5 3.567 8.5 5.5V6.5C8.5 8.433 10.067 10 12 10C13.933 10 15.5 8.433 15.5 6.5Z"
-          stroke="currentColor"
+          d="M6.5 2.5V4.5"
+          stroke="#7C7C7C"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
-          d="M16.75 19.25C16.75 19.6642 16.4142 20 16 20C15.5858 20 15.25 19.6642 15.25 19.25C15.25 18.8358 15.5858 18.5 16 18.5C16.4142 18.5 16.75 18.8358 16.75 19.25Z"
-          stroke="currentColor"
+          d="M20.5 13.5C20.5 14.6046 19.6046 15.5 18.5 15.5C17.3954 15.5 16.5 14.6046 16.5 13.5C16.5 12.3954 17.3954 11.5 18.5 11.5C19.6046 11.5 20.5 12.3954 20.5 13.5Z"
+          stroke="#7C7C7C"
           strokeWidth="1.5"
         />
       </svg>
     ),
+    activeIcon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6.5 3.5H4.5C3.94772 3.5 3.5 3.94772 3.5 4.5V8C3.5 11.0376 5.96243 13.5 9 13.5C12.0376 13.5 14.5 11.0376 14.5 8V4.5C14.5 3.94772 14.0523 3.5 13.5 3.5H11.5"
+          stroke="#2E8BC9"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M18.5 15.5V16.75C18.5 19.3734 16.3734 21.5 13.75 21.5C11.1266 21.5 9 19.3734 9 16.75V13.5"
+          stroke="#2E8BC9"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M11.5 2.5V4.5"
+          stroke="#2E8BC9"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M6.5 2.5V4.5"
+          stroke="#2E8BC9"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M20.5 13.5C20.5 14.6046 19.6046 15.5 18.5 15.5C17.3954 15.5 16.5 14.6046 16.5 13.5C16.5 12.3954 17.3954 11.5 18.5 11.5C19.6046 11.5 20.5 12.3954 20.5 13.5Z"
+          stroke="#2E8BC9"
+          strokeWidth="2.2"
+        />
+      </svg>
+    ),
   },
+
+
   {
     id: "appointment",
     label: "Appointment",
     href: "/appointment",
     onDesktop: true,
     icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-        />
-      </svg>
+     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 2V6M8 2V6" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M13 4H11C7.22876 4 5.34315 4 4.17157 5.17157C3 6.34315 3 8.22876 3 12V14C3 17.7712 3 19.6569 4.17157 20.8284C5.34315 22 7.22876 22 11 22H13C16.7712 22 18.6569 22 19.8284 20.8284C21 19.6569 21 17.7712 21 14V12C21 8.22876 21 6.34315 19.8284 5.17157C18.6569 4 16.7712 4 13 4Z" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M3 10H21" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M11 14H16M8 14H8.00898M13 18H8M16 18H15.991" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
+
+    ),
+  },
+  {
+    id: "Calendar",
+    label: "Calendar",
+    href: "/calendar",
+    onDesktop: true,
+    icon: (
+     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 2V6M8 2V6" stroke="#2E8BC9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M13 4H11C7.22876 4 5.34315 4 4.17157 5.17157C3 6.34315 3 8.22876 3 12V14C3 17.7712 3 19.6569 4.17157 20.8284C5.34315 22 7.22876 22 11 22H13C16.7712 22 18.6569 22 19.8284 20.8284C21 19.6569 21 17.7712 21 14V12C21 8.22876 21 6.34315 19.8284 5.17157C18.6569 4 16.7712 4 13 4Z" stroke="#2E8BC9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M3 10H21" stroke="#2E8BC9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
+
+    ),
+  },
+    {
+    id: "Staff",
+    label: "Staff ",
+    href: "/staff ",
+    onDesktop: true,
+    icon: (
+     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10Z" stroke="#2E8BC9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M17 18C17 15.2386 14.7614 13 12 13C9.23858 13 7 15.2386 7 18" stroke="#2E8BC9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M21 13V11C21 7.22876 21 5.34315 19.8284 4.17157C18.6569 3 16.7712 3 13 3H11C7.22876 3 5.34315 3 4.17157 4.17157C3 5.34315 3 7.22876 3 11V13C3 16.7712 3 18.6569 4.17157 19.8284C5.34315 21 7.22876 21 11 21H13C16.7712 21 18.6569 21 19.8284 19.8284C21 18.6569 21 16.7712 21 13Z" stroke="#2E8BC9" strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="round"/>
+</svg>
+
+
+    ),
+  },{
+    id: "Inbox",
+    label: "Inbox ",
+    href: "/inbox ",
+    onDesktop: true,
+    icon: (
+     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.922 4.79004C16.6963 3.16245 19.0834 2.34866 20.3674 3.63261C21.6513 4.91656 20.8375 7.30371 19.21 12.078L18.1016 15.3292C16.8517 18.9958 16.2267 20.8291 15.1964 20.9808C14.9195 21.0216 14.6328 20.9971 14.3587 20.9091C13.3395 20.5819 12.8007 18.6489 11.7231 14.783C11.4841 13.9255 11.3646 13.4967 11.0924 13.1692C11.0134 13.0742 10.9258 12.9866 10.8308 12.9076C10.5033 12.6354 10.0745 12.5159 9.21705 12.2769C5.35111 11.1993 3.41814 10.6605 3.0909 9.64127C3.00292 9.36724 2.97837 9.08053 3.01916 8.80355C3.17088 7.77332 5.00419 7.14834 8.6708 5.89838L11.922 4.79004Z" stroke="#2E8BC9" strokeWidth="1.5"/>
+</svg>
+
+
+
+    ),
+  },
+  {
+    id: "Reminder",
+    label: "Reminder",
+    href: "/reminder ",
+    onDesktop: true,
+    icon: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.9094 18.9994C12.8346 20.021 12.6486 20.6893 12.1866 21.1793C11.4134 21.9994 10.1689 21.9994 7.6799 21.9994C5.19089 21.9994 3.94638 21.9994 3.17314 21.1793C2.3999 20.3592 2.3999 19.0392 2.3999 16.3994V11.5994C2.3999 8.95956 2.3999 7.63963 3.17314 6.81952C3.64327 6.32091 4.28759 6.12545 5.2799 6.04883" stroke="#2E8BC9" strokeWidth="1.44" strokeLinecap="round"/>
+<path d="M7.67236 19H7.68135" stroke="#2E8BC9" strokeWidth="1.92" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M15.9155 2H13.8448C11.0601 2 9.66783 2 8.84136 2.90325C8.01491 3.8065 8.10176 5.23328 8.27546 8.08683L8.39627 10.0715C8.43619 10.7273 8.45615 11.0552 8.52682 11.3287C8.79973 12.3849 9.63404 13.1898 10.6778 13.4036C10.948 13.4589 11.268 13.4588 11.908 13.4588C12.7996 13.4588 12.7875 14.226 12.7875 14.9853C12.7875 15.5744 12.7875 15.869 12.9718 15.9703C13.156 16.0715 13.3947 15.9081 13.8721 15.5813L16.7131 13.6367C16.8989 13.5094 17.066 13.4588 17.2848 13.4588C18.4581 13.4588 19.0447 13.4589 19.5201 13.2751C21.1674 12.638 21.3043 11.0526 21.3994 9.48995L21.4849 8.08683C21.6585 5.23328 21.7454 3.8065 20.9189 2.90325C20.0925 2 18.7002 2 15.9155 2Z" stroke="#2E8BC9" strokeWidth="1.44" strokeLinejoin="round"/>
+<path d="M13.7606 8.42857C11.4486 6.71429 14.8791 5 14.8791 5C14.8791 5 18.3114 6.71429 15.9995 8.42857M13.7606 8.42857H15.9995M13.7606 8.42857L13.2005 10.9999M15.9995 8.42857L16.7826 10.9999" stroke="#2E8BC9" strokeWidth="1.44" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
+
+
+
+
+    ),
+  }, {
+    id: "Analytics",
+    label: "Analytics",
+    href: "/analytics",
+    onDesktop: true,
+    icon: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 17V13" stroke="#2E8BC9" strokeWidth="1.5" stroke-linecap="round"/>
+<path d="M12 17V7" stroke="#2E8BC9" strokeWidth="1.5" stroke-linecap="round"/>
+<path d="M17 17V11" stroke="#2E8BC9" strokeWidth="1.5" stroke-linecap="round"/>
+<path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="#2E8BC9" strokeWidth="1.5" stroke-linejoin="round"/>
+</svg>
+
+
+
+
+
     ),
   },
 ];
@@ -362,176 +481,28 @@ const mobileMenuItems = [
   },
 ];
 
-const quickMenuItems = [
-  {
-    id: "waitlist",
-    label: "Waitlist",
-    href: "/waitlist",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-    ),
-  },
-  {
-    id: "medications",
-    label: "Medications",
-    href: "/medications",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-        />
-      </svg>
-    ),
-  },
-];
 
-const informationItems = [
-  {
-    id: "personal-information",
-    label: "Personal Information",
-    href: "/personal-information",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-        />
-      </svg>
-    ),
-  },
-  {
-    id: "medical-information",
-    label: "Medical Information",
-    href: "/medical-information",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-        />
-      </svg>
-    ),
-  },
-  {
-    id: "insurance-information",
-    label: "Insurance Information",
-    href: "/insurance-information",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-        />
-      </svg>
-    ),
-  },
-  {
-    id: "upload-document",
-    label: "Upload Document",
-    href: "/upload-document",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-        />
-      </svg>
-    ),
-  },
-];
 
-const accountsItems = [
-  {
-    id: "switch-account",
-    label: "Switch Account",
-    href: "/switch-account",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-        />
-      </svg>
-    ),
-  },
-  {
-    id: "caregiver",
-    label: "Caregiver",
-    href: "/caregiver",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a4 4 0 11-8 0 4 4 0 018 0z"
-        />
-      </svg>
-    ),
-  },
-];
+
+
+
 
 const otherItems = [
+    {
+    id: "Coding & Billing",
+    label: "Coding & Billing",
+    href: "/billing_and_coding",
+    icon: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 18.6458V8.05426C4 5.20025 4 3.77325 4.87868 2.88663C5.75736 2 7.17157 2 10 2H14C16.8284 2 18.2426 2 19.1213 2.88663C20 3.77325 20 5.20025 20 8.05426V18.6458C20 20.1575 20 20.9133 19.538 21.2108C18.7831 21.6971 17.6161 20.6774 17.0291 20.3073C16.5441 20.0014 16.3017 19.8485 16.0325 19.8397C15.7417 19.8301 15.4949 19.9768 14.9709 20.3073L13.06 21.5124C12.5445 21.8374 12.2868 22 12 22C11.7132 22 11.4555 21.8374 10.94 21.5124L9.02913 20.3073C8.54415 20.0014 8.30166 19.8485 8.03253 19.8397C7.74172 19.8301 7.49493 19.9768 6.97087 20.3073C6.38395 20.6774 5.21687 21.6971 4.46195 21.2108C4 20.9133 4 20.1575 4 18.6458Z" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M16 6H8" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M10 10H8" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M14.5 9.875C13.6716 9.875 13 10.4626 13 11.1875C13 11.9124 13.6716 12.5 14.5 12.5C15.3284 12.5 16 13.0876 16 13.8125C16 14.5374 15.3284 15.125 14.5 15.125M14.5 9.875C15.1531 9.875 15.7087 10.2402 15.9146 10.75M14.5 9.875V9M14.5 15.125C13.8469 15.125 13.2913 14.7598 13.0854 14.25M14.5 15.125V16" stroke="#7C7C7C" strokeWidth="1.5" strokeLinecap="round"/>
+</svg>
+
+    ),
+  },
+  
   {
     id: "hipaa-consent",
     label: "HIPAA Consent",
@@ -592,12 +563,14 @@ function SidebarItem({ item, isActive, onClick }: SidebarItemProps) {
       <button
         onClick={onClick}
         className={cn(
-          "w-full flex items-center gap-3 px-4 py-3 text-left rounded-lg transition-all duration-500 group",
+          "w-full flex relative items-center gap-3 px-4 py-3 text-left rounded-lg transition-all duration-500 group",
           isActive
-            ? " text-primary-500 shadow-[0px_3px_4px_0px_rgba(26,64,96,0.10)] before:w-1 before:h-8 before:-left-1 z-0 before:absolute before:bg-primary-500 before:rounded-l-3xl"
+            ? " text-primary-500   shadow-[0px_3px_4px_0px_rgba(26,64,96,0.10)]  before:w-1 before:h-8 before:-left-1 z-0 before:absolute  before:rounded-l-3xl"
             : "text-Text-secondary hover:bg-[#F3F3F3] hover:text-text-primary hover:shadow-[0px_3px_4px_0px_rgba(26,64,96,0.10)]"
         )}
-      >
+      >{isActive && (
+    <span className="absolute left-0 top-6 h-6 w-1  bg-[#2E8BC9]  transform -translate-y-2" />
+  )}
         <div
           className={cn(
             "flex-shrink-0 transition-colors",
@@ -664,9 +637,7 @@ export function Sidebar() {
     const allItems = [
       ...mainMenuItems,
       ...mobileMenuItems,
-      ...quickMenuItems,
-      ...informationItems,
-      ...accountsItems,
+ 
       ...otherItems,
     ];
     const currentItem = allItems.find((item) => item.href === pathname);
@@ -744,37 +715,12 @@ export function Sidebar() {
               activeItem={activeItem}
               onItemClick={handleItemClick}
             />
-            <div className="h-px w-full bg-tertiary"></div>
+    
 
             {/* Quick Section */}
-            <SidebarSection
-              title="Quick"
-              items={quickMenuItems}
-              activeItem={activeItem}
-              onItemClick={handleItemClick}
-            />
+     
 
-            <div className="h-px w-full bg-tertiary"></div>
-
-            {/* Information Section */}
-            <SidebarSection
-              title="Information"
-              items={informationItems}
-              activeItem={activeItem}
-              onItemClick={handleItemClick}
-            />
-
-            <div className="h-px w-full bg-tertiary"></div>
-
-            {/* Accounts Section */}
-            <SidebarSection
-              title="Accounts"
-              items={accountsItems}
-              activeItem={activeItem}
-              onItemClick={handleItemClick}
-            />
-
-            <div className="h-px w-full bg-tertiary"></div>
+          
 
             {/* Other Section */}
             <SidebarSection
@@ -885,7 +831,7 @@ export function Sidebar() {
                 <div
                   className={`${
                     activeItem === item.id
-                      ? "text-primary-500"
+                      ? "text-primary-500 "
                       : "text-text-primary"
                   }`}
                 >
